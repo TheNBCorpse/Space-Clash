@@ -2097,6 +2097,28 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 562770234157259
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 930120487370782,
+							"parameters": {
+								"instance-variable": "frozen",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 618243358314447
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-peer-connected",
 							"objectClass": "multiplayer",
 							"sid": 736393917657352
