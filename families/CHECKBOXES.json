@@ -1,0 +1,15 @@
+{
+	"name": "CHECKBOXES",
+	"plugin-id": "Sprite",
+	"sid": 436939789069770,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"menu_checkbox_1",
+		"menu_checkbox_2",
+		"menu_checkbox_3",
+		"menu_checkbox_4",
+		"menu_checkbox_random"
+	]
+}

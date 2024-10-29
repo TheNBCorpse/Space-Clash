@@ -1,0 +1,134 @@
+{
+	"name": "level_spike",
+	"plugin-id": "Sprite",
+	"sid": 304528198305436,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 96,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4332303,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 846254406378263,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 96,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 983354,
+						"collisionPoly": {
+							"points": [
+								0.3333333333333333,
+								0,
+								0.8333333333333334,
+								0,
+								0.8333333333333334,
+								0.3333333333333333,
+								1,
+								0.3333333333333333,
+								1,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								1,
+								0.16666666666666666,
+								1,
+								0.16666666666666666,
+								0.6666666666666666,
+								0,
+								0.6666666666666666,
+								0,
+								0.16666666666666666,
+								0.3333333333333333,
+								0.16666666666666666
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 96,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6690264,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0,
+								0.6666666666666666,
+								0,
+								0.6666666666666666,
+								0.16666666666666666,
+								1,
+								0.16666666666666666,
+								1,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.3333333333333333,
+								1,
+								0.3333333333333333,
+								0.8333333333333334,
+								0,
+								0.8333333333333334,
+								0,
+								0.3333333333333333,
+								0.16666666666666666,
+								0.3333333333333333
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 617241321512572,
+				"name": "Animation 2",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 3
+			}
+		],
+		"subfolders": []
+	}
+}

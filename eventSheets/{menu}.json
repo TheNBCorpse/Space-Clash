@@ -1,0 +1,692 @@
+{
+	"name": "{menu}",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "{GLOBAL}"
+		},
+		{
+			"eventType": "variable",
+			"name": "username",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 919380864532352
+		},
+		{
+			"eventType": "variable",
+			"name": "room",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 586479091299222
+		},
+		{
+			"eventType": "variable",
+			"name": "alttext",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 991491641395594
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 891676820548162
+				}
+			],
+			"actions": [
+				{
+					"id": "set-max-length",
+					"objectClass": "menu_name",
+					"sid": 444819721136031,
+					"parameters": {
+						"max-length": "12"
+					}
+				},
+				{
+					"id": "set-max-length",
+					"objectClass": "menu_room",
+					"sid": 460629595996214,
+					"parameters": {
+						"max-length": "5"
+					}
+				}
+			],
+			"sid": 890090561596144
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "mouse",
+					"sid": 179754738749720,
+					"parameters": {
+						"object": "menu_font"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-cursor-style",
+					"objectClass": "mouse",
+					"sid": 905771705282203,
+					"parameters": {
+						"cursor-style": "hand"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "menu_font",
+					"sid": 743169563739491,
+					"parameters": {
+						"color": "rgbEx255(200, 200, 200)"
+					}
+				}
+			],
+			"sid": 766093150629101
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "mouse",
+					"sid": 611091049043095,
+					"parameters": {
+						"object": "menu_font"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 875035430228549
+				}
+			],
+			"actions": [
+				{
+					"id": "set-cursor-style",
+					"objectClass": "mouse",
+					"sid": 358513976537997,
+					"parameters": {
+						"cursor-style": "normal"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "menu_font",
+					"sid": 120401875455208,
+					"parameters": {
+						"color": "rgbEx255(255, 255, 255)"
+					}
+				}
+			],
+			"sid": 904789102284136
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "text_standard",
+					"sid": 493593659383559,
+					"parameters": {
+						"unique-id": "9"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 849057444199870,
+					"parameters": {
+						"first-value": "len(menu_name.Text)",
+						"comparison": 2,
+						"second-value": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "text_standard",
+					"sid": 236749231870492,
+					"parameters": {
+						"text": "\"Your name\" & newline & \"[color=red](3-12 characters)[/color]\""
+					}
+				}
+			],
+			"sid": 725853218541947
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "text_standard",
+					"sid": 108091468664161,
+					"parameters": {
+						"unique-id": "9"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 176469988529473,
+					"parameters": {
+						"first-value": "len(menu_name.Text)",
+						"comparison": 5,
+						"second-value": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "text_standard",
+					"sid": 852296526951177,
+					"parameters": {
+						"text": "\"Your name\" & newline & \"(3-12 characters)\""
+					}
+				}
+			],
+			"sid": 248089513903092
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "text_standard",
+					"sid": 229422135674256,
+					"parameters": {
+						"unique-id": "11"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 116551192412992,
+					"parameters": {
+						"first-value": "len(menu_room.Text)",
+						"comparison": 2,
+						"second-value": "5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "text_standard",
+					"sid": 287786840931829,
+					"parameters": {
+						"text": "\"Room to join\" & newline & \"[color=red](5 characters)[/color]\""
+					}
+				}
+			],
+			"sid": 768543108388981
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "text_standard",
+					"sid": 394571785097421,
+					"parameters": {
+						"unique-id": "11"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 630788263090468,
+					"parameters": {
+						"first-value": "len(menu_room.Text)",
+						"comparison": 0,
+						"second-value": "5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "text_standard",
+					"sid": 628040366197514,
+					"parameters": {
+						"text": "\"Room to join\" & newline & \"(5 characters)\""
+					}
+				}
+			],
+			"sid": 997738730886142
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "mouse",
+					"sid": 736808288683058,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "menu_font"
+					}
+				},
+				{
+					"id": "compare-animation-frame",
+					"objectClass": "menu_font",
+					"sid": 498139155211101,
+					"parameters": {
+						"comparison": 0,
+						"number": "4"
+					}
+				},
+				{
+					"id": "compare-opacity",
+					"objectClass": "level_transition",
+					"sid": 727400967945286,
+					"parameters": {
+						"comparison": 0,
+						"opacity": "0"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 152279093199778,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "menu_font",
+							"sid": 899188337039126,
+							"parameters": {
+								"animation": "\"on\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 623015807228775,
+							"parameters": {
+								"seconds": "0.001"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "menu_font",
+							"sid": 233850798454559,
+							"parameters": {
+								"animation": "\"off\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 406795828077530,
+							"parameters": {
+								"variable": "alttext",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 791056415955986
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "menu_font",
+							"sid": 689525857246205,
+							"parameters": {
+								"animation": "\"off\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 671443385773413,
+							"parameters": {
+								"seconds": "0.001"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "menu_font",
+							"sid": 598680302340452,
+							"parameters": {
+								"animation": "\"on\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 125436857297066,
+							"parameters": {
+								"variable": "alttext",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 715697609437239
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "keyboard",
+					"sid": 149595885386742,
+					"parameters": {
+						"key": 13
+					}
+				}
+			],
+			"actions": [],
+			"sid": 859374229817683,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-focused",
+							"objectClass": "menu_name",
+							"sid": 125976687651598
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 139615063733924,
+							"parameters": {
+								"seconds": "0.001"
+							}
+						},
+						{
+							"id": "set-unfocused",
+							"objectClass": "menu_name",
+							"sid": 160208745921230
+						}
+					],
+					"sid": 599942812648603
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-focused",
+							"objectClass": "menu_room",
+							"sid": 823957485172980
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 729867817961094,
+							"parameters": {
+								"seconds": "0.001"
+							}
+						},
+						{
+							"id": "set-unfocused",
+							"objectClass": "menu_room",
+							"sid": 355009023251722
+						}
+					],
+					"sid": 414234409619380
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-focused",
+							"objectClass": "menu_name",
+							"sid": 323719234710695,
+							"isInverted": true
+						},
+						{
+							"id": "is-focused",
+							"objectClass": "menu_room",
+							"sid": 976668071777935,
+							"isInverted": true
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 992923879409062,
+							"parameters": {
+								"first-value": "len(menu_name.Text)",
+								"comparison": 5,
+								"second-value": "3"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 360626402291354,
+							"parameters": {
+								"first-value": "len(menu_room.Text)",
+								"comparison": 0,
+								"second-value": "5"
+							}
+						},
+						{
+							"id": "compare-opacity",
+							"objectClass": "level_transition",
+							"sid": 687233565229165,
+							"parameters": {
+								"comparison": 0,
+								"opacity": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 973523047402214,
+							"parameters": {
+								"variable": "username",
+								"value": "menu_name.Text"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 464143505277217,
+							"parameters": {
+								"variable": "room",
+								"value": "menu_room.Text"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "menu_name",
+							"sid": 539623167136892,
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "menu_room",
+							"sid": 231940042223018,
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "level_transition",
+							"sid": 820863710278344,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"fade in\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "1/3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "0"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "text_transition",
+							"sid": 767577838855096,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"fade in\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "1/3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "0"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 337446586092929
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 964090952926877,
+							"parameters": {
+								"layout": "room"
+							}
+						}
+					],
+					"sid": 427536955076486
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 149126563857462
+				},
+				{
+					"id": "repeat",
+					"objectClass": "System",
+					"sid": 739159063623433,
+					"parameters": {
+						"count": "random(15, 20) * (LayoutWidth / 2560)"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 230238548592725,
+					"parameters": {
+						"object-to-create": "level_star",
+						"layer": "0",
+						"x": "round(random(0, LayoutWidth) / 16) * 16",
+						"y": "random(0, LayoutHeight)",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "level_star",
+					"sid": 425155665031872,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "random(300, 400)"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "level_star",
+					"sid": 141207577118471,
+					"parameters": {
+						"angle": "270"
+					}
+				}
+			],
+			"sid": 162534796987618
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 819956898260971,
+					"parameters": {
+						"interval-seconds": "random(0.2, 0.55)"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 142788600831973,
+					"parameters": {
+						"object-to-create": "level_star",
+						"layer": "0",
+						"x": "round(random(0, LayoutWidth) / 16) * 16",
+						"y": "LayoutHeight - 0.1",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "level_star",
+					"sid": 730899801161922,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "random(300, 400)"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "level_star",
+					"sid": 134837234244747,
+					"parameters": {
+						"angle": "270"
+					}
+				}
+			],
+			"sid": 230121429204945
+		}
+	],
+	"sid": 925937720484612
+}

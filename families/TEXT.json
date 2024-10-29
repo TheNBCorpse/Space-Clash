@@ -1,0 +1,45 @@
+{
+	"name": "TEXT",
+	"plugin-id": "Text",
+	"sid": 214335038443642,
+	"instanceVariables": [
+		{
+			"name": "size8",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 200502914302097
+		},
+		{
+			"name": "sizeD",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 394086300842415
+		},
+		{
+			"name": "spacing8",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 514623526064964
+		},
+		{
+			"name": "spacingD",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 527024967989439
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"text_standard",
+		"text_name",
+		"text_maps_host",
+		"text_begintimer",
+		"text_maps_peer",
+		"text_transition"
+	]
+}

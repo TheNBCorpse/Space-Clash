@@ -1,0 +1,2741 @@
+{
+	"name": "{room}",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "players",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 571214621931941
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "{GLOBAL}"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "startup_room",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 985333480259075
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "level_wallfiller",
+							"sid": 401122235368976,
+							"parameters": {
+								"color": "rgbEx255(0, 0, 0)"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "CHECKBOXES",
+							"sid": 907967483043211,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "text_maps_host",
+							"sid": 528897549471881,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "text_maps_peer",
+							"sid": 438136125018519,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "player",
+							"sid": 542753971696045,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "text_begintimer",
+							"sid": 444724326379243
+						},
+						{
+							"id": "set-position",
+							"objectClass": "player",
+							"sid": 866416189771440,
+							"parameters": {
+								"x": "random(256, 1904)",
+								"y": "random(256, 1184)"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "text_name",
+							"sid": 863206279746475,
+							"parameters": {
+								"x": "player.X",
+								"y": "player.Y - 64"
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "player",
+							"sid": 261390029743282,
+							"parameters": {
+								"child": "text_name",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-z-elevation": true,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						},
+						{
+							"id": "add-client-input-value",
+							"objectClass": "multiplayer",
+							"sid": 782086079501544,
+							"parameters": {
+								"tag": "\"mousex\"",
+								"precision": "low-int16-2-bytes",
+								"interpolation": "linear"
+							}
+						},
+						{
+							"id": "add-client-input-value",
+							"objectClass": "multiplayer",
+							"sid": 474144452977442,
+							"parameters": {
+								"tag": "\"mousey\"",
+								"precision": "low-int16-2-bytes",
+								"interpolation": "linear"
+							}
+						},
+						{
+							"id": "add-client-input-value",
+							"objectClass": "multiplayer",
+							"sid": 961208745274394,
+							"parameters": {
+								"tag": "\"mousebuttons\"",
+								"precision": "very-low-uint8-1-byte",
+								"interpolation": "none"
+							}
+						},
+						{
+							"id": "sync-object-2",
+							"objectClass": "multiplayer",
+							"sid": 615899473551683,
+							"parameters": {
+								"object": "player",
+								"x": true,
+								"y": true,
+								"angle": false,
+								"precision": "high-double-8-bytes",
+								"bandwidth": "normal-bandwidth-unpredictable"
+							}
+						},
+						{
+							"id": "sync-instance-variable",
+							"objectClass": "multiplayer",
+							"sid": 508245867579735,
+							"parameters": {
+								"object": "player",
+								"instance-variable": {
+									"name": "mousex",
+									"objectClass": "player"
+								},
+								"precision": "normal-float-4-bytes",
+								"interpolation": "linear",
+								"client-value-tag": "\"mousex\""
+							}
+						},
+						{
+							"id": "sync-instance-variable",
+							"objectClass": "multiplayer",
+							"sid": 295452008033471,
+							"parameters": {
+								"object": "player",
+								"instance-variable": {
+									"name": "mousey",
+									"objectClass": "player"
+								},
+								"precision": "normal-float-4-bytes",
+								"interpolation": "linear",
+								"client-value-tag": "\"mousey\""
+							}
+						},
+						{
+							"id": "sync-instance-variable",
+							"objectClass": "multiplayer",
+							"sid": 982585533272057,
+							"parameters": {
+								"object": "player",
+								"instance-variable": {
+									"name": "mousebuttons",
+									"objectClass": "player"
+								},
+								"precision": "very-low-uint8-1-byte",
+								"interpolation": "none",
+								"client-value-tag": "\"mousebuttons\""
+							}
+						},
+						{
+							"id": "sync-instance-variable",
+							"objectClass": "multiplayer",
+							"sid": 629737402487476,
+							"parameters": {
+								"object": "player",
+								"instance-variable": {
+									"name": "score",
+									"objectClass": "player"
+								},
+								"precision": "low-int16-2-bytes",
+								"interpolation": "none",
+								"client-value-tag": "\"\""
+							}
+						},
+						{
+							"id": "sync-instance-variable",
+							"objectClass": "multiplayer",
+							"sid": 117446192659078,
+							"parameters": {
+								"object": "player",
+								"instance-variable": {
+									"name": "powerup",
+									"objectClass": "player"
+								},
+								"precision": "low-int16-2-bytes",
+								"interpolation": "none",
+								"client-value-tag": "\"\""
+							}
+						},
+						{
+							"id": "sync-instance-variable",
+							"objectClass": "multiplayer",
+							"sid": 857738564189896,
+							"parameters": {
+								"object": "player",
+								"instance-variable": {
+									"name": "frozen",
+									"objectClass": "player"
+								},
+								"precision": "low-int16-2-bytes",
+								"interpolation": "none",
+								"client-value-tag": "\"\""
+							}
+						},
+						{
+							"id": "sync-object-2",
+							"objectClass": "multiplayer",
+							"sid": 148561218616540,
+							"parameters": {
+								"object": "text_begintimer",
+								"x": true,
+								"y": true,
+								"angle": false,
+								"precision": "low-int16-2-bytes",
+								"bandwidth": "normal-bandwidth-unpredictable"
+							}
+						},
+						{
+							"id": "sync-instance-variable",
+							"objectClass": "multiplayer",
+							"sid": 549982010588687,
+							"parameters": {
+								"object": "text_begintimer",
+								"instance-variable": {
+									"name": "map",
+									"objectClass": "text_begintimer"
+								},
+								"precision": "low-int16-2-bytes",
+								"interpolation": "none",
+								"client-value-tag": "\"\""
+							}
+						},
+						{
+							"id": "sync-instance-variable",
+							"objectClass": "multiplayer",
+							"sid": 567637700675000,
+							"parameters": {
+								"object": "text_begintimer",
+								"instance-variable": {
+									"name": "time",
+									"objectClass": "text_begintimer"
+								},
+								"precision": "high-double-8-bytes",
+								"interpolation": "none",
+								"client-value-tag": "\"\""
+							}
+						},
+						{
+							"id": "sync-object-2",
+							"objectClass": "multiplayer",
+							"sid": 791250420451148,
+							"disabled": true,
+							"parameters": {
+								"object": "text_name",
+								"x": true,
+								"y": true,
+								"angle": false,
+								"precision": "low-int16-2-bytes",
+								"bandwidth": "normal-bandwidth-unpredictable"
+							}
+						},
+						{
+							"id": "connect",
+							"objectClass": "multiplayer",
+							"sid": 450280123495633,
+							"parameters": {
+								"server": "\"wss://multiplayer.construct.net\""
+							}
+						}
+					],
+					"sid": 511422324999933
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-connected",
+							"objectClass": "multiplayer",
+							"sid": 654905527510985
+						}
+					],
+					"actions": [
+						{
+							"id": "log-in",
+							"objectClass": "multiplayer",
+							"sid": 546101674829432,
+							"parameters": {
+								"alias": "username"
+							}
+						}
+					],
+					"sid": 660296055553148
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-logged-in",
+							"objectClass": "multiplayer",
+							"sid": 719767550157112
+						}
+					],
+					"actions": [
+						{
+							"id": "join-room",
+							"objectClass": "multiplayer",
+							"sid": 661409509386340,
+							"parameters": {
+								"game": "\"thenbcorpse_5132652236_\" & projectversion",
+								"instance": "\"room\"",
+								"room": "room",
+								"max-peers": "4"
+							}
+						}
+					],
+					"sid": 370570449615590
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-joined-room",
+							"objectClass": "multiplayer",
+							"sid": 236859087566051
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-animation",
+							"objectClass": "level_loadingicon",
+							"sid": 506432627310422
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "level_loadingicon",
+							"sid": 611139285949677,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "level_transition",
+							"sid": 493638656645157,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"fade out\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "1/3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "0"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "text_transition",
+							"sid": 461123845502082,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"fade out\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "1/3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "0"
+							}
+						}
+					],
+					"sid": 969938581935600,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-host",
+									"objectClass": "multiplayer",
+									"sid": 447997480725475
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 190551199599605,
+									"parameters": {
+										"group-name": "\"host_room\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 418834269795762,
+									"parameters": {
+										"instance-variable": "id",
+										"value": "multiplayer.MyID"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "text_name",
+									"sid": 446751425003794,
+									"parameters": {
+										"instance-variable": "id",
+										"value": "multiplayer.MyID"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 642865480286316,
+									"parameters": {
+										"instance-variable": "playerindex",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "player",
+									"sid": 982323767210600,
+									"parameters": {
+										"opacity": "100"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "CHECKBOXES",
+									"sid": 437596378360808,
+									"parameters": {
+										"opacity": "100"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "text_maps_host",
+									"sid": 300077511634109,
+									"parameters": {
+										"opacity": "100"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "text_maps_peer",
+									"sid": 603118952240667
+								},
+								{
+									"id": "associate-object-with-peer",
+									"objectClass": "multiplayer",
+									"sid": 843792375088361,
+									"parameters": {
+										"object": "player",
+										"peer-id": "multiplayer.MyID"
+									}
+								}
+							],
+							"sid": 996092706106994
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 482166081718478
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 668046631868110,
+									"parameters": {
+										"group-name": "\"peer_room\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "player",
+									"sid": 315296475744718
+								},
+								{
+									"id": "destroy",
+									"objectClass": "CHECKBOXES",
+									"sid": 553096235712040
+								},
+								{
+									"id": "destroy",
+									"objectClass": "text_maps_host",
+									"sid": 951643476868617
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "text_maps_peer",
+									"sid": 985490656174836,
+									"parameters": {
+										"opacity": "100"
+									}
+								}
+							],
+							"sid": 399330361610281
+						}
+					]
+				}
+			],
+			"sid": 837292545856459
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "common_room",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player",
+							"sid": 180472245455687,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "multiplayer.MyID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 527983083713951,
+							"parameters": {
+								"instance-variable": "mousex",
+								"value": "mouse.X"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 335912461196101,
+							"parameters": {
+								"instance-variable": "mousey",
+								"value": "mouse.Y"
+							}
+						}
+					],
+					"sid": 780017371568267
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 700629458125961
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-layer",
+							"objectClass": "player",
+							"sid": 821765464255536,
+							"parameters": {
+								"layer": "\"players\""
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "text_name",
+							"sid": 920523901976808,
+							"parameters": {
+								"layer": "\"names\""
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "text_begintimer",
+							"sid": 745852542209493,
+							"parameters": {
+								"layer": "\"ui\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "text_begintimer",
+							"sid": 573973327337707,
+							"parameters": {
+								"text": "clamp(Self.time, 0, 5)"
+							}
+						}
+					],
+					"sid": 827517553842045
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 287626047289229,
+							"parameters": {
+								"object": "text_name"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "text_name",
+							"sid": 255239226247700,
+							"parameters": {
+								"text": "\"[background=black] \" & multiplayer.PeerAliasFromID(Self.id) & \" \""
+							}
+						}
+					],
+					"sid": 787125127068704,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "text_name",
+									"sid": 469028728533950,
+									"parameters": {
+										"opacity": "70"
+									}
+								}
+							],
+							"sid": 893737029098714,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "text_name",
+									"sid": 416872650991009,
+									"parameters": {
+										"opacity": "100"
+									}
+								}
+							],
+							"sid": 853548335758853,
+							"disabled": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "mouse",
+							"sid": 287095599608699,
+							"parameters": {
+								"object": "CHECKBOXES"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-cursor-style",
+							"objectClass": "mouse",
+							"sid": 308703648176808,
+							"parameters": {
+								"cursor-style": "hand"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "CHECKBOXES",
+							"sid": 632910067521139,
+							"parameters": {
+								"color": "rgbEx255(200, 200, 200)"
+							}
+						}
+					],
+					"sid": 853403577555469
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 751141824228060
+						}
+					],
+					"actions": [
+						{
+							"id": "set-cursor-style",
+							"objectClass": "mouse",
+							"sid": 400431300063756,
+							"parameters": {
+								"cursor-style": "normal"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "CHECKBOXES",
+							"sid": 791922229686241,
+							"parameters": {
+								"color": "rgbEx255(255, 255, 255)"
+							}
+						}
+					],
+					"sid": 639947508282623
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "text_begintimer",
+							"sid": 960547894828508,
+							"parameters": {
+								"instance-variable": "time",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 552926589037706
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "text_begintimer",
+							"sid": 883269145000422,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "level_transition",
+							"sid": 285418961343275,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"fade in\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "1/3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "0"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "text_transition",
+							"sid": 286407385158825,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"fade in\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "1/3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "0"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 654160513034744
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "level_loadingicon",
+							"sid": 732207571085825,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "level_loadingicon",
+							"sid": 477466426201872,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "start-animation",
+							"objectClass": "level_loadingicon",
+							"sid": 722568962273835,
+							"parameters": {
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 499048265202062,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-host",
+									"objectClass": "multiplayer",
+									"sid": 372419172367687
+								}
+							],
+							"actions": [
+								{
+									"id": "disconnect-room",
+									"objectClass": "multiplayer",
+									"sid": 802426087321503
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 160240324485370,
+									"parameters": {
+										"seconds": "0.15"
+									}
+								},
+								{
+									"id": "go-to-layout-by-name",
+									"objectClass": "System",
+									"sid": 797564495439181,
+									"parameters": {
+										"layout": "chooseindex(text_begintimer.map, \"bowl\", \"minefield\", \"storm\", \"\")"
+									}
+								}
+							],
+							"sid": 772978658924863
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 261029690339235
+								}
+							],
+							"actions": [
+								{
+									"id": "disconnect-room",
+									"objectClass": "multiplayer",
+									"sid": 572753834436117
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 210773846667327,
+									"parameters": {
+										"seconds": "0.2"
+									}
+								},
+								{
+									"id": "go-to-layout-by-name",
+									"objectClass": "System",
+									"sid": 374989695973916,
+									"parameters": {
+										"layout": "chooseindex(text_begintimer.map, \"bowl\", \"minefield\", \"storm\", \"\")"
+									}
+								}
+							],
+							"sid": 882688500713168
+						}
+					]
+				}
+			],
+			"sid": 121953702618363
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "peer_room",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "room (peer)",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-peer-message",
+									"objectClass": "multiplayer",
+									"sid": 458493534260344,
+									"parameters": {
+										"tag": "\"map change\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "text_maps_peer",
+									"sid": 106413833493773,
+									"parameters": {
+										"text": "multiplayer.Message"
+									}
+								}
+							],
+							"sid": 135594045245091
+						}
+					],
+					"sid": 816873421836615
+				},
+				{
+					"eventType": "variable",
+					"name": "mouseL",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 392095519136185
+				},
+				{
+					"eventType": "variable",
+					"name": "mouseR",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 493230555359769
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "mouse",
+							"sid": 361526155332588,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 755556611032642,
+							"parameters": {
+								"variable": "mouseL",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 228650511241114
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "mouse",
+							"sid": 184922619011491,
+							"parameters": {
+								"mouse-button": "right",
+								"click-type": "clicked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 191430318042297,
+							"parameters": {
+								"variable": "mouseR",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 422668713779347
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "player",
+							"sid": 497251581292213
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 240596970010921,
+							"parameters": {
+								"instance-variable": "id",
+								"value": "multiplayer.PeerID"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 516577466207018,
+							"parameters": {
+								"object-to-create": "text_name",
+								"layer": "0",
+								"x": "player.X",
+								"y": "player.Y - 64",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "player",
+							"sid": 956109573401896,
+							"parameters": {
+								"child": "text_name",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-z-elevation": true,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "text_name",
+							"sid": 139509701852537,
+							"parameters": {
+								"instance-variable": "id",
+								"value": "multiplayer.PeerID"
+							}
+						},
+						{
+							"id": "associate-object-with-peer",
+							"objectClass": "multiplayer",
+							"sid": 233420745265613,
+							"parameters": {
+								"object": "player",
+								"peer-id": "multiplayer.PeerID"
+							}
+						}
+					],
+					"sid": 261456224103673,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 260876091334884,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "multiplayer.MyID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "enable-local-input-prediction",
+									"objectClass": "multiplayer",
+									"sid": 742275079717568,
+									"parameters": {
+										"object": "player",
+										"avoid-solids": true,
+										"platform-mode": false
+									}
+								}
+							],
+							"sid": 371083515685514
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-client-update",
+							"objectClass": "multiplayer",
+							"sid": 943625922769067
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player",
+							"sid": 502339936067630,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "multiplayer.MyID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-client-state",
+							"objectClass": "multiplayer",
+							"sid": 941568142738935,
+							"parameters": {
+								"tag": "\"mousex\"",
+								"value": "mouse.X"
+							}
+						},
+						{
+							"id": "set-client-state",
+							"objectClass": "multiplayer",
+							"sid": 345812949348171,
+							"parameters": {
+								"tag": "\"mousey\"",
+								"value": "mouse.Y"
+							}
+						}
+					],
+					"sid": 680373411893882,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 451862599931981,
+									"parameters": {
+										"variable": "mouseL"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 376195306386411,
+									"parameters": {
+										"instance-variable": "mousebuttons",
+										"value": "setbit(Self.mousebuttons, 0, 1)"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 753233352136440,
+									"parameters": {
+										"variable": "mouseL",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 133348333701299
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 652490668221574
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 822540974251605,
+									"parameters": {
+										"instance-variable": "mousebuttons",
+										"value": "setbit(Self.mousebuttons, 0, 0)"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 761214271531506,
+									"disabled": true,
+									"parameters": {
+										"variable": "mouseL",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 308361639926871
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 656238417714387,
+									"parameters": {
+										"variable": "mouseR"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 759899048121099,
+									"parameters": {
+										"instance-variable": "mousebuttons",
+										"value": "setbit(Self.mousebuttons, 1, 1)"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 562814190825419,
+									"parameters": {
+										"variable": "mouseR",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 435431335345311
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 998864570086021
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 321431480153257,
+									"parameters": {
+										"instance-variable": "mousebuttons",
+										"value": "setbit(Self.mousebuttons, 1, 0)"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 684354236913821,
+									"disabled": true,
+									"parameters": {
+										"variable": "mouseR",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 821322920629885
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-client-state",
+									"objectClass": "multiplayer",
+									"sid": 586954999989318,
+									"parameters": {
+										"tag": "\"mousebuttons\"",
+										"value": "player.mousebuttons"
+									}
+								}
+							],
+							"sid": 620405834628050
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player",
+							"sid": 475919156143069,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "multiplayer.MyID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 764925477326150,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 900806431562891,
+									"parameters": {
+										"first-value": "getbit(player.mousebuttons, 0)",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-acceleration",
+									"objectClass": "player",
+									"sid": 203046755848449,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"acceleration": "0"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "player",
+									"sid": 928842927259704,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "475"
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "player",
+									"sid": 306850607782759,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "angle(Self.X, Self.Y, mouse.X, mouse.Y)"
+									}
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "player",
+									"sid": 996350320008282,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"decel\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "player",
+									"sid": 267300916365982,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "0.5",
+										"type": "once",
+										"tag": "\"decel\""
+									}
+								}
+							],
+							"sid": 189162990544993
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "player",
+							"sid": 392289577880710,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"decel\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player",
+							"sid": 543979568208536,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "multiplayer.MyID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-acceleration",
+							"objectClass": "player",
+							"sid": 463742906864577,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"acceleration": "-375"
+							}
+						}
+					],
+					"sid": 840725537049130
+				}
+			],
+			"sid": 735165149358182
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "host_room",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "room (host)",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "mouse",
+									"sid": 353277532667909,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "menu_checkbox_1"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 773509446325981,
+									"parameters": {
+										"first-value": "text_begintimer.Count",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "CHECKBOXES",
+									"sid": 323117617234003,
+									"parameters": {
+										"animation": "\"unselected\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "menu_checkbox_1",
+									"sid": 895333795789568,
+									"parameters": {
+										"animation": "\"selected\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "broadcast-message",
+									"objectClass": "multiplayer",
+									"sid": 299796510210834,
+									"parameters": {
+										"from-id": "\"\"",
+										"tag": "\"map change\"",
+										"message": "\"Map:\" & newline & \"Bowl\"",
+										"mode": "reliable-ordered"
+									}
+								}
+							],
+							"sid": 972534602009612
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "mouse",
+									"sid": 487534999289396,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "menu_checkbox_2"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 832437415159803,
+									"parameters": {
+										"first-value": "text_begintimer.Count",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "CHECKBOXES",
+									"sid": 677878669561783,
+									"parameters": {
+										"animation": "\"unselected\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "menu_checkbox_2",
+									"sid": 156104995458104,
+									"parameters": {
+										"animation": "\"selected\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "broadcast-message",
+									"objectClass": "multiplayer",
+									"sid": 978949400228849,
+									"parameters": {
+										"from-id": "\"\"",
+										"tag": "\"map change\"",
+										"message": "\"Map:\" & newline & \"Minefield\"",
+										"mode": "reliable-ordered"
+									}
+								}
+							],
+							"sid": 895188031957248
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "mouse",
+									"sid": 995885261997691,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "menu_checkbox_3"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 552830617009413,
+									"parameters": {
+										"first-value": "text_begintimer.Count",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "CHECKBOXES",
+									"sid": 278079493173261,
+									"parameters": {
+										"animation": "\"unselected\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "menu_checkbox_3",
+									"sid": 102622944177070,
+									"parameters": {
+										"animation": "\"selected\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "broadcast-message",
+									"objectClass": "multiplayer",
+									"sid": 683671788769272,
+									"parameters": {
+										"from-id": "\"\"",
+										"tag": "\"map change\"",
+										"message": "\"Map:\" & newline & \"Storm\"",
+										"mode": "reliable-ordered"
+									}
+								}
+							],
+							"sid": 921750476883924
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "mouse",
+									"sid": 787332488040667,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "menu_checkbox_4"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 973441372199567,
+									"parameters": {
+										"first-value": "text_begintimer.Count",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "CHECKBOXES",
+									"sid": 530601886913851,
+									"parameters": {
+										"animation": "\"unselected\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "menu_checkbox_4",
+									"sid": 181106639586114,
+									"parameters": {
+										"animation": "\"selected\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "broadcast-message",
+									"objectClass": "multiplayer",
+									"sid": 464866724297606,
+									"parameters": {
+										"from-id": "\"\"",
+										"tag": "\"map change\"",
+										"message": "\"Map:\" & newline & \"\"",
+										"mode": "reliable-ordered"
+									}
+								}
+							],
+							"sid": 198797997932146
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "mouse",
+									"sid": 698834195417958,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "menu_checkbox_random"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 157078393465959,
+									"parameters": {
+										"first-value": "text_begintimer.Count",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "CHECKBOXES",
+									"sid": 738201329771160,
+									"parameters": {
+										"animation": "\"unselected\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "menu_checkbox_random",
+									"sid": 725266774834184,
+									"parameters": {
+										"animation": "\"selected\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "broadcast-message",
+									"objectClass": "multiplayer",
+									"sid": 980610666690571,
+									"parameters": {
+										"from-id": "\"\"",
+										"tag": "\"map change\"",
+										"message": "\"Map:\" & newline & \"Random\"",
+										"mode": "reliable-ordered"
+									}
+								}
+							],
+							"sid": 766971927107032
+						},
+						{
+							"eventType": "variable",
+							"name": "countingdown",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 581583561864507
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "keyboard",
+									"sid": 571274694158973,
+									"parameters": {
+										"key": 13
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 403564599087798,
+									"parameters": {
+										"first-value": "text_begintimer.Count",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "compare-peer-count",
+									"objectClass": "multiplayer",
+									"sid": 556683077531304,
+									"parameters": {
+										"comparison": 5,
+										"count": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 603189546609659,
+									"parameters": {
+										"object-to-create": "text_begintimer",
+										"layer": "5",
+										"x": "784",
+										"y": "440",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 360379081378660,
+									"disabled": true,
+									"parameters": {
+										"variable": "countingdown",
+										"value": "true"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "text_begintimer",
+									"sid": 427918940367294,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "5.0",
+										"type": "once",
+										"tag": "\"countdown\""
+									}
+								}
+							],
+							"sid": 255860204181787,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "menu_checkbox_1",
+											"sid": 807678799880446,
+											"parameters": {
+												"animation": "\"selected\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "text_begintimer",
+											"sid": 669972515281218,
+											"parameters": {
+												"instance-variable": "map",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 191992521304849
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "menu_checkbox_2",
+											"sid": 682873286339773,
+											"parameters": {
+												"animation": "\"selected\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "text_begintimer",
+											"sid": 506459244075569,
+											"parameters": {
+												"instance-variable": "map",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 102482896167760
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "menu_checkbox_3",
+											"sid": 284007461760819,
+											"parameters": {
+												"animation": "\"selected\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "text_begintimer",
+											"sid": 914313963819047,
+											"parameters": {
+												"instance-variable": "map",
+												"value": "2"
+											}
+										}
+									],
+									"sid": 491526581060398
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "menu_checkbox_4",
+											"sid": 413245231970857,
+											"parameters": {
+												"animation": "\"selected\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "text_begintimer",
+											"sid": 411194853596758,
+											"parameters": {
+												"instance-variable": "map",
+												"value": "3"
+											}
+										}
+									],
+									"sid": 729376924105125
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "menu_checkbox_random",
+											"sid": 971885239271948,
+											"parameters": {
+												"animation": "\"selected\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "text_begintimer",
+											"sid": 639019216138275,
+											"parameters": {
+												"instance-variable": "map",
+												"value": "choose(0, 1, 2, 3)"
+											}
+										}
+									],
+									"sid": 132913267770338
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-timer-running",
+									"objectClass": "text_begintimer",
+									"sid": 365676372882254,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"countdown\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "text_begintimer",
+									"sid": 531774776497193,
+									"parameters": {
+										"instance-variable": "time",
+										"value": "ceil(5 - Self.Timer.CurrentTime(\"countdown\"))"
+									}
+								}
+							],
+							"sid": 948974892587027
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "text_begintimer",
+									"sid": 641557758589876,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"countdown\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "text_begintimer",
+									"sid": 514631137048956,
+									"parameters": {
+										"instance-variable": "time",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 130461926832661,
+									"parameters": {
+										"variable": "players",
+										"value": "multiplayer.PeerCount"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "level_transition",
+									"sid": 171769161949033,
+									"disabled": true,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"fade in\"",
+										"property": "offsetOpacity",
+										"end-value": "100",
+										"time": "0.5",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "text_transition",
+									"sid": 295851912308162,
+									"disabled": true,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"fade in\"",
+										"property": "offsetOpacity",
+										"end-value": "100",
+										"time": "0.5",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 422259325464287,
+									"disabled": true
+								},
+								{
+									"id": "leave-room",
+									"objectClass": "multiplayer",
+									"sid": 467491523529084,
+									"disabled": true
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 649119472098772,
+									"disabled": true
+								},
+								{
+									"id": "go-to-layout-by-name",
+									"objectClass": "System",
+									"sid": 987844394472709,
+									"disabled": true,
+									"parameters": {
+										"layout": "chooseindex(text_begintimer.map, \"bowl\", \"minefield\", \"storm\", \"\")"
+									}
+								}
+							],
+							"sid": 894534412134638
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 595617417463382,
+									"parameters": {
+										"variable": "countingdown"
+									}
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 364798735142792,
+									"parameters": {
+										"interval-seconds": "1.0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "text_begintimer",
+									"sid": 162826731578980,
+									"parameters": {
+										"instance-variable": "time",
+										"comparison": 5,
+										"value": "1.0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "text_begintimer",
+									"sid": 147752076499163,
+									"parameters": {
+										"instance-variable": "time",
+										"value": "1.0"
+									}
+								}
+							],
+							"sid": 430387348019717,
+							"disabled": true
+						}
+					],
+					"sid": 186959368399636
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-peer-connected",
+							"objectClass": "multiplayer",
+							"sid": 571450071342267
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 158383491691208,
+							"parameters": {
+								"object-to-create": "player",
+								"layer": "0",
+								"x": "random(256, 1904)",
+								"y": "random(256, 1184)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 754776133213013,
+							"parameters": {
+								"instance-variable": "id",
+								"value": "multiplayer.PeerID"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 900318675159065,
+							"parameters": {
+								"instance-variable": "playerindex",
+								"value": "multiplayer.PeerCount"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 887804355193779,
+							"parameters": {
+								"object-to-create": "text_name",
+								"layer": "0",
+								"x": "player.X",
+								"y": "player.Y - 64",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "text_name",
+							"sid": 600577287840909,
+							"parameters": {
+								"instance-variable": "id",
+								"value": "multiplayer.PeerID"
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "player",
+							"sid": 595958521235399,
+							"parameters": {
+								"child": "text_name",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-z-elevation": true,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						},
+						{
+							"id": "associate-object-with-peer",
+							"objectClass": "multiplayer",
+							"sid": 518705752740797,
+							"parameters": {
+								"object": "player",
+								"peer-id": "multiplayer.PeerID"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "text_begintimer",
+							"sid": 691686459015251
+						}
+					],
+					"sid": 115801843812212,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "menu_checkbox_1",
+									"sid": 257985653194555,
+									"parameters": {
+										"animation": "\"selected\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "broadcast-message",
+									"objectClass": "multiplayer",
+									"sid": 646103811482158,
+									"parameters": {
+										"from-id": "\"\"",
+										"tag": "\"map change\"",
+										"message": "\"Map:\" & newline & \"Bowl\"",
+										"mode": "reliable-ordered"
+									}
+								}
+							],
+							"sid": 400986160626449
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "menu_checkbox_2",
+									"sid": 115039987823605,
+									"parameters": {
+										"animation": "\"selected\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "broadcast-message",
+									"objectClass": "multiplayer",
+									"sid": 711319817924533,
+									"parameters": {
+										"from-id": "\"\"",
+										"tag": "\"map change\"",
+										"message": "\"Map:\" & newline & \"Minefield\"",
+										"mode": "reliable-ordered"
+									}
+								}
+							],
+							"sid": 132348351323955
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "menu_checkbox_3",
+									"sid": 105369638123141,
+									"parameters": {
+										"animation": "\"selected\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "broadcast-message",
+									"objectClass": "multiplayer",
+									"sid": 788958619449818,
+									"parameters": {
+										"from-id": "\"\"",
+										"tag": "\"map change\"",
+										"message": "\"Map:\" & newline & \"Storm\"",
+										"mode": "reliable-ordered"
+									}
+								}
+							],
+							"sid": 352176204336583
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "menu_checkbox_4",
+									"sid": 170350115197913,
+									"parameters": {
+										"animation": "\"selected\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "broadcast-message",
+									"objectClass": "multiplayer",
+									"sid": 591046648158688,
+									"parameters": {
+										"from-id": "\"\"",
+										"tag": "\"map change\"",
+										"message": "\"Map:\" & newline & \"\"",
+										"mode": "reliable-ordered"
+									}
+								}
+							],
+							"sid": 660121727803706
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "menu_checkbox_random",
+									"sid": 344600869492352,
+									"parameters": {
+										"animation": "\"selected\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "broadcast-message",
+									"objectClass": "multiplayer",
+									"sid": 606248261377594,
+									"parameters": {
+										"from-id": "\"\"",
+										"tag": "\"map change\"",
+										"message": "\"Map:\" & newline & \"Random\"",
+										"mode": "reliable-ordered"
+									}
+								}
+							],
+							"sid": 421471732890442
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player",
+							"sid": 251087890340106,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "multiplayer.MyID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 199500600927826,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "mouse",
+									"sid": 772638392468037,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked"
+									}
+								},
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "mouse",
+									"sid": 231884127176477,
+									"parameters": {
+										"object": "CHECKBOXES"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-acceleration",
+									"objectClass": "player",
+									"sid": 192340834669226,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"acceleration": "0"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "player",
+									"sid": 479091000095351,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "475"
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "player",
+									"sid": 978722852634323,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "angle(Self.X, Self.Y, mouse.X, mouse.Y)"
+									}
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "player",
+									"sid": 695222048433369,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"decel\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "player",
+									"sid": 604385049471115,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "0.5",
+										"type": "once",
+										"tag": "\"decel\""
+									}
+								}
+							],
+							"sid": 417929915590245
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player",
+							"sid": 340299336205236,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 1,
+								"value": "multiplayer.MyID"
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 979055550501734,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 901015346940464,
+							"parameters": {
+								"instance-variable": "mousebuttons",
+								"value": "multiplayer.PeerState(player.id, \"mousebuttons\")"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 244415086386021,
+							"parameters": {
+								"instance-variable": "mousex",
+								"value": "multiplayer.PeerState(player.id, \"mousex\")"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 814743968969148,
+							"parameters": {
+								"instance-variable": "mousey",
+								"value": "multiplayer.PeerState(player.id, \"mousey\")"
+							}
+						}
+					],
+					"sid": 451633190574855,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 322450118014020,
+									"parameters": {
+										"first-value": "getbit(player.mousebuttons, 0)",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-acceleration",
+									"objectClass": "player",
+									"sid": 763566272358640,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"acceleration": "0"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "player",
+									"sid": 631675984970762,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "475"
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "player",
+									"sid": 992563942881641,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "angle(Self.X, Self.Y, Self.mousex, Self.mousey)"
+									}
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "player",
+									"sid": 382513291157434,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"decel\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "player",
+									"sid": 123885357874864,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "0.5",
+										"type": "once",
+										"tag": "\"decel\""
+									}
+								}
+							],
+							"sid": 571399373510559
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "player",
+							"sid": 678870194252094,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"decel\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player",
+							"sid": 117249274745457,
+							"disabled": true,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "multiplayer.MyID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-acceleration",
+							"objectClass": "player",
+							"sid": 707570040051353,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"acceleration": "-375"
+							}
+						}
+					],
+					"sid": 927466882473489
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-speed",
+							"objectClass": "player",
+							"sid": 328071766912178,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"comparison": 0,
+								"speed": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "player",
+							"sid": 620231801890319,
+							"parameters": {
+								"x": "round(Self.X / 16) * 16",
+								"y": "round(Self.Y / 16) * 16"
+							}
+						}
+					],
+					"sid": 340309643443175
+				}
+			],
+			"sid": 496793091143690
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "level_room",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 189595687725752
+						},
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 593980881611672,
+							"parameters": {
+								"count": "random(15, 20) * (LayoutWidth / 2560)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 799901043206037,
+							"parameters": {
+								"object-to-create": "level_star",
+								"layer": "0",
+								"x": "random(0, LayoutWidth)",
+								"y": "round(random(0, LayoutHeight) / 16) * 16",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "level_star",
+							"sid": 156228914910802,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "random(300, 400)"
+							}
+						}
+					],
+					"sid": 685781028439395
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 991888631620726,
+							"parameters": {
+								"interval-seconds": "random(0.2, 0.55)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 434858582958660,
+							"parameters": {
+								"object-to-create": "level_star",
+								"layer": "0",
+								"x": "0.1",
+								"y": "round(random(0, LayoutHeight) / 16) * 16",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "level_star",
+							"sid": 783343494791722,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "random(300, 400)"
+							}
+						}
+					],
+					"sid": 188254493526660
+				}
+			],
+			"sid": 457291883241837
+		}
+	],
+	"sid": 128108720909683
+}

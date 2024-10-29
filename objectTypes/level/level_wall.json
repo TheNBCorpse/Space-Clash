@@ -1,0 +1,28 @@
+{
+	"name": "level_wall",
+	"plugin-id": "TiledBg",
+	"sid": 936498101750728,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 830533855381020
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 16,
+		"height": 16,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 9553897,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

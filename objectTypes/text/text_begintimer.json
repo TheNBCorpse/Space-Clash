@@ -1,0 +1,35 @@
+{
+	"name": "text_begintimer",
+	"plugin-id": "Text",
+	"sid": 542888583301507,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "map",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 133950200655845
+		},
+		{
+			"name": "time",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 833994579141010
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 703502834507457
+		},
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 186872201029275
+		}
+	],
+	"effectTypes": []
+}

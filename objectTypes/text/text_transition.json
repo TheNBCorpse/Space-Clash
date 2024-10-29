@@ -1,0 +1,15 @@
+{
+	"name": "text_transition",
+	"plugin-id": "Text",
+	"sid": 190140290564809,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 309597423073512
+		}
+	],
+	"effectTypes": []
+}

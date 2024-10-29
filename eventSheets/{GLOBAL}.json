@@ -1,0 +1,173 @@
+{
+	"name": "{GLOBAL}",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 491750035675477,
+					"parameters": {
+						"variable": "alttext"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-font-face",
+					"objectClass": "TEXT",
+					"sid": 552031971619377,
+					"parameters": {
+						"font-face": "\"OpenDyslexic-Regular\"",
+						"style": "normal"
+					}
+				},
+				{
+					"id": "set-font-size",
+					"objectClass": "TEXT",
+					"sid": 206526833558353,
+					"parameters": {
+						"size-pt": "Self.sizeD"
+					}
+				},
+				{
+					"id": "set-line-height",
+					"objectClass": "TEXT",
+					"sid": 199187524540937,
+					"parameters": {
+						"line-height": "Self.spacingD"
+					}
+				}
+			],
+			"sid": 201016587463044
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 425040268286246,
+					"parameters": {
+						"variable": "alttext"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-font-face",
+					"objectClass": "TEXT",
+					"sid": 299174275615665,
+					"parameters": {
+						"font-face": "\"pixel8\"",
+						"style": "normal"
+					}
+				},
+				{
+					"id": "set-font-size",
+					"objectClass": "TEXT",
+					"sid": 844808075105999,
+					"parameters": {
+						"size-pt": "Self.size8"
+					}
+				},
+				{
+					"id": "set-line-height",
+					"objectClass": "TEXT",
+					"sid": 952535192014034,
+					"parameters": {
+						"line-height": "Self.spacing8"
+					}
+				}
+			],
+			"sid": 249326198376676
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "keyboard",
+					"sid": 651856271691016,
+					"parameters": {
+						"key": 120
+					}
+				}
+			],
+			"actions": [],
+			"sid": 787869307162855,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 421325449440320,
+							"parameters": {
+								"variable": "alttext"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 769526583502911,
+							"parameters": {
+								"seconds": "0.001"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 889703080296122,
+							"parameters": {
+								"variable": "alttext",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 564338501814530
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 761696850898918,
+							"parameters": {
+								"variable": "alttext"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 969706226665755,
+							"parameters": {
+								"seconds": "0.001"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 584853425938403,
+							"parameters": {
+								"variable": "alttext",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 932080133190148
+				}
+			]
+		}
+	],
+	"sid": 177965189641720
+}

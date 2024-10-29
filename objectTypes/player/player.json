@@ -1,0 +1,132 @@
+{
+	"name": "player",
+	"plugin-id": "Sprite",
+	"sid": 532708608760419,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "id",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 998458767999980
+		},
+		{
+			"name": "mousebuttons",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 105512159947612
+		},
+		{
+			"name": "mousex",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 333917480820466
+		},
+		{
+			"name": "mousey",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 856266287440298
+		},
+		{
+			"name": "score",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 608716059969936
+		},
+		{
+			"name": "powerup",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 978447742581904
+		},
+		{
+			"name": "frozen",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 845416327224094
+		},
+		{
+			"name": "playerindex",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 805805247426420
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 371861059379225
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 685609091156626
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 457046868597643
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 96,
+						"height": 96,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8685967,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.16666666666666666,
+								0.16666666666666666,
+								0,
+								0.8333333333333334,
+								0,
+								1,
+								0.16666666666666666,
+								1,
+								0.8333333333333334,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1,
+								0,
+								0.8333333333333334
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 667200618574890,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

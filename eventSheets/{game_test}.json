@@ -1,0 +1,100 @@
+{
+	"name": "{game_test}",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "{GLOBAL}"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "mouse",
+					"sid": 482709484801801,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-acceleration",
+					"objectClass": "player",
+					"sid": 788481162689473,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"acceleration": "0"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "player",
+					"sid": 629255023471727,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "400"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "player",
+					"sid": 874836725591827,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "angle(Self.X, Self.Y, mouse.X, mouse.Y)"
+					}
+				},
+				{
+					"id": "stop-timer",
+					"objectClass": "player",
+					"sid": 938165512576831,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"decel\""
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "player",
+					"sid": 463277073226060,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "0.5",
+						"type": "once",
+						"tag": "\"decel\""
+					}
+				}
+			],
+			"sid": 845531582773444
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "player",
+					"sid": 180443324093324,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"decel\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-acceleration",
+					"objectClass": "player",
+					"sid": 811614731050135,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"acceleration": "-300"
+					}
+				}
+			],
+			"sid": 307403870822820
+		}
+	],
+	"sid": 143445110542946
+}

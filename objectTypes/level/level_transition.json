@@ -1,0 +1,28 @@
+{
+	"name": "level_transition",
+	"plugin-id": "TiledBg",
+	"sid": 872621812230933,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 470873968506050
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 160,
+		"height": 160,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 4569391,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}
