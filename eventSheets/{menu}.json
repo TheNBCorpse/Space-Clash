@@ -197,6 +197,21 @@
 				{
 					"id": "sync-instance-variable",
 					"objectClass": "multiplayer",
+					"sid": 149020077303754,
+					"parameters": {
+						"object": "player",
+						"instance-variable": {
+							"name": "dead",
+							"objectClass": "player"
+						},
+						"precision": "low-int16-2-bytes",
+						"interpolation": "none",
+						"client-value-tag": "\"\""
+					}
+				},
+				{
+					"id": "sync-instance-variable",
+					"objectClass": "multiplayer",
 					"sid": 128214749489992,
 					"parameters": {
 						"object": "player",

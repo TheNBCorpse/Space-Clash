@@ -903,6 +903,58 @@
 							"sid": 514474266480227
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 264384662894467,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 108191885221004,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 578157008786715,
+									"parameters": {
+										"instance-variable": "dead",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player",
+									"sid": 131687071485293,
+									"parameters": {
+										"animation": "\"alive\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 724232590444788,
+									"parameters": {
+										"animation": "\"dead\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 708905470271220
+						}
+					]
 				}
 			],
 			"sid": 903254140831643
@@ -1326,6 +1378,16 @@
 									}
 								},
 								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 672189864812242,
+									"parameters": {
+										"instance-variable": "dead",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
 									"id": "compare-speed",
 									"objectClass": "player",
 									"sid": 501800193422025,
@@ -1406,6 +1468,16 @@
 									"sid": 472088325012533,
 									"parameters": {
 										"instance-variable": "frozen",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 871555869544862,
+									"parameters": {
+										"instance-variable": "dead",
 										"comparison": 0,
 										"value": "0"
 									}
@@ -1509,6 +1581,69 @@
 						}
 					],
 					"sid": 210260751498680
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 366470446032596,
+							"parameters": {
+								"object": "level_spike"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 271351150169811,
+							"parameters": {
+								"object": "player_projectile"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 107539324101557,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 759881622391491,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "multiplayer.MyID"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 992248761005201,
+									"parameters": {
+										"instance-variable": "dead",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-speed",
+									"objectClass": "player",
+									"sid": 124756815729091,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "0"
+									}
+								}
+							],
+							"sid": 741692705090902
+						}
+					],
+					"isOrBlock": true
 				}
 			],
 			"sid": 523118221572468
@@ -1980,6 +2115,16 @@
 									"parameters": {
 										"object": "level_objcollect"
 									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 273035734389486,
+									"parameters": {
+										"instance-variable": "dead",
+										"comparison": 0,
+										"value": "0"
+									}
 								}
 							],
 							"actions": [
@@ -2009,6 +2154,16 @@
 									"sid": 272107346969000,
 									"parameters": {
 										"object": "level_objsweep"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 285131407802462,
+									"parameters": {
+										"instance-variable": "dead",
+										"comparison": 0,
+										"value": "0"
 									}
 								}
 							],
@@ -2040,6 +2195,16 @@
 									"parameters": {
 										"object": "level_objbeam"
 									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 104835503264558,
+									"parameters": {
+										"instance-variable": "dead",
+										"comparison": 0,
+										"value": "0"
+									}
 								}
 							],
 							"actions": [
@@ -2069,6 +2234,16 @@
 									"sid": 352930458715975,
 									"parameters": {
 										"object": "level_objspeed"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 862382658114175,
+									"parameters": {
+										"instance-variable": "dead",
+										"comparison": 0,
+										"value": "0"
 									}
 								}
 							],
@@ -2360,6 +2535,31 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 264105061588138,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 282810943611831,
+							"parameters": {
+								"instance-variable": "speed",
+								"value": "Self.Bullet.Speed"
+							}
+						}
+					],
+					"sid": 497578533833713
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "compare-instance-variable",
 							"objectClass": "player",
 							"sid": 316259328047678,
@@ -2391,6 +2591,16 @@
 									"sid": 937039543977183,
 									"parameters": {
 										"instance-variable": "frozen",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 266805077626761,
+									"parameters": {
+										"instance-variable": "dead",
 										"comparison": 0,
 										"value": "0"
 									}
@@ -2475,6 +2685,16 @@
 									"sid": 371817927614084,
 									"parameters": {
 										"instance-variable": "frozen",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 107574812445354,
+									"parameters": {
+										"instance-variable": "dead",
 										"comparison": 0,
 										"value": "0"
 									}
@@ -2638,6 +2858,16 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
+									"sid": 726574730180372,
+									"parameters": {
+										"instance-variable": "dead",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
 									"sid": 140710561316615,
 									"parameters": {
 										"instance-variable": "powerup",
@@ -2785,6 +3015,16 @@
 									}
 								},
 								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 903155787641585,
+									"parameters": {
+										"instance-variable": "dead",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
 									"id": "compare-speed",
 									"objectClass": "player",
 									"sid": 210116191446127,
@@ -2865,6 +3105,16 @@
 									"sid": 426406578899471,
 									"parameters": {
 										"instance-variable": "frozen",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 650607533221328,
+									"parameters": {
+										"instance-variable": "dead",
 										"comparison": 0,
 										"value": "0"
 									}
@@ -3029,6 +3279,16 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
+									"sid": 741128779205280,
+									"parameters": {
+										"instance-variable": "dead",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
 									"sid": 752148278099284,
 									"parameters": {
 										"instance-variable": "powerup",
@@ -3162,6 +3422,68 @@
 						}
 					],
 					"sid": 388212272982483
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 681737377705137,
+							"parameters": {
+								"object": "level_spike"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 688134937662995,
+							"parameters": {
+								"object": "player_projectile"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 406273860561186,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 557973397284592,
+									"parameters": {
+										"instance-variable": "dead",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 574975271085517,
+									"parameters": {
+										"instance-variable": "dead",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "player",
+									"sid": 541608157161532,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "0"
+									}
+								}
+							],
+							"sid": 793808670801507
+						}
+					],
+					"isOrBlock": true
 				}
 			],
 			"sid": 235493309083815

@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 41200,
+	"savedWithRelease": 41300,
 	"name": "space thing",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -121,9 +121,7 @@
 	],
 	"uniqueId": "txqu23phnsg",
 	"objectTypes": {
-		"items": [
-			"player_projectile"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -138,7 +136,8 @@
 			},
 			{
 				"items": [
-					"player"
+					"player",
+					"player_projectile"
 				],
 				"subfolders": [],
 				"name": "player"
@@ -402,7 +401,6 @@
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
-		"autoReloadScriptsOnPreview": false,
 		"exportFileStructure": "folders",
 		"uidAllocationMode": "increment"
 	},

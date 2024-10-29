@@ -10,7 +10,7 @@
 					"type": "player",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "alive",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -27,7 +27,8 @@
 						"powerup": 0,
 						"frozen": 0,
 						"playerindex": 1,
-						"speed": 0
+						"speed": 0,
+						"dead": 0
 					},
 					"behaviors": {
 						"Bullet": {
@@ -11663,7 +11664,7 @@
 								"acceleration": 0,
 								"gravity": 0,
 								"bounce-off-solids": false,
-								"set-angle": true,
+								"set-angle": false,
 								"step": false,
 								"enabled": true
 							}
