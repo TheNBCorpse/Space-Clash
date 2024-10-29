@@ -60,6 +60,182 @@
 					"parameters": {
 						"max-length": "5"
 					}
+				},
+				{
+					"id": "add-client-input-value",
+					"objectClass": "multiplayer",
+					"sid": 881386690251215,
+					"parameters": {
+						"tag": "\"mousex\"",
+						"precision": "low-int16-2-bytes",
+						"interpolation": "linear"
+					}
+				},
+				{
+					"id": "add-client-input-value",
+					"objectClass": "multiplayer",
+					"sid": 309386553352262,
+					"parameters": {
+						"tag": "\"mousey\"",
+						"precision": "low-int16-2-bytes",
+						"interpolation": "linear"
+					}
+				},
+				{
+					"id": "add-client-input-value",
+					"objectClass": "multiplayer",
+					"sid": 120125651932193,
+					"parameters": {
+						"tag": "\"mousebuttons\"",
+						"precision": "very-low-uint8-1-byte",
+						"interpolation": "none"
+					}
+				},
+				{
+					"id": "sync-object-2",
+					"objectClass": "multiplayer",
+					"sid": 623058656698265,
+					"parameters": {
+						"object": "player",
+						"x": true,
+						"y": true,
+						"angle": false,
+						"precision": "high-double-8-bytes",
+						"bandwidth": "normal-bandwidth-unpredictable"
+					}
+				},
+				{
+					"id": "sync-instance-variable",
+					"objectClass": "multiplayer",
+					"sid": 586908518366664,
+					"parameters": {
+						"object": "player",
+						"instance-variable": {
+							"name": "mousex",
+							"objectClass": "player"
+						},
+						"precision": "normal-float-4-bytes",
+						"interpolation": "linear",
+						"client-value-tag": "\"mousex\""
+					}
+				},
+				{
+					"id": "sync-instance-variable",
+					"objectClass": "multiplayer",
+					"sid": 696254815186173,
+					"parameters": {
+						"object": "player",
+						"instance-variable": {
+							"name": "mousey",
+							"objectClass": "player"
+						},
+						"precision": "normal-float-4-bytes",
+						"interpolation": "linear",
+						"client-value-tag": "\"mousey\""
+					}
+				},
+				{
+					"id": "sync-instance-variable",
+					"objectClass": "multiplayer",
+					"sid": 204146302987429,
+					"parameters": {
+						"object": "player",
+						"instance-variable": {
+							"name": "mousebuttons",
+							"objectClass": "player"
+						},
+						"precision": "very-low-uint8-1-byte",
+						"interpolation": "none",
+						"client-value-tag": "\"mousebuttons\""
+					}
+				},
+				{
+					"id": "sync-instance-variable",
+					"objectClass": "multiplayer",
+					"sid": 221734051539529,
+					"parameters": {
+						"object": "player",
+						"instance-variable": {
+							"name": "score",
+							"objectClass": "player"
+						},
+						"precision": "low-int16-2-bytes",
+						"interpolation": "none",
+						"client-value-tag": "\"\""
+					}
+				},
+				{
+					"id": "sync-instance-variable",
+					"objectClass": "multiplayer",
+					"sid": 587617870660910,
+					"parameters": {
+						"object": "player",
+						"instance-variable": {
+							"name": "powerup",
+							"objectClass": "player"
+						},
+						"precision": "low-int16-2-bytes",
+						"interpolation": "none",
+						"client-value-tag": "\"\""
+					}
+				},
+				{
+					"id": "sync-instance-variable",
+					"objectClass": "multiplayer",
+					"sid": 711100785670159,
+					"parameters": {
+						"object": "player",
+						"instance-variable": {
+							"name": "frozen",
+							"objectClass": "player"
+						},
+						"precision": "low-int16-2-bytes",
+						"interpolation": "none",
+						"client-value-tag": "\"\""
+					}
+				},
+				{
+					"id": "sync-object-2",
+					"objectClass": "multiplayer",
+					"sid": 665353716258531,
+					"parameters": {
+						"object": "text_begintimer",
+						"x": true,
+						"y": true,
+						"angle": false,
+						"precision": "low-int16-2-bytes",
+						"bandwidth": "normal-bandwidth-unpredictable"
+					}
+				},
+				{
+					"id": "sync-instance-variable",
+					"objectClass": "multiplayer",
+					"sid": 764992233201254,
+					"parameters": {
+						"object": "text_begintimer",
+						"instance-variable": {
+							"name": "map",
+							"objectClass": "text_begintimer"
+						},
+						"precision": "low-int16-2-bytes",
+						"interpolation": "none",
+						"client-value-tag": "\"\""
+					}
+				},
+				{
+					"id": "sync-instance-variable",
+					"objectClass": "multiplayer",
+					"sid": 398109982181848,
+					"parameters": {
+						"object": "text_begintimer",
+						"instance-variable": {
+							"name": "time",
+							"objectClass": "text_begintimer"
+						},
+						"precision": "high-double-8-bytes",
+						"interpolation": "none",
+						"client-value-tag": "\"\""
+					}
 				}
 			],
 			"sid": 890090561596144

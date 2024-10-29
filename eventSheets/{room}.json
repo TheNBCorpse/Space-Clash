@@ -116,6 +116,7 @@
 							"id": "add-client-input-value",
 							"objectClass": "multiplayer",
 							"sid": 782086079501544,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"mousex\"",
 								"precision": "low-int16-2-bytes",
@@ -126,6 +127,7 @@
 							"id": "add-client-input-value",
 							"objectClass": "multiplayer",
 							"sid": 474144452977442,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"mousey\"",
 								"precision": "low-int16-2-bytes",
@@ -136,6 +138,7 @@
 							"id": "add-client-input-value",
 							"objectClass": "multiplayer",
 							"sid": 961208745274394,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"mousebuttons\"",
 								"precision": "very-low-uint8-1-byte",
@@ -146,6 +149,7 @@
 							"id": "sync-object-2",
 							"objectClass": "multiplayer",
 							"sid": 615899473551683,
+							"disabled": true,
 							"parameters": {
 								"object": "player",
 								"x": true,
@@ -159,6 +163,7 @@
 							"id": "sync-instance-variable",
 							"objectClass": "multiplayer",
 							"sid": 508245867579735,
+							"disabled": true,
 							"parameters": {
 								"object": "player",
 								"instance-variable": {
@@ -174,6 +179,7 @@
 							"id": "sync-instance-variable",
 							"objectClass": "multiplayer",
 							"sid": 295452008033471,
+							"disabled": true,
 							"parameters": {
 								"object": "player",
 								"instance-variable": {
@@ -189,6 +195,7 @@
 							"id": "sync-instance-variable",
 							"objectClass": "multiplayer",
 							"sid": 982585533272057,
+							"disabled": true,
 							"parameters": {
 								"object": "player",
 								"instance-variable": {
@@ -204,6 +211,7 @@
 							"id": "sync-instance-variable",
 							"objectClass": "multiplayer",
 							"sid": 629737402487476,
+							"disabled": true,
 							"parameters": {
 								"object": "player",
 								"instance-variable": {
@@ -219,6 +227,7 @@
 							"id": "sync-instance-variable",
 							"objectClass": "multiplayer",
 							"sid": 117446192659078,
+							"disabled": true,
 							"parameters": {
 								"object": "player",
 								"instance-variable": {
@@ -234,6 +243,7 @@
 							"id": "sync-instance-variable",
 							"objectClass": "multiplayer",
 							"sid": 857738564189896,
+							"disabled": true,
 							"parameters": {
 								"object": "player",
 								"instance-variable": {
@@ -249,6 +259,7 @@
 							"id": "sync-object-2",
 							"objectClass": "multiplayer",
 							"sid": 148561218616540,
+							"disabled": true,
 							"parameters": {
 								"object": "text_begintimer",
 								"x": true,
@@ -262,6 +273,7 @@
 							"id": "sync-instance-variable",
 							"objectClass": "multiplayer",
 							"sid": 549982010588687,
+							"disabled": true,
 							"parameters": {
 								"object": "text_begintimer",
 								"instance-variable": {
@@ -277,6 +289,7 @@
 							"id": "sync-instance-variable",
 							"objectClass": "multiplayer",
 							"sid": 567637700675000,
+							"disabled": true,
 							"parameters": {
 								"object": "text_begintimer",
 								"instance-variable": {
@@ -301,62 +314,86 @@
 								"precision": "low-int16-2-bytes",
 								"bandwidth": "normal-bandwidth-unpredictable"
 							}
+						}
+					],
+					"sid": 511422324999933,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-connected",
+									"objectClass": "multiplayer",
+									"sid": 868630640753158
+								}
+							],
+							"actions": [
+								{
+									"id": "join-room",
+									"objectClass": "multiplayer",
+									"sid": 595577036236969,
+									"parameters": {
+										"game": "\"thenbcorpse_5132652236_\" & projectversion",
+										"instance": "\"room\"",
+										"room": "room",
+										"max-peers": "4"
+									}
+								}
+							],
+							"sid": 126431614418763
 						},
 						{
-							"id": "connect",
-							"objectClass": "multiplayer",
-							"sid": 450280123495633,
-							"parameters": {
-								"server": "\"wss://multiplayer.construct.net\""
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-connected",
+									"objectClass": "multiplayer",
+									"sid": 377258529967525,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "connect",
+									"objectClass": "multiplayer",
+									"sid": 934372272780761,
+									"parameters": {
+										"server": "\"wss://multiplayer.construct.net\""
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 896012942267090
+								},
+								{
+									"id": "log-in",
+									"objectClass": "multiplayer",
+									"sid": 817692603563902,
+									"parameters": {
+										"alias": "username"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 808832551442087
+								},
+								{
+									"id": "join-room",
+									"objectClass": "multiplayer",
+									"sid": 860165349179852,
+									"parameters": {
+										"game": "\"thenbcorpse_5132652236_\" & projectversion",
+										"instance": "\"room\"",
+										"room": "room",
+										"max-peers": "4"
+									}
+								}
+							],
+							"sid": 668667279467343
 						}
-					],
-					"sid": 511422324999933
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-connected",
-							"objectClass": "multiplayer",
-							"sid": 654905527510985
-						}
-					],
-					"actions": [
-						{
-							"id": "log-in",
-							"objectClass": "multiplayer",
-							"sid": 546101674829432,
-							"parameters": {
-								"alias": "username"
-							}
-						}
-					],
-					"sid": 660296055553148
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-logged-in",
-							"objectClass": "multiplayer",
-							"sid": 719767550157112
-						}
-					],
-					"actions": [
-						{
-							"id": "join-room",
-							"objectClass": "multiplayer",
-							"sid": 661409509386340,
-							"parameters": {
-								"game": "\"thenbcorpse_5132652236_\" & projectversion",
-								"instance": "\"room\"",
-								"room": "room",
-								"max-peers": "4"
-							}
-						}
-					],
-					"sid": 370570449615590
+					]
 				},
 				{
 					"eventType": "block",
@@ -782,6 +819,15 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 781548127130029,
+							"parameters": {
+								"variable": "players",
+								"value": "multiplayer.PeerCount"
+							}
+						},
 						{
 							"id": "set-visible",
 							"objectClass": "text_begintimer",
@@ -2008,15 +2054,6 @@
 									"parameters": {
 										"instance-variable": "time",
 										"value": "0"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 130461926832661,
-									"parameters": {
-										"variable": "players",
-										"value": "multiplayer.PeerCount"
 									}
 								},
 								{
