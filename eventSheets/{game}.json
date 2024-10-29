@@ -667,27 +667,45 @@
 								"comparison": 4,
 								"value": "3"
 							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 414741156753213
 						}
 					],
 					"actions": [
 						{
-							"id": "fade-volume",
-							"objectClass": "audio",
-							"sid": 305451072900060,
+							"id": "set-text",
+							"objectClass": "text_begintimer",
+							"sid": 273747108867466,
 							"parameters": {
-								"tag": "\"waiting\"",
-								"db": "-100",
-								"duration": "2/3",
-								"ending": "stop"
+								"text": "\"\""
 							}
 						}
 					],
-					"sid": 120196969237032
+					"sid": 120196969237032,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 845159087224260
+								}
+							],
+							"actions": [
+								{
+									"id": "fade-volume",
+									"objectClass": "audio",
+									"sid": 342130712510844,
+									"parameters": {
+										"tag": "\"waiting\"",
+										"db": "-100",
+										"duration": "2/3",
+										"ending": "stop"
+									}
+								}
+							],
+							"sid": 578469507762185
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -758,6 +776,18 @@
 							"objectClass": "text_begintimer",
 							"sid": 236289547362718,
 							"behaviorType": "Fade"
+						},
+						{
+							"id": "play",
+							"objectClass": "audio",
+							"sid": 861267385578849,
+							"parameters": {
+								"audio-file": "music_battle1",
+								"loop": "not-looping",
+								"volume": "-5",
+								"stereo-pan": "0",
+								"tag-optional": "\"music\""
+							}
 						}
 					],
 					"sid": 730472280876734
@@ -1391,19 +1421,19 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "text_begintimer",
-									"sid": 197535842631441,
+									"sid": 298081635545266,
 									"parameters": {
 										"instance-variable": "time",
-										"value": "3"
+										"value": "3.6"
 									}
 								},
 								{
 									"id": "start-timer",
 									"objectClass": "text_begintimer",
-									"sid": 962799624239005,
+									"sid": 210921971616468,
 									"behaviorType": "Timer",
 									"parameters": {
-										"duration": "3.0",
+										"duration": "3.6",
 										"type": "once",
 										"tag": "\"countdown\""
 									}
@@ -1428,10 +1458,10 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "text_begintimer",
-									"sid": 596348083363848,
+									"sid": 187586633006340,
 									"parameters": {
 										"instance-variable": "time",
-										"value": "ceil(3 - Self.Timer.CurrentTime(\"countdown\"))"
+										"value": "ceil(3.6 - Self.Timer.CurrentTime(\"countdown\"))"
 									}
 								}
 							],
