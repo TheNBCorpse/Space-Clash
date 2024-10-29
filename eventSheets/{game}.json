@@ -586,10 +586,10 @@
 						{
 							"id": "scroll-to-position",
 							"objectClass": "System",
-							"sid": 902190756402003,
+							"sid": 870565829837352,
 							"parameters": {
-								"x": "lerp(scrollx, player.X, 15 * dt)",
-								"y": "lerp(scrolly, player.Y, 15 * dt)"
+								"x": "lerp(scrollx, player.X, 12 * dt)",
+								"y": "lerp(scrolly, player.Y, 12 * dt)"
 							}
 						}
 					],
@@ -824,6 +824,83 @@
 							],
 							"sid": 950116060889080,
 							"disabled": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 493497619881103,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 177020648685079,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 118260367613780,
+									"parameters": {
+										"instance-variable": "powerup",
+										"comparison": 1,
+										"value": "0"
+									}
+								},
+								{
+									"id": "is-flashing",
+									"objectClass": "player",
+									"sid": 571356307672220,
+									"behaviorType": "Flash",
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "flash",
+									"objectClass": "player",
+									"sid": 234022555722882,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.4",
+										"off-time": "0.1",
+										"duration": "Infinity"
+									}
+								}
+							],
+							"sid": 144211944340120
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 564712983335993,
+									"parameters": {
+										"instance-variable": "powerup",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-flashing",
+									"objectClass": "player",
+									"sid": 694183150647275,
+									"behaviorType": "Flash"
+								}
+							],
+							"sid": 514474266480227
 						}
 					]
 				}
@@ -1247,6 +1324,16 @@
 										"comparison": 0,
 										"value": "0"
 									}
+								},
+								{
+									"id": "compare-speed",
+									"objectClass": "player",
+									"sid": 501800193422025,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"comparison": 3,
+										"speed": "475"
+									}
 								}
 							],
 							"actions": [
@@ -1299,6 +1386,91 @@
 								}
 							],
 							"sid": 811266045818080
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 401625828369589,
+									"parameters": {
+										"first-value": "getbit(player.mousebuttons, 1)",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 472088325012533,
+									"parameters": {
+										"instance-variable": "frozen",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 738305395335180,
+									"parameters": {
+										"instance-variable": "powerup",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-acceleration",
+									"objectClass": "player",
+									"sid": 634592647841638,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"acceleration": "0"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "player",
+									"sid": 706704544615222,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "1000"
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "player",
+									"sid": 478525648176072,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "angle(Self.X, Self.Y, mouse.X, mouse.Y)"
+									}
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "player",
+									"sid": 881422702084532,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"decel\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "player",
+									"sid": 966364490473902,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "0.25",
+										"type": "once",
+										"tag": "\"decel\""
+									}
+								}
+							],
+							"sid": 648562301381617
 						}
 					]
 				},
@@ -1723,9 +1895,9 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 439012162705647,
+											"sid": 685255660358390,
 											"parameters": {
-												"object-to-create": "level_objcollect",
+												"object-to-create": "level_objspeed",
 												"layer": "1",
 												"x": "level_objspawn.X",
 												"y": "level_objspawn.Y",
@@ -1815,9 +1987,108 @@
 									"id": "destroy",
 									"objectClass": "level_objcollect",
 									"sid": 305909130974316
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "player",
+									"sid": 484268342755195,
+									"parameters": {
+										"instance-variable": "score",
+										"value": "1"
+									}
 								}
 							],
 							"sid": 664077132892570
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "player",
+									"sid": 272107346969000,
+									"parameters": {
+										"object": "level_objsweep"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "level_objsweep",
+									"sid": 770902674275683
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 611552309001825,
+									"parameters": {
+										"instance-variable": "powerup",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 253977403155072
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "player",
+									"sid": 359861302068511,
+									"parameters": {
+										"object": "level_objbeam"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "level_objbeam",
+									"sid": 776718779029391
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 261082002323792,
+									"parameters": {
+										"instance-variable": "powerup",
+										"value": "2"
+									}
+								}
+							],
+							"sid": 302250592255012
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "player",
+									"sid": 352930458715975,
+									"parameters": {
+										"object": "level_objspeed"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "level_objspeed",
+									"sid": 804487404431177
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 237455235917010,
+									"parameters": {
+										"instance-variable": "powerup",
+										"value": "3"
+									}
+								}
+							],
+							"sid": 895353620094128
 						}
 					],
 					"sid": 954752237210646
@@ -2101,6 +2372,16 @@
 										"comparison": 0,
 										"value": "0"
 									}
+								},
+								{
+									"id": "compare-speed",
+									"objectClass": "player",
+									"sid": 183429601769024,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"comparison": 3,
+										"speed": "475"
+									}
 								}
 							],
 							"actions": [
@@ -2153,6 +2434,255 @@
 								}
 							],
 							"sid": 750940486534985
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "mouse",
+									"sid": 336664317089910,
+									"parameters": {
+										"mouse-button": "right",
+										"click-type": "clicked"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 371817927614084,
+									"parameters": {
+										"instance-variable": "frozen",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 372796732435251,
+									"parameters": {
+										"instance-variable": "powerup",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 375449987281248,
+									"parameters": {
+										"instance-variable": "powerup",
+										"value": "0"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 276434064629822,
+									"parameters": {
+										"object-to-create": "player_projectile",
+										"layer": "2",
+										"x": "player.X",
+										"y": "player.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "player_projectile",
+									"sid": 866803327077936,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "player.Bullet.AngleOfMotion"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 569473078482103,
+									"parameters": {
+										"object-to-create": "player_projectile",
+										"layer": "2",
+										"x": "player.X",
+										"y": "player.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "player_projectile",
+									"sid": 430921673027053,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "player.Bullet.AngleOfMotion - 15"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 150405021735019,
+									"parameters": {
+										"object-to-create": "player_projectile",
+										"layer": "2",
+										"x": "player.X",
+										"y": "player.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "player_projectile",
+									"sid": 335984795857901,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "player.Bullet.AngleOfMotion + 15"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 923022380802770,
+									"parameters": {
+										"object-to-create": "player_projectile",
+										"layer": "2",
+										"x": "player.X",
+										"y": "player.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "player_projectile",
+									"sid": 250345588891544,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "player.Bullet.AngleOfMotion - 30"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 344706369243941,
+									"parameters": {
+										"object-to-create": "player_projectile",
+										"layer": "2",
+										"x": "player.X",
+										"y": "player.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "player_projectile",
+									"sid": 380162552673671,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "player.Bullet.AngleOfMotion + 30"
+									}
+								}
+							],
+							"sid": 336101132655360
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "mouse",
+									"sid": 124471582697876,
+									"parameters": {
+										"mouse-button": "right",
+										"click-type": "clicked"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 745771168778325,
+									"parameters": {
+										"instance-variable": "frozen",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 140710561316615,
+									"parameters": {
+										"instance-variable": "powerup",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 938718446950356,
+									"parameters": {
+										"instance-variable": "powerup",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-acceleration",
+									"objectClass": "player",
+									"sid": 421851757934337,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"acceleration": "0"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "player",
+									"sid": 623825747633441,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "1000"
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "player",
+									"sid": 172837636995562,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "angle(Self.X, Self.Y, mouse.X, mouse.Y)"
+									}
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "player",
+									"sid": 695623936607924,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"decel\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "player",
+									"sid": 683665205692043,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "0.25",
+										"type": "once",
+										"tag": "\"decel\""
+									}
+								}
+							],
+							"sid": 632114362027114
 						}
 					]
 				},
@@ -2231,6 +2761,16 @@
 										"comparison": 0,
 										"value": "0"
 									}
+								},
+								{
+									"id": "compare-speed",
+									"objectClass": "player",
+									"sid": 210116191446127,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"comparison": 3,
+										"speed": "475"
+									}
 								}
 							],
 							"actions": [
@@ -2283,6 +2823,257 @@
 								}
 							],
 							"sid": 630864983247890
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 297020440862085,
+									"parameters": {
+										"first-value": "getbit(player.mousebuttons, 1)",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 426406578899471,
+									"parameters": {
+										"instance-variable": "frozen",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 344167378062452,
+									"parameters": {
+										"instance-variable": "powerup",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 845561290383742,
+									"parameters": {
+										"instance-variable": "powerup",
+										"value": "0"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 853666433268134,
+									"parameters": {
+										"object-to-create": "player_projectile",
+										"layer": "2",
+										"x": "player.X",
+										"y": "player.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "player_projectile",
+									"sid": 317735930905064,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "player.Bullet.AngleOfMotion"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 619197064946332,
+									"parameters": {
+										"object-to-create": "player_projectile",
+										"layer": "2",
+										"x": "player.X",
+										"y": "player.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "player_projectile",
+									"sid": 444325810730334,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "player.Bullet.AngleOfMotion - 15"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 771167949087150,
+									"parameters": {
+										"object-to-create": "player_projectile",
+										"layer": "2",
+										"x": "player.X",
+										"y": "player.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "player_projectile",
+									"sid": 537467169205528,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "player.Bullet.AngleOfMotion + 15"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 160727573984099,
+									"parameters": {
+										"object-to-create": "player_projectile",
+										"layer": "2",
+										"x": "player.X",
+										"y": "player.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "player_projectile",
+									"sid": 840083463787928,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "player.Bullet.AngleOfMotion - 30"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 135758467591850,
+									"parameters": {
+										"object-to-create": "player_projectile",
+										"layer": "2",
+										"x": "player.X",
+										"y": "player.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "player_projectile",
+									"sid": 762803671332805,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "player.Bullet.AngleOfMotion + 30"
+									}
+								}
+							],
+							"sid": 675829431094136
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 762500078382814,
+									"parameters": {
+										"first-value": "getbit(player.mousebuttons, 1)",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 443414466214976,
+									"parameters": {
+										"instance-variable": "frozen",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 752148278099284,
+									"parameters": {
+										"instance-variable": "powerup",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 467940284062993,
+									"parameters": {
+										"instance-variable": "powerup",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-acceleration",
+									"objectClass": "player",
+									"sid": 317838007385134,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"acceleration": "0"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "player",
+									"sid": 966524338988016,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "1000"
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "player",
+									"sid": 202004257226929,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "angle(Self.X, Self.Y, mouse.X, mouse.Y)"
+									}
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "player",
+									"sid": 854884444687916,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"decel\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "player",
+									"sid": 515756464693709,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "0.25",
+										"type": "once",
+										"tag": "\"decel\""
+									}
+								}
+							],
+							"sid": 552882790189825
 						}
 					]
 				},

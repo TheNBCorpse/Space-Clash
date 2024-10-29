@@ -122,9 +122,7 @@
 	"uniqueId": "txqu23phnsg",
 	"objectTypes": {
 		"items": [
-			"level_objcollect",
-			"level_objsweep",
-			"level_objbeam"
+			"player_projectile"
 		],
 		"subfolders": [
 			{
@@ -181,7 +179,11 @@
 					"level_transition",
 					"level_spike",
 					"level_objspawn",
-					"level_playerspawn"
+					"level_playerspawn",
+					"level_objbeam",
+					"level_objcollect",
+					"level_objsweep",
+					"level_objspeed"
 				],
 				"subfolders": [],
 				"name": "level"

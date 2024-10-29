@@ -59,6 +59,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 805805247426420
+		},
+		{
+			"name": "speed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 310568500500573
 		}
 	],
 	"behaviorTypes": [

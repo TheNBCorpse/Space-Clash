@@ -26,7 +26,8 @@
 						"score": 0,
 						"powerup": 0,
 						"frozen": 0,
-						"playerindex": 0
+						"playerindex": 0,
+						"speed": 0
 					},
 					"behaviors": {
 						"Bullet": {
