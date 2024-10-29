@@ -76,6 +76,11 @@
 			"behaviorId": "solid",
 			"name": "Solid",
 			"sid": 457046868597643
+		},
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 132789083952843
 		}
 	],
 	"effectTypes": [],

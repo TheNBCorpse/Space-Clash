@@ -3,7 +3,15 @@
 	"plugin-id": "Sprite",
 	"sid": 849133060277939,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "overlapped",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 549943938775355
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {

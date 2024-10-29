@@ -236,6 +236,45 @@
 						"interpolation": "none",
 						"client-value-tag": "\"\""
 					}
+				},
+				{
+					"id": "sync-object-2",
+					"objectClass": "multiplayer",
+					"sid": 649965316344109,
+					"parameters": {
+						"object": "level_objcollect",
+						"x": true,
+						"y": true,
+						"angle": false,
+						"precision": "low-int16-2-bytes",
+						"bandwidth": "low-bandwidth-highly-predictable"
+					}
+				},
+				{
+					"id": "sync-object-2",
+					"objectClass": "multiplayer",
+					"sid": 606523361756617,
+					"parameters": {
+						"object": "level_objsweep",
+						"x": true,
+						"y": true,
+						"angle": false,
+						"precision": "low-int16-2-bytes",
+						"bandwidth": "low-bandwidth-highly-predictable"
+					}
+				},
+				{
+					"id": "sync-object-2",
+					"objectClass": "multiplayer",
+					"sid": 372558348453890,
+					"parameters": {
+						"object": "level_objbeam",
+						"x": true,
+						"y": true,
+						"angle": false,
+						"precision": "low-int16-2-bytes",
+						"bandwidth": "low-bandwidth-highly-predictable"
+					}
 				}
 			],
 			"sid": 890090561596144

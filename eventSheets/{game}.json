@@ -386,6 +386,29 @@
 							}
 						},
 						{
+							"id": "play",
+							"objectClass": "audio",
+							"sid": 891340619175237,
+							"parameters": {
+								"audio-file": "music_waiting",
+								"loop": "looping",
+								"volume": "-50",
+								"stereo-pan": "0",
+								"tag-optional": "\"waiting\""
+							}
+						},
+						{
+							"id": "fade-volume",
+							"objectClass": "audio",
+							"sid": 922996743123522,
+							"parameters": {
+								"tag": "\"waiting\"",
+								"db": "-5",
+								"duration": "2/3",
+								"ending": "keep-playing"
+							}
+						},
+						{
 							"id": "tween-one-property",
 							"objectClass": "level_transition",
 							"sid": 798261403631456,
@@ -484,29 +507,6 @@
 										"object": "player",
 										"peer-id": "multiplayer.MyID"
 									}
-								},
-								{
-									"id": "play",
-									"objectClass": "audio",
-									"sid": 114900628623912,
-									"parameters": {
-										"audio-file": "music_waiting",
-										"loop": "looping",
-										"volume": "-100",
-										"stereo-pan": "0",
-										"tag-optional": "\"waiting\""
-									}
-								},
-								{
-									"id": "fade-volume",
-									"objectClass": "audio",
-									"sid": 872657504577339,
-									"parameters": {
-										"tag": "\"waiting\"",
-										"db": "-5",
-										"duration": "2/3",
-										"ending": "keep-playing"
-									}
 								}
 							],
 							"sid": 722020530713696
@@ -534,29 +534,6 @@
 									"id": "destroy",
 									"objectClass": "player",
 									"sid": 115071497440381
-								},
-								{
-									"id": "play",
-									"objectClass": "audio",
-									"sid": 580457707064546,
-									"parameters": {
-										"audio-file": "music_waiting",
-										"loop": "looping",
-										"volume": "-100",
-										"stereo-pan": "0",
-										"tag-optional": "\"waiting\""
-									}
-								},
-								{
-									"id": "fade-volume",
-									"objectClass": "audio",
-									"sid": 548907787726478,
-									"parameters": {
-										"tag": "\"waiting\"",
-										"db": "-5",
-										"duration": "2/3",
-										"ending": "keep-playing"
-									}
 								}
 							],
 							"sid": 115780312655689
@@ -1384,7 +1361,7 @@
 								{
 									"id": "compare-peer-count",
 									"objectClass": "multiplayer",
-									"sid": 284877477094260,
+									"sid": 761888531359736,
 									"parameters": {
 										"comparison": 0,
 										"count": "players"
@@ -1393,14 +1370,14 @@
 								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
-									"sid": 669807887801822
+									"sid": 506916343181815
 								}
 							],
 							"actions": [
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 576413990449963,
+									"sid": 392574915419908,
 									"parameters": {
 										"seconds": "3.0"
 									}
@@ -1408,7 +1385,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 399744822348124,
+									"sid": 405347446201523,
 									"parameters": {
 										"object-to-create": "text_begintimer",
 										"layer": "\"ui\"",
@@ -1421,7 +1398,7 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "text_begintimer",
-									"sid": 298081635545266,
+									"sid": 814708618889176,
 									"parameters": {
 										"instance-variable": "time",
 										"value": "3.6"
@@ -1430,7 +1407,7 @@
 								{
 									"id": "start-timer",
 									"objectClass": "text_begintimer",
-									"sid": 210921971616468,
+									"sid": 591194003360505,
 									"behaviorType": "Timer",
 									"parameters": {
 										"duration": "3.6",
@@ -1439,7 +1416,7 @@
 									}
 								}
 							],
-							"sid": 621682340284398
+							"sid": 703514314374353
 						},
 						{
 							"eventType": "block",
@@ -1447,7 +1424,7 @@
 								{
 									"id": "is-timer-running",
 									"objectClass": "text_begintimer",
-									"sid": 942855927074611,
+									"sid": 224307823627959,
 									"behaviorType": "Timer",
 									"parameters": {
 										"tag": "\"countdown\""
@@ -1458,14 +1435,14 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "text_begintimer",
-									"sid": 187586633006340,
+									"sid": 120109168904414,
 									"parameters": {
 										"instance-variable": "time",
 										"value": "ceil(3.6 - Self.Timer.CurrentTime(\"countdown\"))"
 									}
 								}
 							],
-							"sid": 225096998394230
+							"sid": 857383135573701
 						},
 						{
 							"eventType": "block",
@@ -1473,7 +1450,7 @@
 								{
 									"id": "on-timer",
 									"objectClass": "text_begintimer",
-									"sid": 145778150702570,
+									"sid": 299365467076788,
 									"behaviorType": "Timer",
 									"parameters": {
 										"tag": "\"countdown\""
@@ -1484,7 +1461,7 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "text_begintimer",
-									"sid": 417071677287259,
+									"sid": 140286060502798,
 									"parameters": {
 										"instance-variable": "time",
 										"value": "0"
@@ -1493,17 +1470,357 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "player",
-									"sid": 893228257081263,
+									"sid": 383064507755429,
 									"parameters": {
 										"instance-variable": "frozen",
 										"value": "0"
 									}
 								}
 							],
-							"sid": 964337073475702
+							"sid": 262965720123706
 						}
 					],
-					"sid": 206094483524696
+					"sid": 849317108231881
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "object spawning",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 765933814730200
+								}
+							],
+							"actions": [],
+							"sid": 731932543832420,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 198068396021389,
+											"parameters": {
+												"count": "choose(1, 2) + players"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Spawn object",
+											"sid": 685584825787507,
+											"parameters": [
+												"0"
+											]
+										}
+									],
+									"sid": 685682929542622
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 914172476873898,
+									"parameters": {
+										"interval-seconds": "random(1, 3)"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 543963814463901,
+									"parameters": {
+										"first-value": "OBJECTS.Count",
+										"comparison": 2,
+										"second-value": "2 + players"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Spawn object",
+									"sid": 533058680268023,
+									"parameters": [
+										"choose(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3)"
+									]
+								}
+							],
+							"sid": 335853247113223
+						},
+						{
+							"functionName": "Spawn object",
+							"functionDescription": "Spawns an object (either a point collectible or a powerup).",
+							"functionCategory": "Gameplay",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "Type",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "Which object to spawn.",
+									"sid": 752606822192660
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 909556050190185,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 421572949725366,
+											"parameters": {
+												"first-value": "Type",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										},
+										{
+											"id": "pick-random-instance",
+											"objectClass": "System",
+											"sid": 734598238543566,
+											"parameters": {
+												"object": "level_objspawn"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 930188386728635,
+											"parameters": {
+												"object-to-create": "level_objcollect",
+												"layer": "1",
+												"x": "level_objspawn.X",
+												"y": "level_objspawn.Y",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 362177078809263
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 115459310476037,
+											"parameters": {
+												"first-value": "Type",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										},
+										{
+											"id": "pick-random-instance",
+											"objectClass": "System",
+											"sid": 245846130662388,
+											"parameters": {
+												"object": "level_objspawn"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 962916593798107,
+											"parameters": {
+												"object-to-create": "level_objsweep",
+												"layer": "1",
+												"x": "level_objspawn.X",
+												"y": "level_objspawn.Y",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 391862083122037
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 238276981466223,
+											"parameters": {
+												"first-value": "Type",
+												"comparison": 0,
+												"second-value": "2"
+											}
+										},
+										{
+											"id": "pick-random-instance",
+											"objectClass": "System",
+											"sid": 554890822151918,
+											"parameters": {
+												"object": "level_objspawn"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 262854884964695,
+											"parameters": {
+												"object-to-create": "level_objbeam",
+												"layer": "1",
+												"x": "level_objspawn.X",
+												"y": "level_objspawn.Y",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 851815829045974
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 293488530733033,
+											"parameters": {
+												"first-value": "Type",
+												"comparison": 0,
+												"second-value": "3"
+											}
+										},
+										{
+											"id": "pick-random-instance",
+											"objectClass": "System",
+											"sid": 193694677842372,
+											"parameters": {
+												"object": "level_objspawn"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 439012162705647,
+											"parameters": {
+												"object-to-create": "level_objcollect",
+												"layer": "1",
+												"x": "level_objspawn.X",
+												"y": "level_objspawn.Y",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 519547039992142
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "OBJECTS",
+									"sid": 299214551194031,
+									"parameters": {
+										"object": "OBJECTS"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 202178401874748,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-last-created",
+											"objectClass": "System",
+											"sid": 757718741742043,
+											"parameters": {
+												"object": "OBJECTS"
+											}
+										},
+										{
+											"id": "pick-random-instance",
+											"objectClass": "System",
+											"sid": 833101302597012,
+											"parameters": {
+												"object": "level_objspawn"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position-to-another-object",
+											"objectClass": "OBJECTS",
+											"sid": 866995142557441,
+											"parameters": {
+												"object": "level_objspawn",
+												"image-point-optional": "0"
+											}
+										}
+									],
+									"sid": 640097128676282
+								}
+							]
+						}
+					],
+					"sid": 972529534827586
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "object interactions",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "player",
+									"sid": 886577177420281,
+									"parameters": {
+										"object": "level_objcollect"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "level_objcollect",
+									"sid": 305909130974316
+								}
+							],
+							"sid": 664077132892570
+						}
+					],
+					"sid": 954752237210646
 				},
 				{
 					"eventType": "block",
