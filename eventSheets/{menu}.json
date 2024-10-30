@@ -223,7 +223,7 @@
 							"parameters": {
 								"object": "player",
 								"instance-variable": {
-									"name": "dead",
+									"name": "alive",
 									"objectClass": "player"
 								},
 								"precision": "low-int16-2-bytes",

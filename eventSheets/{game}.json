@@ -778,7 +778,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player1",
+											"objectClass": "text_player2",
 											"sid": 645365257667539,
 											"parameters": {
 												"text": "multiplayer.PeerAliasAt(2) & newline & player.score"
@@ -804,7 +804,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player1",
+											"objectClass": "text_player2",
 											"sid": 227666585119673,
 											"parameters": {
 												"text": "multiplayer.PeerAliasAt(2) & newline & \"X \" & player.score"
@@ -830,7 +830,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player1",
+											"objectClass": "text_player2",
 											"sid": 529163244881491,
 											"parameters": {
 												"text": "multiplayer.PeerAliasAt(2) & newline & \"H \" & player.score"
@@ -856,7 +856,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player1",
+											"objectClass": "text_player2",
 											"sid": 139518848344941,
 											"parameters": {
 												"text": "multiplayer.PeerAliasAt(2) & newline & \"~ \" & player.score"
@@ -901,7 +901,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player1",
+											"objectClass": "text_player3",
 											"sid": 722264466886869,
 											"parameters": {
 												"text": "player.score & newline & multiplayer.PeerAliasAt(3)"
@@ -927,7 +927,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player1",
+											"objectClass": "text_player3",
 											"sid": 717953284906875,
 											"parameters": {
 												"text": "player.score & \" X\" & newline & multiplayer.PeerAliasAt(3)"
@@ -953,7 +953,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player1",
+											"objectClass": "text_player3",
 											"sid": 404867261968257,
 											"parameters": {
 												"text": "player.score & \" H\" & newline & multiplayer.PeerAliasAt(3)"
@@ -979,7 +979,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player1",
+											"objectClass": "text_player3",
 											"sid": 657777022155777,
 											"parameters": {
 												"text": "player.score & \" ~\" & newline & multiplayer.PeerAliasAt(3)"
@@ -1024,7 +1024,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player1",
+											"objectClass": "text_player4",
 											"sid": 886688844531108,
 											"parameters": {
 												"text": "player.score & newline & multiplayer.PeerAliasAt(4)"
@@ -1050,7 +1050,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player1",
+											"objectClass": "text_player4",
 											"sid": 153694671793333,
 											"parameters": {
 												"text": "\"X \" & player.score & newline & multiplayer.PeerAliasAt(4)"
@@ -1076,7 +1076,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player1",
+											"objectClass": "text_player4",
 											"sid": 338817757384447,
 											"parameters": {
 												"text": "\"H \" & player.score & newline & multiplayer.PeerAliasAt(4)"
@@ -1102,7 +1102,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player1",
+											"objectClass": "text_player4",
 											"sid": 821001373243275,
 											"parameters": {
 												"text": "\"~ \" & player.score & newline & multiplayer.PeerAliasAt(4)"
@@ -1129,7 +1129,7 @@
 									"sid": 214250030529846,
 									"parameters": {
 										"object": "player",
-										"expression": "player.dead"
+										"expression": "player.alive"
 									}
 								}
 							],
@@ -1752,7 +1752,16 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "text_begintimer",
+							"sid": 141908352355917,
+							"parameters": {
+								"text": "clamp(Self.time, 0, 3)"
+							}
+						}
+					],
 					"sid": 671602417990722
 				},
 				{
@@ -1926,7 +1935,7 @@
 					"actions": [
 						{
 							"id": "set-text",
-							"objectClass": "text_begintimer",
+							"objectClass": "text_timer",
 							"sid": 104743237850451,
 							"parameters": {
 								"text": "clamp(Self.time, 0, 90)"
@@ -2143,11 +2152,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 578157008786715,
+									"sid": 758108840286946,
 									"parameters": {
-										"instance-variable": "dead",
+										"instance-variable": "alive",
 										"comparison": 0,
-										"value": "1"
+										"value": "0"
 									}
 								},
 								{
@@ -2254,6 +2263,7 @@
 						}
 					],
 					"sid": 691365419991555,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -2439,6 +2449,41 @@
 							"sid": 483547559143627
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player",
+							"sid": 734298067390177,
+							"parameters": {
+								"instance-variable": "speed",
+								"comparison": 0,
+								"value": "1000"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 349450103870992
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "audio",
+							"sid": 462767028571381,
+							"parameters": {
+								"audio-file": "sfx_launch",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"launch\""
+							}
+						}
+					],
+					"sid": 366591464021593
 				}
 			],
 			"sid": 903254140831643
@@ -2864,11 +2909,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 672189864812242,
+									"sid": 440868926165674,
 									"parameters": {
-										"instance-variable": "dead",
+										"instance-variable": "alive",
 										"comparison": 0,
-										"value": "0"
+										"value": "1"
 									}
 								},
 								{
@@ -2959,11 +3004,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 871555869544862,
+									"sid": 967559800736011,
 									"parameters": {
-										"instance-variable": "dead",
+										"instance-variable": "alive",
 										"comparison": 0,
-										"value": "0"
+										"value": "1"
 									}
 								},
 								{
@@ -3030,10 +3075,10 @@
 								{
 									"id": "start-timer",
 									"objectClass": "player",
-									"sid": 966364490473902,
+									"sid": 119890954270989,
 									"behaviorType": "Timer",
 									"parameters": {
-										"duration": "0.25",
+										"duration": "0.5",
 										"type": "once",
 										"tag": "\"decel\""
 									}
@@ -3126,11 +3171,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 992248761005201,
+									"sid": 865360212621077,
 									"parameters": {
-										"instance-variable": "dead",
+										"instance-variable": "alive",
 										"comparison": 0,
-										"value": "0"
+										"value": "1"
 									}
 								},
 								{
@@ -3458,9 +3503,9 @@
 							"actions": [
 								{
 									"callFunction": "Spawn object",
-									"sid": 533058680268023,
+									"sid": 246269414523506,
 									"parameters": [
-										"choose(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3)"
+										"choose(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3)"
 									]
 								}
 							],
@@ -3719,11 +3764,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 273035734389486,
+									"sid": 465235520194943,
 									"parameters": {
-										"instance-variable": "dead",
+										"instance-variable": "alive",
 										"comparison": 0,
-										"value": "0"
+										"value": "1"
 									}
 								}
 							],
@@ -3759,11 +3804,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 285131407802462,
+									"sid": 421611773263521,
 									"parameters": {
-										"instance-variable": "dead",
+										"instance-variable": "alive",
 										"comparison": 0,
-										"value": "0"
+										"value": "1"
 									}
 								}
 							],
@@ -3799,11 +3844,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 104835503264558,
+									"sid": 213923440377709,
 									"parameters": {
-										"instance-variable": "dead",
+										"instance-variable": "alive",
 										"comparison": 0,
-										"value": "0"
+										"value": "1"
 									}
 								}
 							],
@@ -3839,11 +3884,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 862382658114175,
+									"sid": 887687843198248,
 									"parameters": {
-										"instance-variable": "dead",
+										"instance-variable": "alive",
 										"comparison": 0,
-										"value": "0"
+										"value": "1"
 									}
 								}
 							],
@@ -4198,11 +4243,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 266805077626761,
+									"sid": 699335458214428,
 									"parameters": {
-										"instance-variable": "dead",
+										"instance-variable": "alive",
 										"comparison": 0,
-										"value": "0"
+										"value": "1"
 									}
 								},
 								{
@@ -4292,11 +4337,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 107574812445354,
+									"sid": 175412386568526,
 									"parameters": {
-										"instance-variable": "dead",
+										"instance-variable": "alive",
 										"comparison": 0,
-										"value": "0"
+										"value": "1"
 									}
 								},
 								{
@@ -4458,11 +4503,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 949910131889332,
+									"sid": 392048742430021,
 									"parameters": {
-										"instance-variable": "dead",
+										"instance-variable": "alive",
 										"comparison": 0,
-										"value": "0"
+										"value": "1"
 									}
 								},
 								{
@@ -4592,11 +4637,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 726574730180372,
+									"sid": 307344270454936,
 									"parameters": {
-										"instance-variable": "dead",
+										"instance-variable": "alive",
 										"comparison": 0,
-										"value": "0"
+										"value": "1"
 									}
 								},
 								{
@@ -4659,10 +4704,10 @@
 								{
 									"id": "start-timer",
 									"objectClass": "player",
-									"sid": 683665205692043,
+									"sid": 863800386676619,
 									"behaviorType": "Timer",
 									"parameters": {
-										"duration": "0.25",
+										"duration": "0.5",
 										"type": "once",
 										"tag": "\"decel\""
 									}
@@ -4751,11 +4796,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 903155787641585,
+									"sid": 711316455547113,
 									"parameters": {
-										"instance-variable": "dead",
+										"instance-variable": "alive",
 										"comparison": 0,
-										"value": "0"
+										"value": "1"
 									}
 								},
 								{
@@ -4846,11 +4891,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 650607533221328,
+									"sid": 394177027365500,
 									"parameters": {
-										"instance-variable": "dead",
+										"instance-variable": "alive",
 										"comparison": 0,
-										"value": "0"
+										"value": "1"
 									}
 								},
 								{
@@ -5013,11 +5058,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 236628475463018,
+									"sid": 917258002621801,
 									"parameters": {
-										"instance-variable": "dead",
+										"instance-variable": "alive",
 										"comparison": 0,
-										"value": "0"
+										"value": "1"
 									}
 								},
 								{
@@ -5148,11 +5193,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 741128779205280,
+									"sid": 821248074341180,
 									"parameters": {
-										"instance-variable": "dead",
+										"instance-variable": "alive",
 										"comparison": 0,
-										"value": "0"
+										"value": "1"
 									}
 								},
 								{
@@ -5215,10 +5260,10 @@
 								{
 									"id": "start-timer",
 									"objectClass": "player",
-									"sid": 515756464693709,
+									"sid": 203766905127641,
 									"behaviorType": "Timer",
 									"parameters": {
-										"duration": "0.25",
+										"duration": "0.5",
 										"type": "once",
 										"tag": "\"decel\""
 									}
@@ -5388,11 +5433,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 557973397284592,
+									"sid": 340673137677653,
 									"parameters": {
-										"instance-variable": "dead",
+										"instance-variable": "alive",
 										"comparison": 0,
-										"value": "0"
+										"value": "1"
 									}
 								},
 								{
@@ -5410,10 +5455,10 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "player",
-									"sid": 574975271085517,
+									"sid": 668813397676200,
 									"parameters": {
-										"instance-variable": "dead",
-										"value": "1"
+										"instance-variable": "alive",
+										"value": "0"
 									}
 								},
 								{
@@ -5432,6 +5477,15 @@
 									"behaviorType": "Bullet",
 									"parameters": {
 										"speed": "0"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "player",
+									"sid": 923467433070310,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "disabled"
 									}
 								}
 							],
