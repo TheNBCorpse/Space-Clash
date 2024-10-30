@@ -179,7 +179,11 @@
 					"text_maps_host",
 					"text_begintimer",
 					"text_maps_peer",
-					"text_transition"
+					"text_transition",
+					"text_player1",
+					"text_player2",
+					"text_player3",
+					"text_player4"
 				],
 				"subfolders": [],
 				"name": "text"
@@ -198,7 +202,8 @@
 					"level_objbeam",
 					"level_objcollect",
 					"level_objsweep",
-					"level_objspeed"
+					"level_objspeed",
+					"level_trail"
 				],
 				"subfolders": [],
 				"name": "level"

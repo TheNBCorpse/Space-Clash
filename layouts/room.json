@@ -28,7 +28,8 @@
 						"frozen": 0,
 						"playerindex": 0,
 						"speed": 0,
-						"dead": 0
+						"dead": 0,
+						"bounce": 0
 					},
 					"behaviors": {
 						"Bullet": {

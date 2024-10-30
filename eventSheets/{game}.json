@@ -551,6 +551,436 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "scores",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 195342312032039,
+									"parameters": {
+										"variable": "players",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "text_player4",
+									"sid": 778017631923250
+								}
+							],
+							"sid": 138759239097728
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 109120594952856,
+									"parameters": {
+										"variable": "players",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "text_player4",
+									"sid": 208563082517759
+								},
+								{
+									"id": "destroy",
+									"objectClass": "text_player3",
+									"sid": 210502406284026
+								}
+							],
+							"sid": 308083073250310
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 389458497517645,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "multiplayer.HostID"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 594642460067265,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "player",
+											"sid": 616994475431782,
+											"parameters": {
+												"instance-variable": "powerup",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "text_player1",
+											"sid": 680618146766010,
+											"parameters": {
+												"text": "multiplayer.HostAlias & newline & player.score"
+											}
+										}
+									],
+									"sid": 496454543085400
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "player",
+											"sid": 785046554183271,
+											"parameters": {
+												"instance-variable": "powerup",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "text_player1",
+											"sid": 310217066965433,
+											"parameters": {
+												"text": "multiplayer.HostAlias & newline & player.score & \"X\""
+											}
+										}
+									],
+									"sid": 432890490787640
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "player",
+											"sid": 410099170035910,
+											"parameters": {
+												"instance-variable": "powerup",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "text_player1",
+											"sid": 911105094873508,
+											"parameters": {
+												"text": "multiplayer.HostAlias & newline & player.score & \"H\""
+											}
+										}
+									],
+									"sid": 794150619235927
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "player",
+											"sid": 443022931583830,
+											"parameters": {
+												"instance-variable": "powerup",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "text_player1",
+											"sid": 747895925037858,
+											"parameters": {
+												"text": "multiplayer.HostAlias & newline & player.score & \"~\""
+											}
+										}
+									],
+									"sid": 457011820747678
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 185400344232002,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "multiplayer.PeerIDAt(2)"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 383598181500099,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "player",
+											"sid": 963739113307579,
+											"parameters": {
+												"instance-variable": "powerup",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "text_player1",
+											"sid": 645365257667539,
+											"parameters": {
+												"text": "multiplayer.PeerAliasAt(2) & newline & player.score"
+											}
+										}
+									],
+									"sid": 153911008540706
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "player",
+											"sid": 730208258660853,
+											"parameters": {
+												"instance-variable": "powerup",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "text_player1",
+											"sid": 227666585119673,
+											"parameters": {
+												"text": "multiplayer.PeerAliasAt(2) & newline & \"X \" & player.score"
+											}
+										}
+									],
+									"sid": 663447892579743
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "player",
+											"sid": 627537932577452,
+											"parameters": {
+												"instance-variable": "powerup",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "text_player1",
+											"sid": 529163244881491,
+											"parameters": {
+												"text": "multiplayer.PeerAliasAt(2) & newline & \"H \" & player.score"
+											}
+										}
+									],
+									"sid": 666560238200373
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "player",
+											"sid": 324608471501736,
+											"parameters": {
+												"instance-variable": "powerup",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "text_player1",
+											"sid": 139518848344941,
+											"parameters": {
+												"text": "multiplayer.PeerAliasAt(2) & newline & \"~ \" & player.score"
+											}
+										}
+									],
+									"sid": 747911791002409
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 968558803408941,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "multiplayer.PeerIDAt(3)"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 703452003717033,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "player",
+											"sid": 921859454769986,
+											"parameters": {
+												"instance-variable": "powerup",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "text_player1",
+											"sid": 633520945863319,
+											"parameters": {
+												"text": "multiplayer.PeerAliasAt(2) & newline & player.score"
+											}
+										}
+									],
+									"sid": 492579077172540
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "player",
+											"sid": 355196110445150,
+											"parameters": {
+												"instance-variable": "powerup",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "text_player1",
+											"sid": 452719276406059,
+											"parameters": {
+												"text": "multiplayer.PeerAliasAt(2) & newline & \"X \" & player.score"
+											}
+										}
+									],
+									"sid": 240530828382711
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "player",
+											"sid": 223566867981990,
+											"parameters": {
+												"instance-variable": "powerup",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "text_player1",
+											"sid": 778873958502167,
+											"parameters": {
+												"text": "multiplayer.PeerAliasAt(2) & newline & \"H \" & player.score"
+											}
+										}
+									],
+									"sid": 721621883880845
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "player",
+											"sid": 130926059883689,
+											"parameters": {
+												"instance-variable": "powerup",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "text_player1",
+											"sid": 841342527600160,
+											"parameters": {
+												"text": "multiplayer.PeerAliasAt(2) & newline & \"~ \" & player.score"
+											}
+										}
+									],
+									"sid": 831388626876879
+								}
+							]
+						}
+					],
+					"sid": 280242207370916
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -1200,6 +1630,132 @@
 						}
 					],
 					"sid": 510591548543522
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 238271930628917,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 462500495900680,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 524266634325665,
+									"parameters": {
+										"instance-variable": "speed",
+										"comparison": 4,
+										"value": "500"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 909867415880109,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 222027110011665,
+											"parameters": {
+												"interval-seconds": "random(0.2, 0.25)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 973765933340065,
+											"parameters": {
+												"object-to-create": "level_trail",
+												"layer": "3",
+												"x": "player.X",
+												"y": "player.Y",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "level_trail",
+											"sid": 146757283350776,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "random(0, 360)"
+											}
+										}
+									],
+									"sid": 393607933205458
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 685721854224569,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 310926478251055,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 565922292083220,
+									"parameters": {
+										"instance-variable": "bounce",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 943969479870904
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "audio",
+									"sid": 711872214065654,
+									"parameters": {
+										"audio-file": "sfx_bounce",
+										"loop": "not-looping",
+										"volume": "-2.5",
+										"stereo-pan": "0",
+										"tag-optional": "\"bounce\""
+									}
+								}
+							],
+							"sid": 483547559143627
+						}
+					]
 				}
 			],
 			"sid": 903254140831643
@@ -3957,6 +4513,65 @@
 						}
 					],
 					"sid": 388212272982483
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 664107185019052,
+							"parameters": {
+								"object": "level_wall"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 176188962852433,
+							"parameters": {
+								"object": "level_wallfiller"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 740992145012680,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 257882713574474,
+							"parameters": {
+								"instance-variable": "bounce",
+								"value": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 463620133178275,
+							"parameters": {
+								"seconds": "1.5/60"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 312356868982455,
+							"parameters": {
+								"instance-variable": "bounce",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 671928183324021,
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",

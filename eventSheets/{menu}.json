@@ -189,6 +189,21 @@
 						{
 							"id": "sync-instance-variable",
 							"objectClass": "multiplayer",
+							"sid": 110944531881442,
+							"parameters": {
+								"object": "player",
+								"instance-variable": {
+									"name": "bounce",
+									"objectClass": "player"
+								},
+								"precision": "low-int16-2-bytes",
+								"interpolation": "none",
+								"client-value-tag": "\"\""
+							}
+						},
+						{
+							"id": "sync-instance-variable",
+							"objectClass": "multiplayer",
 							"sid": 209452830626076,
 							"parameters": {
 								"object": "player",

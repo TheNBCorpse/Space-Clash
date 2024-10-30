@@ -73,6 +73,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 268267401546782
+		},
+		{
+			"name": "bounce",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 567970968015654
 		}
 	],
 	"behaviorTypes": [

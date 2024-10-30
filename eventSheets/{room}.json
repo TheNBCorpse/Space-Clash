@@ -1168,7 +1168,60 @@
 						}
 					],
 					"sid": 691365419991555,
+					"disabled": true,
 					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 299275686292308,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 684063183883743,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 724438319861407,
+									"parameters": {
+										"instance-variable": "bounce",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 535822643896007
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "audio",
+									"sid": 663077350334130,
+									"parameters": {
+										"audio-file": "sfx_bounce",
+										"loop": "not-looping",
+										"volume": "-2.5",
+										"stereo-pan": "0",
+										"tag-optional": "\"bounce\""
+									}
+								}
+							],
+							"sid": 402180947059305
+						}
+					]
 				}
 			],
 			"sid": 121953702618363
@@ -3050,6 +3103,65 @@
 						}
 					],
 					"sid": 340309643443175
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 429065892497246,
+							"parameters": {
+								"object": "level_wall"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 778963755809722,
+							"parameters": {
+								"object": "level_wallfiller"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 188730104975979,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 703280731243589,
+							"parameters": {
+								"instance-variable": "bounce",
+								"value": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 111903524067121,
+							"parameters": {
+								"seconds": "1.5/60"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 967276449856127,
+							"parameters": {
+								"instance-variable": "bounce",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 226443608600274,
+					"isOrBlock": true
 				}
 			],
 			"sid": 496793091143690
