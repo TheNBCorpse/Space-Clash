@@ -184,7 +184,8 @@
 					"text_player2",
 					"text_player3",
 					"text_player4",
-					"text_timer"
+					"text_timer",
+					"text_results"
 				],
 				"subfolders": [],
 				"name": "text"

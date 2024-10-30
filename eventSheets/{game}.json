@@ -39,6 +39,14 @@
 							}
 						},
 						{
+							"id": "set-opacity",
+							"objectClass": "text_results",
+							"sid": 509851687893744,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
 							"id": "destroy",
 							"objectClass": "text_begintimer",
 							"sid": 240460675904414
@@ -1104,6 +1112,428 @@
 									"sid": 831388626876879
 								}
 							]
+						},
+						{
+							"functionName": "Display winner(s)",
+							"functionDescription": "Displays the round's winners.",
+							"functionCategory": "Gameplay",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 214250030529846,
+									"parameters": {
+										"object": "player",
+										"expression": "player.dead"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 126863637430137,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-highest-lowest-value",
+											"objectClass": "System",
+											"sid": 211187329338844,
+											"parameters": {
+												"object": "player",
+												"which": "highest",
+												"expression": "player.score"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 533096030391997,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 824995055579497,
+													"parameters": {
+														"first-value": "player.PickedCount",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "text_results",
+													"sid": 672207760646058,
+													"parameters": {
+														"text": "\"[background=black]\" & multiplayer.PeerAliasFromID(player.id) & newline & \"wins!\""
+													}
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "text_results",
+													"sid": 872679260826490,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"fade in\"",
+														"property": "offsetOpacity",
+														"end-value": "100",
+														"time": "0.5",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												},
+												{
+													"id": "wait-for-previous-actions",
+													"objectClass": "System",
+													"sid": 574906605634478
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 712721353584875,
+													"parameters": {
+														"seconds": "5.0"
+													}
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "level_transition",
+													"sid": 565241973357140,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"fade in\"",
+														"property": "offsetOpacity",
+														"end-value": "100",
+														"time": "1/3",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "0"
+													}
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "text_transition",
+													"sid": 857773407799740,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"fade in\"",
+														"property": "offsetOpacity",
+														"end-value": "100",
+														"time": "1/3",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "0"
+													}
+												},
+												{
+													"id": "wait-for-previous-actions",
+													"objectClass": "System",
+													"sid": 425657183175037
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "level_loadingicon",
+													"sid": 948170781725540,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "level_loadingicon",
+													"sid": 976669530346632,
+													"parameters": {
+														"frame-number": "0"
+													}
+												},
+												{
+													"id": "start-animation",
+													"objectClass": "level_loadingicon",
+													"sid": 863383690751545,
+													"parameters": {
+														"from": "current-frame"
+													}
+												}
+											],
+											"sid": 178927511455014,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-host",
+															"objectClass": "multiplayer",
+															"sid": 466475689448789
+														}
+													],
+													"actions": [
+														{
+															"id": "disconnect-room",
+															"objectClass": "multiplayer",
+															"sid": 986875168173047
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 124608908511799,
+															"parameters": {
+																"seconds": "0.15"
+															}
+														},
+														{
+															"id": "go-to-layout",
+															"objectClass": "System",
+															"sid": 670627372654671,
+															"parameters": {
+																"layout": "room"
+															}
+														}
+													],
+													"sid": 556040627383805
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 776123957688125
+														}
+													],
+													"actions": [
+														{
+															"id": "disconnect-room",
+															"objectClass": "multiplayer",
+															"sid": 298286367962958
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 702407785561739,
+															"parameters": {
+																"seconds": "0.2"
+															}
+														},
+														{
+															"id": "go-to-layout",
+															"objectClass": "System",
+															"sid": 478537774478793,
+															"parameters": {
+																"layout": "room"
+															}
+														}
+													],
+													"sid": 741105367092961
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 685915735473792,
+													"parameters": {
+														"first-value": "player.PickedCount",
+														"comparison": 4,
+														"second-value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "text_results",
+													"sid": 241115502716043,
+													"parameters": {
+														"text": "\"[background=black]Tie!\""
+													}
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "text_results",
+													"sid": 951758519761998,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"fade in\"",
+														"property": "offsetOpacity",
+														"end-value": "100",
+														"time": "0.5",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												},
+												{
+													"id": "wait-for-previous-actions",
+													"objectClass": "System",
+													"sid": 377508579984707
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 743071939241810,
+													"parameters": {
+														"seconds": "5.0"
+													}
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "level_transition",
+													"sid": 124964139402236,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"fade in\"",
+														"property": "offsetOpacity",
+														"end-value": "100",
+														"time": "1/3",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "0"
+													}
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "text_transition",
+													"sid": 422888070038572,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"fade in\"",
+														"property": "offsetOpacity",
+														"end-value": "100",
+														"time": "1/3",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "0"
+													}
+												},
+												{
+													"id": "wait-for-previous-actions",
+													"objectClass": "System",
+													"sid": 551823342496018
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "level_loadingicon",
+													"sid": 906417373311086,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "level_loadingicon",
+													"sid": 246866796139767,
+													"parameters": {
+														"frame-number": "0"
+													}
+												},
+												{
+													"id": "start-animation",
+													"objectClass": "level_loadingicon",
+													"sid": 746189211094630,
+													"parameters": {
+														"from": "current-frame"
+													}
+												}
+											],
+											"sid": 828471806643727,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-host",
+															"objectClass": "multiplayer",
+															"sid": 364878528714045
+														}
+													],
+													"actions": [
+														{
+															"id": "disconnect-room",
+															"objectClass": "multiplayer",
+															"sid": 160862397250806
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 999060106685916,
+															"parameters": {
+																"seconds": "0.15"
+															}
+														},
+														{
+															"id": "go-to-layout",
+															"objectClass": "System",
+															"sid": 660275566909596,
+															"parameters": {
+																"layout": "room"
+															}
+														}
+													],
+													"sid": 668124544125565
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 716167835475605
+														}
+													],
+													"actions": [
+														{
+															"id": "disconnect-room",
+															"objectClass": "multiplayer",
+															"sid": 861778399174667
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 487401316909556,
+															"parameters": {
+																"seconds": "0.2"
+															}
+														},
+														{
+															"id": "go-to-layout",
+															"objectClass": "System",
+															"sid": 183704709094886,
+															"parameters": {
+																"layout": "room"
+															}
+														}
+													],
+													"sid": 433409433566169
+												}
+											]
+										}
+									]
+								}
+							]
 						}
 					],
 					"sid": 280242207370916
@@ -1532,6 +1962,27 @@
 							"parameters": {
 								"text": "\"Time!\""
 							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "player",
+							"sid": 911110265448858,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 871713810902322,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"callFunction": "Display winner(s)",
+							"sid": 110923103363587
 						}
 					],
 					"sid": 501912676857682
@@ -2899,6 +3350,41 @@
 								}
 							],
 							"sid": 639030991142798
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "text_timer",
+									"sid": 273792829528035,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"countdown\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "text_timer",
+									"sid": 941428496066613,
+									"parameters": {
+										"instance-variable": "time",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 725201405136417,
+									"parameters": {
+										"instance-variable": "frozen",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 487276012874031
 						}
 					],
 					"sid": 849317108231881

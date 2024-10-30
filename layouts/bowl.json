@@ -12196,6 +12196,75 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "text_results",
+					"properties": {
+						"text": "mmmmmmmmmmmm\nWins!",
+						"enable-bbcode": true,
+						"font": "pixel8",
+						"size": 212,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 323,
+					"sid": 455136775283093,
+					"tags": "",
+					"instanceVariables": {
+						"size8": 212,
+						"sizeD": 204,
+						"spacing8": 0,
+						"spacingD": 8,
+						"map": 0,
+						"time": 3
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 455136775283093,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 2560,
+						"height": 1440,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 592051281259494,
