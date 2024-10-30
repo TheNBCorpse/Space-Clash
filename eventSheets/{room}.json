@@ -1124,6 +1124,51 @@
 							"sid": 882688500713168
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 785178409776398,
+							"parameters": {
+								"object": "level_wall"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 697041189018239,
+							"parameters": {
+								"object": "level_wallfiller"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 509865166835227,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "audio",
+							"sid": 752020294491855,
+							"parameters": {
+								"audio-file": "sfx_bounce",
+								"loop": "not-looping",
+								"volume": "-2.5",
+								"stereo-pan": "0",
+								"tag-optional": "\"bounce\""
+							}
+						}
+					],
+					"sid": 691365419991555,
+					"isOrBlock": true
 				}
 			],
 			"sid": 121953702618363

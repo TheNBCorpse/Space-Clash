@@ -117,13 +117,25 @@
 			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "glowhorizontal",
+			"name": "Glow horizontal",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "glowvertical",
+			"name": "Glow vertical",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "txqu23phnsg",
 	"objectTypes": {
-		"items": [
-			"player_beam_base"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -139,7 +151,9 @@
 			{
 				"items": [
 					"player",
-					"player_projectile"
+					"player_projectile",
+					"player_beam_base",
+					"player_beam_laser"
 				],
 				"subfolders": [],
 				"name": "player"

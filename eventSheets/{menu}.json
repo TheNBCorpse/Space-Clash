@@ -338,6 +338,19 @@
 								"precision": "normal-float-4-bytes",
 								"bandwidth": "normal-bandwidth-unpredictable"
 							}
+						},
+						{
+							"id": "sync-object-2",
+							"objectClass": "multiplayer",
+							"sid": 278209947007536,
+							"parameters": {
+								"object": "player_beam_base",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"precision": "normal-float-4-bytes",
+								"bandwidth": "low-bandwidth-highly-predictable"
+							}
 						}
 					],
 					"sid": 494935172316036
