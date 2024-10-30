@@ -12134,10 +12134,10 @@
 				{
 					"type": "text_timer",
 					"properties": {
-						"text": "90",
+						"text": "Time!",
 						"enable-bbcode": true,
-						"font": "OpenDyslexic-Regular",
-						"size": 108,
+						"font": "pixel8",
+						"size": 112,
 						"line-height": 8,
 						"bold": true,
 						"italic": false,
@@ -12163,9 +12163,14 @@
 						"size8": 112,
 						"sizeD": 108,
 						"spacing8": 0,
-						"spacingD": 8
+						"spacingD": 8,
+						"time": 90
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 819019558928542,
 						"expanded": true,
@@ -12176,9 +12181,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1040,
+						"x": 944,
 						"y": 0,
-						"width": 480,
+						"width": 672,
 						"height": 192,
 						"originX": 0,
 						"originY": 0,

@@ -44,6 +44,11 @@
 							"sid": 240460675904414
 						},
 						{
+							"id": "destroy",
+							"objectClass": "text_timer",
+							"sid": 177602565910015
+						},
+						{
 							"id": "set-position",
 							"objectClass": "player",
 							"sid": 603698135146552,
@@ -1181,6 +1186,62 @@
 							"parameters": {
 								"layer": "\"ui\""
 							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "text_timer",
+							"sid": 699865279785026,
+							"parameters": {
+								"layer": "\"ui\""
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "level_objcollect",
+							"sid": 301960976231792,
+							"parameters": {
+								"layer": "\"level\""
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "level_objsweep",
+							"sid": 369678224473450,
+							"parameters": {
+								"layer": "\"level\""
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "level_objbeam",
+							"sid": 501992424774952,
+							"parameters": {
+								"layer": "\"level\""
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "level_objspeed",
+							"sid": 999624377789510,
+							"parameters": {
+								"layer": "\"level\""
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "player_projectile",
+							"sid": 559846253803466,
+							"parameters": {
+								"layer": "\"particles\""
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "player_beam_base",
+							"sid": 473038581127535,
+							"parameters": {
+								"layer": "\"particles\""
+							}
 						}
 					],
 					"sid": 473439504559044
@@ -1261,16 +1322,7 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "text_begintimer",
-							"sid": 292681030811596,
-							"parameters": {
-								"text": "clamp(Self.time, 0, 3)"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 671602417990722
 				},
 				{
@@ -1426,6 +1478,63 @@
 						}
 					],
 					"sid": 730472280876734
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "text_timer",
+							"sid": 620696489640324,
+							"parameters": {
+								"instance-variable": "time",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "text_begintimer",
+							"sid": 104743237850451,
+							"parameters": {
+								"text": "clamp(Self.time, 0, 90)"
+							}
+						}
+					],
+					"sid": 689374540484805
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "text_timer",
+							"sid": 576550613713025,
+							"parameters": {
+								"instance-variable": "time",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 412317163108815
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "text_timer",
+							"sid": 606090171646129,
+							"parameters": {
+								"text": "\"Time!\""
+							}
+						}
+					],
+					"sid": 501912676857682
 				},
 				{
 					"eventType": "block",
@@ -2737,9 +2846,59 @@
 										"instance-variable": "frozen",
 										"value": "0"
 									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 114957997308568,
+									"parameters": {
+										"object-to-create": "text_timer",
+										"layer": "5",
+										"x": "944",
+										"y": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "text_timer",
+									"sid": 172211459718510,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "90.0",
+										"type": "once",
+										"tag": "\"countdown\""
+									}
 								}
 							],
 							"sid": 262965720123706
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-timer-running",
+									"objectClass": "text_timer",
+									"sid": 283338445101675,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"countdown\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "text_timer",
+									"sid": 362889027540048,
+									"parameters": {
+										"instance-variable": "time",
+										"value": "ceil(90 - Self.Timer.CurrentTime(\"countdown\"))"
+									}
+								}
+							],
+							"sid": 639030991142798
 						}
 					],
 					"sid": 849317108231881

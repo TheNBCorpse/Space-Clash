@@ -277,14 +277,14 @@
 						{
 							"id": "sync-instance-variable",
 							"objectClass": "multiplayer",
-							"sid": 122026812693218,
+							"sid": 730116290744951,
 							"parameters": {
 								"object": "text_begintimer",
 								"instance-variable": {
 									"name": "time",
 									"objectClass": "text_begintimer"
 								},
-								"precision": "high-double-8-bytes",
+								"precision": "normal-float-4-bytes",
 								"interpolation": "none",
 								"client-value-tag": "\"\""
 							}
@@ -365,6 +365,34 @@
 								"angle": true,
 								"precision": "normal-float-4-bytes",
 								"bandwidth": "low-bandwidth-highly-predictable"
+							}
+						},
+						{
+							"id": "sync-object-2",
+							"objectClass": "multiplayer",
+							"sid": 665429739017758,
+							"parameters": {
+								"object": "text_timer",
+								"x": true,
+								"y": true,
+								"angle": false,
+								"precision": "low-int16-2-bytes",
+								"bandwidth": "normal-bandwidth-unpredictable"
+							}
+						},
+						{
+							"id": "sync-instance-variable",
+							"objectClass": "multiplayer",
+							"sid": 505858375265827,
+							"parameters": {
+								"object": "text_timer",
+								"instance-variable": {
+									"name": "time",
+									"objectClass": "text_timer"
+								},
+								"precision": "normal-float-4-bytes",
+								"interpolation": "none",
+								"client-value-tag": "\"\""
 							}
 						}
 					],
