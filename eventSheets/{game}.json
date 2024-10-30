@@ -860,11 +860,134 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 968558803408941,
+									"sid": 955539290885468,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
 										"value": "multiplayer.PeerIDAt(3)"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 489550365207128,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "player",
+											"sid": 771754657915842,
+											"parameters": {
+												"instance-variable": "powerup",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "text_player1",
+											"sid": 722264466886869,
+											"parameters": {
+												"text": "player.score & newline & multiplayer.PeerAliasAt(3)"
+											}
+										}
+									],
+									"sid": 687259404956620
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "player",
+											"sid": 740758334348149,
+											"parameters": {
+												"instance-variable": "powerup",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "text_player1",
+											"sid": 717953284906875,
+											"parameters": {
+												"text": "player.score & \" X\" & newline & multiplayer.PeerAliasAt(3)"
+											}
+										}
+									],
+									"sid": 997444441344340
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "player",
+											"sid": 926040549472861,
+											"parameters": {
+												"instance-variable": "powerup",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "text_player1",
+											"sid": 404867261968257,
+											"parameters": {
+												"text": "player.score & \" H\" & newline & multiplayer.PeerAliasAt(3)"
+											}
+										}
+									],
+									"sid": 679429876531605
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "player",
+											"sid": 914332860597249,
+											"parameters": {
+												"instance-variable": "powerup",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "text_player1",
+											"sid": 657777022155777,
+											"parameters": {
+												"text": "player.score & \" ~\" & newline & multiplayer.PeerAliasAt(3)"
+											}
+										}
+									],
+									"sid": 672906802106320
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 523136928206736,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "multiplayer.PeerIDAt(4)"
 									}
 								}
 							],
@@ -889,9 +1012,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player1",
-											"sid": 633520945863319,
+											"sid": 886688844531108,
 											"parameters": {
-												"text": "multiplayer.PeerAliasAt(2) & newline & player.score"
+												"text": "player.score & newline & multiplayer.PeerAliasAt(4)"
 											}
 										}
 									],
@@ -915,9 +1038,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player1",
-											"sid": 452719276406059,
+											"sid": 153694671793333,
 											"parameters": {
-												"text": "multiplayer.PeerAliasAt(2) & newline & \"X \" & player.score"
+												"text": "\"X \" & player.score & newline & multiplayer.PeerAliasAt(4)"
 											}
 										}
 									],
@@ -941,9 +1064,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player1",
-											"sid": 778873958502167,
+											"sid": 338817757384447,
 											"parameters": {
-												"text": "multiplayer.PeerAliasAt(2) & newline & \"H \" & player.score"
+												"text": "\"H \" & player.score & newline & multiplayer.PeerAliasAt(4)"
 											}
 										}
 									],
@@ -967,9 +1090,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player1",
-											"sid": 841342527600160,
+											"sid": 821001373243275,
 											"parameters": {
-												"text": "multiplayer.PeerAliasAt(2) & newline & \"~ \" & player.score"
+												"text": "\"~ \" & player.score & newline & multiplayer.PeerAliasAt(4)"
 											}
 										}
 									],
@@ -2446,6 +2569,16 @@
 									"sid": 992248761005201,
 									"parameters": {
 										"instance-variable": "dead",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 573410438646078,
+									"parameters": {
+										"instance-variable": "frozen",
 										"comparison": 0,
 										"value": "0"
 									}
@@ -4613,6 +4746,16 @@
 									"sid": 557973397284592,
 									"parameters": {
 										"instance-variable": "dead",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 857530796432201,
+									"parameters": {
+										"instance-variable": "frozen",
 										"comparison": 0,
 										"value": "0"
 									}

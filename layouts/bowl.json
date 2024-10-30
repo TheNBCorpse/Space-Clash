@@ -12130,6 +12130,67 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "text_timer",
+					"properties": {
+						"text": "90",
+						"enable-bbcode": true,
+						"font": "OpenDyslexic-Regular",
+						"size": 108,
+						"line-height": 8,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0.49019607843137253,
+							0.49019607843137253,
+							0.49019607843137253,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 322,
+					"sid": 819019558928542,
+					"tags": "",
+					"instanceVariables": {
+						"size8": 112,
+						"sizeD": 108,
+						"spacing8": 0,
+						"spacingD": 8
+					},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 819019558928542,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1040,
+						"y": 0,
+						"width": 480,
+						"height": 192,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 592051281259494,
