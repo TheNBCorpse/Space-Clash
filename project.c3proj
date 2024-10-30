@@ -226,7 +226,64 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "sfx_launch.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 118845563940269,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_dead.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 548675098096646,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_collect.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 845269641180368,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_beam.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 530317997264202,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_type.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 512847789910542,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_no.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 791085810132042,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_bounce.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 154376683343015,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {

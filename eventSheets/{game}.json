@@ -726,6 +726,111 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "text_begintimer",
+							"sid": 291279725646474,
+							"parameters": {
+								"instance-variable": "time",
+								"comparison": 0,
+								"value": "3"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 508129004775858
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "audio",
+							"sid": 793524970253580,
+							"parameters": {
+								"audio-file": "sfx_type",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"type\""
+							}
+						}
+					],
+					"sid": 939440681767980
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "text_begintimer",
+							"sid": 392616248417305,
+							"parameters": {
+								"instance-variable": "time",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 740787465970223
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "audio",
+							"sid": 284395790028146,
+							"parameters": {
+								"audio-file": "sfx_type",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"type\""
+							}
+						}
+					],
+					"sid": 573420647976123
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "text_begintimer",
+							"sid": 357043501516198,
+							"parameters": {
+								"instance-variable": "time",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 280168287097242
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "audio",
+							"sid": 642457095716627,
+							"parameters": {
+								"audio-file": "sfx_type",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"type\""
+							}
+						}
+					],
+					"sid": 979255060942633
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "text_begintimer",
 							"sid": 694298170435012,
 							"parameters": {
 								"instance-variable": "time",

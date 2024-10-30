@@ -805,6 +805,146 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "text_begintimer",
+							"sid": 197910311867498,
+							"parameters": {
+								"instance-variable": "time",
+								"comparison": 0,
+								"value": "4"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 842664697857678
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "audio",
+							"sid": 136188524960419,
+							"parameters": {
+								"audio-file": "sfx_type",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"type\""
+							}
+						}
+					],
+					"sid": 220248187809817
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "text_begintimer",
+							"sid": 465779265429860,
+							"parameters": {
+								"instance-variable": "time",
+								"comparison": 0,
+								"value": "3"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 629122402166422
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "audio",
+							"sid": 650937561233751,
+							"parameters": {
+								"audio-file": "sfx_type",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"type\""
+							}
+						}
+					],
+					"sid": 161091358308461
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "text_begintimer",
+							"sid": 613169932745945,
+							"parameters": {
+								"instance-variable": "time",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 465159776738933
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "audio",
+							"sid": 692368647492985,
+							"parameters": {
+								"audio-file": "sfx_type",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"type\""
+							}
+						}
+					],
+					"sid": 938155234989412
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "text_begintimer",
+							"sid": 275956289527262,
+							"parameters": {
+								"instance-variable": "time",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 826207333974311
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "audio",
+							"sid": 251453533197587,
+							"parameters": {
+								"audio-file": "sfx_type",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"type\""
+							}
+						}
+					],
+					"sid": 841908566886515
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "text_begintimer",
 							"sid": 960547894828508,
 							"parameters": {
 								"instance-variable": "time",
@@ -823,9 +963,22 @@
 							"id": "set-eventvar-value",
 							"objectClass": "System",
 							"sid": 781548127130029,
+							"disabled": true,
 							"parameters": {
 								"variable": "players",
 								"value": "multiplayer.PeerCount"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "audio",
+							"sid": 731555600920102,
+							"parameters": {
+								"audio-file": "sfx_launch",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"launch\""
 							}
 						},
 						{
@@ -1009,9 +1162,55 @@
 									"parameters": {
 										"text": "multiplayer.Message"
 									}
+								},
+								{
+									"id": "play",
+									"objectClass": "audio",
+									"sid": 218115765204199,
+									"parameters": {
+										"audio-file": "sfx_type",
+										"loop": "not-looping",
+										"volume": "-7.5",
+										"stereo-pan": "0",
+										"tag-optional": "\"type\""
+									}
 								}
 							],
 							"sid": 135594045245091
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "text_begintimer",
+									"sid": 667358419704250
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 719076804567275,
+									"parameters": {
+										"variable": "players",
+										"value": "multiplayer.PeerCount"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "audio",
+									"sid": 949730050181027,
+									"parameters": {
+										"audio-file": "sfx_type",
+										"loop": "not-looping",
+										"volume": "-7.5",
+										"stereo-pan": "0",
+										"tag-optional": "\"type\""
+									}
+								}
+							],
+							"sid": 407255909805808
 						}
 					],
 					"sid": 816873421836615
@@ -1569,6 +1768,18 @@
 										"message": "\"Map:\" & newline & \"Bowl\"",
 										"mode": "reliable-ordered"
 									}
+								},
+								{
+									"id": "play",
+									"objectClass": "audio",
+									"sid": 919263530248179,
+									"parameters": {
+										"audio-file": "sfx_type",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"type\""
+									}
 								}
 							],
 							"sid": 972534602009612
@@ -1625,6 +1836,18 @@
 										"tag": "\"map change\"",
 										"message": "\"Map:\" & newline & \"Minefield\"",
 										"mode": "reliable-ordered"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "audio",
+									"sid": 862157899833987,
+									"parameters": {
+										"audio-file": "sfx_type",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"type\""
 									}
 								}
 							],
@@ -1683,6 +1906,18 @@
 										"message": "\"Map:\" & newline & \"Storm\"",
 										"mode": "reliable-ordered"
 									}
+								},
+								{
+									"id": "play",
+									"objectClass": "audio",
+									"sid": 938591517097189,
+									"parameters": {
+										"audio-file": "sfx_type",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"type\""
+									}
 								}
 							],
 							"sid": 921750476883924
@@ -1739,6 +1974,18 @@
 										"tag": "\"map change\"",
 										"message": "\"Map:\" & newline & \"\"",
 										"mode": "reliable-ordered"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "audio",
+									"sid": 128626281389057,
+									"parameters": {
+										"audio-file": "sfx_type",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"type\""
 									}
 								}
 							],
@@ -1797,6 +2044,18 @@
 										"message": "\"Map:\" & newline & \"Random\"",
 										"mode": "reliable-ordered"
 									}
+								},
+								{
+									"id": "play",
+									"objectClass": "audio",
+									"sid": 478768537896218,
+									"parameters": {
+										"audio-file": "sfx_type",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"type\""
+									}
 								}
 							],
 							"sid": 766971927107032
@@ -1810,6 +2069,53 @@
 							"isStatic": true,
 							"isConstant": false,
 							"sid": 581583561864507
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "keyboard",
+									"sid": 949143547273097,
+									"parameters": {
+										"key": 13
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 907705558359389,
+									"parameters": {
+										"first-value": "text_begintimer.Count",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "compare-peer-count",
+									"objectClass": "multiplayer",
+									"sid": 287556385846934,
+									"parameters": {
+										"comparison": 2,
+										"count": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "audio",
+									"sid": 554403211649907,
+									"parameters": {
+										"audio-file": "sfx_no",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"no\""
+									}
+								}
+							],
+							"sid": 962156786524004
 						},
 						{
 							"eventType": "block",
@@ -1844,6 +2150,18 @@
 							],
 							"actions": [
 								{
+									"id": "play",
+									"objectClass": "audio",
+									"sid": 602120405180610,
+									"parameters": {
+										"audio-file": "sfx_type",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"type\""
+									}
+								},
+								{
 									"id": "create-object",
 									"objectClass": "System",
 									"sid": 603189546609659,
@@ -1875,6 +2193,15 @@
 										"duration": "5.0",
 										"type": "once",
 										"tag": "\"countdown\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 759011210367801,
+									"parameters": {
+										"variable": "players",
+										"value": "multiplayer.PeerCount"
 									}
 								}
 							],
