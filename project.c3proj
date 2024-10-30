@@ -121,7 +121,9 @@
 	],
 	"uniqueId": "txqu23phnsg",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"player_beam_base"
+		],
 		"subfolders": [
 			{
 				"items": [
