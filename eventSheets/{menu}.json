@@ -247,6 +247,21 @@
 							}
 						},
 						{
+							"id": "sync-instance-variable",
+							"objectClass": "multiplayer",
+							"sid": 780940295985315,
+							"parameters": {
+								"object": "player",
+								"instance-variable": {
+									"name": "playerindex",
+									"objectClass": "player"
+								},
+								"precision": "normal-float-4-bytes",
+								"interpolation": "none",
+								"client-value-tag": "\"\""
+							}
+						},
+						{
 							"id": "sync-object-2",
 							"objectClass": "multiplayer",
 							"sid": 117025617386615,

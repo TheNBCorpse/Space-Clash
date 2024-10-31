@@ -627,11 +627,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 389458497517645,
+									"sid": 117107535208422,
 									"parameters": {
-										"instance-variable": "id",
+										"instance-variable": "playerindex",
 										"comparison": 0,
-										"value": "multiplayer.HostID"
+										"value": "1"
 									}
 								}
 							],
@@ -656,9 +656,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player1",
-											"sid": 680618146766010,
+											"sid": 874401773653856,
 											"parameters": {
-												"text": "multiplayer.HostAlias & newline & player.score"
+												"text": "multiplayer.PeerAliasFromID(player.id) & newline & player.score"
 											}
 										}
 									],
@@ -682,9 +682,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player1",
-											"sid": 528333437677806,
+											"sid": 635465123860432,
 											"parameters": {
-												"text": "multiplayer.HostAlias & newline & player.score & \" X\""
+												"text": "multiplayer.PeerAliasFromID(player.id) & newline & player.score & \" X\""
 											}
 										}
 									],
@@ -708,9 +708,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player1",
-											"sid": 454232464794256,
+											"sid": 254717406641557,
 											"parameters": {
-												"text": "multiplayer.HostAlias & newline & player.score & \" H\""
+												"text": "multiplayer.PeerAliasFromID(player.id) & newline & player.score & \" H\""
 											}
 										}
 									],
@@ -734,9 +734,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player1",
-											"sid": 999691260691936,
+											"sid": 401410180456409,
 											"parameters": {
-												"text": "multiplayer.HostAlias & newline & player.score & \" ~\""
+												"text": "multiplayer.PeerAliasFromID(player.id) & newline & player.score & \" ~\""
 											}
 										}
 									],
@@ -750,11 +750,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 185400344232002,
+									"sid": 694019957468503,
 									"parameters": {
-										"instance-variable": "id",
+										"instance-variable": "playerindex",
 										"comparison": 0,
-										"value": "multiplayer.PeerIDAt(2)"
+										"value": "2"
 									}
 								}
 							],
@@ -778,10 +778,10 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player2",
-											"sid": 645365257667539,
+											"objectClass": "text_player1",
+											"sid": 840311115385771,
 											"parameters": {
-												"text": "multiplayer.PeerAliasAt(2) & newline & player.score"
+												"text": "multiplayer.PeerAliasFromID(player.id) & newline & player.score"
 											}
 										}
 									],
@@ -805,9 +805,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player2",
-											"sid": 227666585119673,
+											"sid": 466042676357660,
 											"parameters": {
-												"text": "multiplayer.PeerAliasAt(2) & newline & \"X \" & player.score"
+												"text": "multiplayer.PeerAliasFromID(player.id) & newline & \"X \" & player.score"
 											}
 										}
 									],
@@ -831,9 +831,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player2",
-											"sid": 529163244881491,
+											"sid": 973150173030328,
 											"parameters": {
-												"text": "multiplayer.PeerAliasAt(2) & newline & \"H \" & player.score"
+												"text": "multiplayer.PeerAliasFromID(player.id) & newline & \"H \" & player.score"
 											}
 										}
 									],
@@ -857,9 +857,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player2",
-											"sid": 139518848344941,
+											"sid": 614687335234297,
 											"parameters": {
-												"text": "multiplayer.PeerAliasAt(2) & newline & \"~ \" & player.score"
+												"text": "multiplayer.PeerAliasFromID(player.id) & newline & \"~ \" & player.score"
 											}
 										}
 									],
@@ -873,11 +873,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 955539290885468,
+									"sid": 919520512106376,
 									"parameters": {
-										"instance-variable": "id",
+										"instance-variable": "playerindex",
 										"comparison": 0,
-										"value": "multiplayer.PeerIDAt(3)"
+										"value": "3"
 									}
 								}
 							],
@@ -901,10 +901,10 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player3",
-											"sid": 722264466886869,
+											"objectClass": "text_player1",
+											"sid": 187376313758107,
 											"parameters": {
-												"text": "player.score & newline & multiplayer.PeerAliasAt(3)"
+												"text": "player.score & newline & multiplayer.PeerAliasFromID(player.id)"
 											}
 										}
 									],
@@ -928,9 +928,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player3",
-											"sid": 717953284906875,
+											"sid": 685710066826592,
 											"parameters": {
-												"text": "player.score & \" X\" & newline & multiplayer.PeerAliasAt(3)"
+												"text": "player.score & \" X\" & newline & multiplayer.PeerAliasFromID(player.id)"
 											}
 										}
 									],
@@ -954,9 +954,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player3",
-											"sid": 404867261968257,
+											"sid": 732066968917277,
 											"parameters": {
-												"text": "player.score & \" H\" & newline & multiplayer.PeerAliasAt(3)"
+												"text": "player.score & \" H\" & newline & multiplayer.PeerAliasFromID(player.id)"
 											}
 										}
 									],
@@ -980,9 +980,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player3",
-											"sid": 657777022155777,
+											"sid": 400373222275253,
 											"parameters": {
-												"text": "player.score & \" ~\" & newline & multiplayer.PeerAliasAt(3)"
+												"text": "player.score & \" ~\" & newline & multiplayer.PeerAliasFromID(player.id)"
 											}
 										}
 									],
@@ -996,11 +996,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 523136928206736,
+									"sid": 388562237578732,
 									"parameters": {
-										"instance-variable": "id",
+										"instance-variable": "playerindex",
 										"comparison": 0,
-										"value": "multiplayer.PeerIDAt(4)"
+										"value": "4"
 									}
 								}
 							],
@@ -1024,10 +1024,10 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player4",
-											"sid": 886688844531108,
+											"objectClass": "text_player1",
+											"sid": 524250339809180,
 											"parameters": {
-												"text": "player.score & newline & multiplayer.PeerAliasAt(4)"
+												"text": "player.score & newline & multiplayer.PeerAliasFromID(player.id)"
 											}
 										}
 									],
@@ -1051,9 +1051,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player4",
-											"sid": 153694671793333,
+											"sid": 258970779732597,
 											"parameters": {
-												"text": "\"X \" & player.score & newline & multiplayer.PeerAliasAt(4)"
+												"text": "\"X \" & player.score & newline & multiplayer.PeerAliasFromID(player.id)"
 											}
 										}
 									],
@@ -1077,9 +1077,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player4",
-											"sid": 338817757384447,
+											"sid": 544988571213255,
 											"parameters": {
-												"text": "\"H \" & player.score & newline & multiplayer.PeerAliasAt(4)"
+												"text": "\"H \" & player.score & newline & multiplayer.PeerAliasFromID(player.id)"
 											}
 										}
 									],
@@ -1103,9 +1103,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player4",
-											"sid": 821001373243275,
+											"sid": 197470604539040,
 											"parameters": {
-												"text": "\"~ \" & player.score & newline & multiplayer.PeerAliasAt(4)"
+												"text": "\"~ \" & player.score & newline & multiplayer.PeerAliasFromID(player.id)"
 											}
 										}
 									],
@@ -1204,6 +1204,18 @@
 													"sid": 712721353584875,
 													"parameters": {
 														"seconds": "5.0"
+													}
+												},
+												{
+													"id": "play",
+													"objectClass": "audio",
+													"sid": 255847657555746,
+													"parameters": {
+														"audio-file": "sfx_launch",
+														"loop": "not-looping",
+														"volume": "0",
+														"stereo-pan": "0",
+														"tag-optional": "\"launch\""
 													}
 												},
 												{
@@ -1348,10 +1360,10 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 238862587785028,
+													"sid": 264900004011118,
 													"parameters": {
 														"first-value": "player.PickedCount",
-														"comparison": 1,
+														"comparison": 4,
 														"second-value": "1"
 													}
 												}
@@ -1393,6 +1405,18 @@
 													"sid": 743071939241810,
 													"parameters": {
 														"seconds": "5.0"
+													}
+												},
+												{
+													"id": "play",
+													"objectClass": "audio",
+													"sid": 309966062680661,
+													"parameters": {
+														"audio-file": "sfx_launch",
+														"loop": "not-looping",
+														"volume": "0",
+														"stereo-pan": "0",
+														"tag-optional": "\"launch\""
 													}
 												},
 												{
@@ -2179,9 +2203,26 @@
 									}
 								},
 								{
+									"id": "set-enabled",
+									"objectClass": "player",
+									"sid": 691890619761294,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "player",
+									"sid": 326573225471904,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
 									"id": "play",
 									"objectClass": "audio",
-									"sid": 351849818182679,
+									"sid": 661383305253895,
 									"parameters": {
 										"audio-file": "sfx_dead",
 										"loop": "not-looping",
@@ -2431,6 +2472,16 @@
 									}
 								},
 								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 627381768707192,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 1,
+										"value": "multiplayer.MyID"
+									}
+								},
+								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
 									"sid": 943969479870904
@@ -2461,6 +2512,78 @@
 							"sid": 483547559143627
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 733563567104170,
+							"parameters": {
+								"object": "level_wall"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 674475810102868,
+							"parameters": {
+								"object": "level_wallfiller"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 863975981276923,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 540543689304610,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 833333347420131,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "multiplayer.MyID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "audio",
+									"sid": 743831132183419,
+									"parameters": {
+										"tag": "\"bounce\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "audio",
+									"sid": 780425176650833,
+									"parameters": {
+										"audio-file": "sfx_bounce",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"bounce\""
+									}
+								}
+							],
+							"sid": 541440577798899
+						}
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -3144,80 +3267,54 @@
 						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "player",
-							"sid": 366470446032596,
+							"sid": 991915166981456,
 							"parameters": {
 								"object": "level_spike"
 							}
 						},
 						{
-							"id": "on-collision-with-another-object",
+							"id": "compare-instance-variable",
 							"objectClass": "player",
-							"sid": 271351150169811,
+							"sid": 662801594709433,
 							"parameters": {
-								"object": "player_projectile"
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "multiplayer.MyID"
 							}
 						},
 						{
-							"id": "on-collision-with-another-object",
+							"id": "compare-instance-variable",
 							"objectClass": "player",
-							"sid": 236654793857448,
+							"sid": 624607923325602,
 							"parameters": {
-								"object": "player_beam_laser"
+								"instance-variable": "alive",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player",
+							"sid": 337557957904039,
+							"parameters": {
+								"instance-variable": "frozen",
+								"comparison": 0,
+								"value": "0"
 							}
 						}
 					],
-					"actions": [],
-					"sid": 107539324101557,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "player",
-									"sid": 759881622391491,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "multiplayer.MyID"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "player",
-									"sid": 865360212621077,
-									"parameters": {
-										"instance-variable": "alive",
-										"comparison": 0,
-										"value": "1"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "player",
-									"sid": 573410438646078,
-									"parameters": {
-										"instance-variable": "frozen",
-										"comparison": 0,
-										"value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-speed",
-									"objectClass": "player",
-									"sid": 124756815729091,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"speed": "0"
-									}
-								}
-							],
-							"sid": 741692705090902
+							"id": "set-speed",
+							"objectClass": "player",
+							"sid": 931467986315671,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "0"
+							}
 						}
 					],
-					"isOrBlock": true
+					"sid": 107539324101557
 				}
 			],
 			"sid": 523118221572468
@@ -5400,10 +5497,10 @@
 								{
 									"id": "set-angle-of-motion",
 									"objectClass": "player",
-									"sid": 202004257226929,
+									"sid": 595651872356133,
 									"behaviorType": "Bullet",
 									"parameters": {
-										"angle": "angle(Self.X, Self.Y, mouse.X, mouse.Y)"
+										"angle": "angle(Self.X, Self.Y, Self.mousex, Self.mousey)"
 									}
 								},
 								{
@@ -5536,9 +5633,9 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 330051155497965,
+							"sid": 896068369096881,
 							"parameters": {
-								"seconds": "0.001"
+								"seconds": "1.5/60"
 							}
 						},
 						{
@@ -5560,105 +5657,259 @@
 						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "player",
-							"sid": 681737377705137,
+							"sid": 483888343024891,
 							"parameters": {
 								"object": "level_spike"
 							}
 						},
 						{
+							"id": "compare-instance-variable",
+							"objectClass": "player",
+							"sid": 942797250083787,
+							"parameters": {
+								"instance-variable": "alive",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player",
+							"sid": 647334805844468,
+							"parameters": {
+								"instance-variable": "frozen",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 384664997979254,
+							"parameters": {
+								"instance-variable": "alive",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 868026519505453,
+							"parameters": {
+								"instance-variable": "powerup",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "player",
+							"sid": 669269080792242,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "0"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "player",
+							"sid": 724317631213966,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "player",
+							"sid": 736437308800159,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						}
+					],
+					"sid": 400667611320945
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "player",
-							"sid": 688134937662995,
+							"sid": 535624790735644,
 							"parameters": {
 								"object": "player_projectile"
 							}
 						},
 						{
-							"id": "on-collision-with-another-object",
+							"id": "compare-instance-variable",
 							"objectClass": "player",
-							"sid": 275139558232349,
+							"sid": 355989902901295,
 							"parameters": {
-								"object": "player_beam_laser"
+								"instance-variable": "alive",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player",
+							"sid": 886755492865932,
+							"parameters": {
+								"instance-variable": "frozen",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player_projectile",
+							"sid": 350635637018240,
+							"parameters": {
+								"instance-variable": "from_uid",
+								"comparison": 1,
+								"value": "player.UID"
 							}
 						}
 					],
-					"actions": [],
-					"sid": 406273860561186,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "player",
-									"sid": 340673137677653,
-									"parameters": {
-										"instance-variable": "alive",
-										"comparison": 0,
-										"value": "1"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "player",
-									"sid": 857530796432201,
-									"parameters": {
-										"instance-variable": "frozen",
-										"comparison": 0,
-										"value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "player",
-									"sid": 668813397676200,
-									"parameters": {
-										"instance-variable": "alive",
-										"value": "0"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "player",
-									"sid": 271006529971418,
-									"parameters": {
-										"instance-variable": "powerup",
-										"value": "0"
-									}
-								},
-								{
-									"id": "set-speed",
-									"objectClass": "player",
-									"sid": 541608157161532,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"speed": "0"
-									}
-								},
-								{
-									"id": "set-enabled",
-									"objectClass": "player",
-									"sid": 923467433070310,
-									"behaviorType": "Solid",
-									"parameters": {
-										"state": "disabled"
-									}
-								},
-								{
-									"id": "set-collisions-enabled",
-									"objectClass": "player",
-									"sid": 963536367843252,
-									"parameters": {
-										"collisions": "disabled"
-									}
-								}
-							],
-							"sid": 793808670801507
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 551052017899253,
+							"parameters": {
+								"instance-variable": "alive",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 413102251282145,
+							"parameters": {
+								"instance-variable": "powerup",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "player",
+							"sid": 746878647805850,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "0"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "player",
+							"sid": 309821493794127,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "player",
+							"sid": 901104558449258,
+							"parameters": {
+								"collisions": "disabled"
+							}
 						}
 					],
-					"isOrBlock": true
+					"sid": 985877519969548
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 453703383097818,
+							"parameters": {
+								"object": "player_beam_laser"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player",
+							"sid": 869639155362313,
+							"parameters": {
+								"instance-variable": "alive",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player",
+							"sid": 567262074576731,
+							"parameters": {
+								"instance-variable": "frozen",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player_beam_laser",
+							"sid": 449621512349997,
+							"parameters": {
+								"instance-variable": "from_uid",
+								"comparison": 1,
+								"value": "player.UID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 603320746019592,
+							"parameters": {
+								"instance-variable": "alive",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player",
+							"sid": 568901465169790,
+							"parameters": {
+								"instance-variable": "powerup",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "player",
+							"sid": 882708628850539,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "0"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "player",
+							"sid": 440072724849856,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "player",
+							"sid": 496626382174147,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						}
+					],
+					"sid": 571455058729782
 				},
 				{
 					"eventType": "block",

@@ -1177,14 +1177,14 @@
 						{
 							"id": "for-each",
 							"objectClass": "System",
-							"sid": 299275686292308,
+							"sid": 949558762565561,
 							"parameters": {
 								"object": "player"
 							}
 						}
 					],
 					"actions": [],
-					"sid": 684063183883743,
+					"sid": 859234357792910,
 					"children": [
 						{
 							"eventType": "block",
@@ -1192,7 +1192,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 724438319861407,
+									"sid": 617126051206998,
 									"parameters": {
 										"instance-variable": "bounce",
 										"comparison": 0,
@@ -1200,28 +1200,118 @@
 									}
 								},
 								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 139881287733986,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 1,
+										"value": "multiplayer.MyID"
+									}
+								},
+								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
-									"sid": 535822643896007
+									"sid": 694672721144178
 								}
 							],
 							"actions": [
 								{
+									"id": "stop",
+									"objectClass": "audio",
+									"sid": 481520680397508,
+									"parameters": {
+										"tag": "\"bounce\""
+									}
+								},
+								{
 									"id": "play",
 									"objectClass": "audio",
-									"sid": 663077350334130,
+									"sid": 699673977954614,
 									"parameters": {
 										"audio-file": "sfx_bounce",
 										"loop": "not-looping",
-										"volume": "-2.5",
+										"volume": "0",
 										"stereo-pan": "0",
 										"tag-optional": "\"bounce\""
 									}
 								}
 							],
-							"sid": 402180947059305
+							"sid": 766919313712520
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 164024331930082,
+							"parameters": {
+								"object": "level_wall"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 410299072582583,
+							"parameters": {
+								"object": "level_wallfiller"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 290278013116971,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 692361419534785,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 444413843609046,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "multiplayer.MyID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "audio",
+									"sid": 776657415796997,
+									"parameters": {
+										"tag": "\"bounce\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "audio",
+									"sid": 536919724889702,
+									"parameters": {
+										"audio-file": "sfx_bounce",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"bounce\""
+									}
+								}
+							],
+							"sid": 694013348500271
+						}
+					],
+					"isOrBlock": true
 				}
 			],
 			"sid": 121953702618363
@@ -1298,11 +1388,11 @@
 								{
 									"id": "play",
 									"objectClass": "audio",
-									"sid": 949730050181027,
+									"sid": 288929464131467,
 									"parameters": {
 										"audio-file": "sfx_type",
 										"loop": "not-looping",
-										"volume": "-7.5",
+										"volume": "0",
 										"stereo-pan": "0",
 										"tag-optional": "\"type\""
 									}
