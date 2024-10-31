@@ -57,6 +57,14 @@
 							"sid": 177602565910015
 						},
 						{
+							"id": "set-cursor-style",
+							"objectClass": "mouse",
+							"sid": 731792116263766,
+							"parameters": {
+								"cursor-style": "normal"
+							}
+						},
+						{
 							"id": "set-position",
 							"objectClass": "player",
 							"sid": 603698135146552,
@@ -1199,6 +1207,18 @@
 													"sid": 574906605634478
 												},
 												{
+													"id": "play",
+													"objectClass": "audio",
+													"sid": 126714420280211,
+													"parameters": {
+														"audio-file": "sfx_win",
+														"loop": "not-looping",
+														"volume": "0",
+														"stereo-pan": "0",
+														"tag-optional": "\"win\""
+													}
+												},
+												{
 													"id": "wait",
 													"objectClass": "System",
 													"sid": 712721353584875,
@@ -1398,6 +1418,18 @@
 													"id": "wait-for-previous-actions",
 													"objectClass": "System",
 													"sid": 377508579984707
+												},
+												{
+													"id": "play",
+													"objectClass": "audio",
+													"sid": 493028666637378,
+													"parameters": {
+														"audio-file": "sfx_tie",
+														"loop": "not-looping",
+														"volume": "0",
+														"stereo-pan": "0",
+														"tag-optional": "\"tie\""
+													}
 												},
 												{
 													"id": "wait",
@@ -1696,6 +1728,22 @@
 							"parameters": {
 								"layer": "\"particles\""
 							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "player_beam_warning",
+							"sid": 995851866003895,
+							"parameters": {
+								"layer": "\"particles\""
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "player_beam_laser",
+							"sid": 740959877471257,
+							"parameters": {
+								"layer": "\"particles\""
+							}
 						}
 					],
 					"sid": 473439504559044
@@ -1988,6 +2036,17 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "fade-volume",
+							"objectClass": "audio",
+							"sid": 981668664935559,
+							"parameters": {
+								"tag": "\"music\"",
+								"db": "-100",
+								"duration": "1",
+								"ending": "stop"
+							}
+						},
 						{
 							"id": "set-text",
 							"objectClass": "text_timer",
@@ -2620,6 +2679,70 @@
 					],
 					"sid": 366591464021593,
 					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-end-of-layout",
+							"objectClass": "System",
+							"sid": 824760889632302
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 421355104126578,
+							"parameters": {
+								"group-name": "\"peer\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 826809257228922,
+							"parameters": {
+								"group-name": "\"host\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 802810906428581
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "player_projectile",
+							"sid": 310505765508955
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "audio",
+							"sid": 137115749339080,
+							"parameters": {
+								"tag": "\"shoot\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "audio",
+							"sid": 421828749275436,
+							"parameters": {
+								"audio-file": "sfx_shoot",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"shoot\""
+							}
+						}
+					],
+					"sid": 801746350706965
 				}
 			],
 			"sid": 903254140831643
@@ -3315,6 +3438,74 @@
 						}
 					],
 					"sid": 107539324101557
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player",
+							"sid": 809826508956364,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "multiplayer.MyID"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player",
+							"sid": 401435101833115,
+							"parameters": {
+								"object": "level_windR"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "player",
+							"sid": 822898683228268,
+							"parameters": {
+								"x": "Self.X + 20 * dt"
+							}
+						}
+					],
+					"sid": 462384299151447
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player",
+							"sid": 735306901066288,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "multiplayer.MyID"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player",
+							"sid": 381655666845336,
+							"parameters": {
+								"object": "level_windL"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "player",
+							"sid": 351977781781363,
+							"parameters": {
+								"x": "Self.X - 20 * dt"
+							}
+						}
+					],
+					"sid": 714069666683614
 				}
 			],
 			"sid": 523118221572468
@@ -3550,6 +3741,78 @@
 								}
 							],
 							"sid": 487276012874031
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 716262596792813,
+									"parameters": {
+										"object": "player",
+										"expression": "player.alive"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 175033555046529,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 947137220841826,
+											"parameters": {
+												"first-value": "player.PickedCount",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "stop-timer",
+											"objectClass": "text_timer",
+											"sid": 591518053541886,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"countdown\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "text_timer",
+											"sid": 648192007983836,
+											"parameters": {
+												"instance-variable": "time",
+												"value": "0"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "player",
+											"sid": 655548788504401,
+											"parameters": {
+												"instance-variable": "frozen",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-speed",
+											"objectClass": "player",
+											"sid": 506511756044155,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"speed": "0"
+											}
+										}
+									],
+									"sid": 112868396821858
+								}
+							]
 						}
 					],
 					"sid": 849317108231881
@@ -3579,9 +3842,9 @@
 										{
 											"id": "repeat",
 											"objectClass": "System",
-											"sid": 198068396021389,
+											"sid": 160363121442862,
 											"parameters": {
-												"count": "choose(1, 2) + players"
+												"count": "choose(3, 4) + players"
 											}
 										}
 									],
@@ -3612,18 +3875,18 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 543963814463901,
+									"sid": 928486645517274,
 									"parameters": {
 										"first-value": "OBJECTS.Count",
 										"comparison": 2,
-										"second-value": "2 + players"
+										"second-value": "3 + players"
 									}
 								}
 							],
 							"actions": [
 								{
 									"callFunction": "Spawn object",
-									"sid": 246269414523506,
+									"sid": 204074873016664,
 									"parameters": [
 										"choose(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3)"
 									]
@@ -3822,7 +4085,20 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "OBJECTS",
+									"sid": 732152446932733
+								},
+								{
+									"callFunction": "Spawn object",
+									"sid": 551046793313627,
+									"parameters": [
+										"choose(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3)"
+									]
+								}
+							],
 							"sid": 202178401874748,
 							"children": [
 								{
@@ -3856,7 +4132,8 @@
 											}
 										}
 									],
-									"sid": 640097128676282
+									"sid": 640097128676282,
+									"disabled": true
 								}
 							]
 						}
@@ -6013,6 +6290,70 @@
 						}
 					],
 					"sid": 529888347457448
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 600353293471846,
+							"parameters": {
+								"object": "player"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player",
+							"sid": 852024866969426,
+							"parameters": {
+								"object": "level_windR"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "player",
+							"sid": 434420830937398,
+							"parameters": {
+								"x": "Self.X + 20 * dt"
+							}
+						}
+					],
+					"sid": 496779250085397
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 258476663355606,
+							"parameters": {
+								"object": "player"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player",
+							"sid": 554901602202587,
+							"parameters": {
+								"object": "level_windL"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "player",
+							"sid": 219016204948457,
+							"parameters": {
+								"x": "Self.X - 20 * dt"
+							}
+						}
+					],
+					"sid": 332287979142032
 				}
 			],
 			"sid": 235493309083815
@@ -6042,11 +6383,144 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 523453433824100,
+									"sid": 677453196474603,
 									"parameters": {
 										"first-value": "LayoutName",
 										"comparison": 0,
 										"second-value": "\"bowl\""
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 304634918443280,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"storm\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 841842463504766,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 756911486747077,
+											"parameters": {
+												"count": "random(15, 20) * (LayoutWidth / 2560)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 565873699772089,
+											"parameters": {
+												"object-to-create": "level_star",
+												"layer": "0",
+												"x": "random(0, LayoutWidth)",
+												"y": "round(random(0, LayoutHeight) / 16) * 16",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-speed",
+											"objectClass": "level_star",
+											"sid": 902111488839763,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"speed": "random(300, 400)"
+											}
+										}
+									],
+									"sid": 293602310413417
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 488034644459906,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"minefield\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 505063270186399,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 756077547397066,
+											"parameters": {
+												"count": "random(15, 20) * (LayoutWidth / 2560)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 525760663375134,
+											"parameters": {
+												"object-to-create": "level_star",
+												"layer": "0",
+												"x": "random(0, LayoutWidth)",
+												"y": "round(random(0, LayoutHeight) / 16) * 16",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-speed",
+											"objectClass": "level_star",
+											"sid": 467333362380786,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"speed": "random(300, 400)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "level_star",
+											"sid": 379535646089933,
+											"parameters": {
+												"angle": "90"
+											}
+										}
+									],
+									"sid": 183128876344383
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 644385689891871,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"fort\""
 									}
 								}
 							],
@@ -6087,6 +6561,14 @@
 											"parameters": {
 												"speed": "random(300, 400)"
 											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "level_star",
+											"sid": 245789415758738,
+											"parameters": {
+												"angle": "270"
+											}
 										}
 									],
 									"sid": 361421308281421
@@ -6116,11 +6598,21 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 977075239014544,
+									"sid": 102797055855136,
 									"parameters": {
 										"first-value": "LayoutName",
 										"comparison": 0,
 										"second-value": "\"bowl\""
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 305152256899990,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"storm\""
 									}
 								}
 							],
@@ -6128,7 +6620,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 505316949812818,
+									"sid": 792464621205774,
 									"parameters": {
 										"object-to-create": "level_star",
 										"layer": "0",
@@ -6141,16 +6633,151 @@
 								{
 									"id": "set-speed",
 									"objectClass": "level_star",
-									"sid": 677610119278297,
+									"sid": 412914601673316,
 									"behaviorType": "Bullet",
 									"parameters": {
 										"speed": "random(300, 400)"
 									}
 								}
 							],
+							"sid": 671087565777775,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 785978447511033,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"minefield\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 244301323607039,
+									"parameters": {
+										"object-to-create": "level_star",
+										"layer": "0",
+										"x": "round(random(0, LayoutWidth) / 16) * 16",
+										"y": "0.1",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "level_star",
+									"sid": 628868468933983,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "random(300, 400)"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "level_star",
+									"sid": 160306271922710,
+									"parameters": {
+										"angle": "90"
+									}
+								}
+							],
+							"sid": 732877825642134
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 581501714542420,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"fort\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 847824964387399,
+									"parameters": {
+										"object-to-create": "level_star",
+										"layer": "0",
+										"x": "round(random(0, LayoutWidth) / 16) * 16",
+										"y": "LayoutHeight - 0.1",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "level_star",
+									"sid": 677610119278297,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "random(300, 400)"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "level_star",
+									"sid": 189515732431174,
+									"parameters": {
+										"angle": "270"
+									}
+								}
+							],
 							"sid": 846208850227185
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 918566886068118,
+							"parameters": {
+								"interval-seconds": "random(4/60, 8/60)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 809536954785596,
+							"parameters": {
+								"object-to-create": "level_wind",
+								"layer": "0",
+								"x": "level_windL.X",
+								"y": "ceil(random(level_windL.Y, level_windL.ImagePointY(1)) / 16) * 16",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "level_wind",
+							"sid": 228943998944714,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "random(300, 400)"
+							}
+						}
+					],
+					"sid": 450951864467945
 				}
 			],
 			"sid": 786126369296177

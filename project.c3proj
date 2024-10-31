@@ -135,7 +135,10 @@
 	],
 	"uniqueId": "txqu23phnsg",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"level_windR",
+			"level_windL"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -206,7 +209,8 @@
 					"level_objbeam",
 					"level_objcollect",
 					"level_objsweep",
-					"level_objspeed"
+					"level_objspeed",
+					"level_wind"
 				],
 				"subfolders": [],
 				"name": "level"
@@ -227,10 +231,20 @@
 		"items": [
 			"game_test",
 			"menu",
-			"room",
-			"bowl"
+			"room"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"bowl",
+					"minefield",
+					"storm",
+					"fort"
+				],
+				"subfolders": [],
+				"name": "levels"
+			}
+		]
 	},
 	"eventSheets": {
 		"items": [
@@ -301,6 +315,30 @@
 					"name": "sfx_bounce.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 154376683343015,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_shoot.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 554570992492666,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_win.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 146949936172925,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_tie.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 590667916627443,
 					"file-info": {
 						"purpose": "none"
 					}

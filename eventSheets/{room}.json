@@ -1081,9 +1081,9 @@
 								{
 									"id": "go-to-layout-by-name",
 									"objectClass": "System",
-									"sid": 797564495439181,
+									"sid": 233753770025046,
 									"parameters": {
-										"layout": "chooseindex(text_begintimer.map, \"bowl\", \"minefield\", \"storm\", \"\")"
+										"layout": "chooseindex(text_begintimer.map, \"bowl\", \"minefield\", \"storm\", \"fort\")"
 									}
 								}
 							],
@@ -1115,9 +1115,9 @@
 								{
 									"id": "go-to-layout-by-name",
 									"objectClass": "System",
-									"sid": 374989695973916,
+									"sid": 819978346977136,
 									"parameters": {
-										"layout": "chooseindex(text_begintimer.map, \"bowl\", \"minefield\", \"storm\", \"\")"
+										"layout": "chooseindex(text_begintimer.map, \"bowl\", \"minefield\", \"storm\", \"fort\")"
 									}
 								}
 							],
@@ -1312,6 +1312,37 @@
 						}
 					],
 					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-end-of-layout",
+							"objectClass": "System",
+							"sid": 879674236935768
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 708647110555678,
+							"parameters": {
+								"group-name": "\"peer_room\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 182378698078151,
+							"parameters": {
+								"group-name": "\"host_room\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 558466490120727
 				}
 			],
 			"sid": 121953702618363
@@ -1354,11 +1385,11 @@
 								{
 									"id": "play",
 									"objectClass": "audio",
-									"sid": 218115765204199,
+									"sid": 902518382630113,
 									"parameters": {
 										"audio-file": "sfx_type",
 										"loop": "not-looping",
-										"volume": "-7.5",
+										"volume": "0",
 										"stereo-pan": "0",
 										"tag-optional": "\"type\""
 									}
@@ -2156,11 +2187,11 @@
 								{
 									"id": "broadcast-message",
 									"objectClass": "multiplayer",
-									"sid": 464866724297606,
+									"sid": 780761133423955,
 									"parameters": {
 										"from-id": "\"\"",
 										"tag": "\"map change\"",
-										"message": "\"Map:\" & newline & \"\"",
+										"message": "\"Map:\" & newline & \"Fort\"",
 										"mode": "reliable-ordered"
 									}
 								},
