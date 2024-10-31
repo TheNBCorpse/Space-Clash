@@ -135,10 +135,7 @@
 	],
 	"uniqueId": "txqu23phnsg",
 	"objectTypes": {
-		"items": [
-			"level_windR",
-			"level_windL"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -210,7 +207,9 @@
 					"level_objcollect",
 					"level_objsweep",
 					"level_objspeed",
-					"level_wind"
+					"level_wind",
+					"level_windL",
+					"level_windR"
 				],
 				"subfolders": [],
 				"name": "level"

@@ -65,6 +65,24 @@
 							}
 						},
 						{
+							"id": "set-animation",
+							"objectClass": "level_windL",
+							"sid": 548119907072027,
+							"parameters": {
+								"animation": "\"Animation 2\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "level_windR",
+							"sid": 455248900358414,
+							"parameters": {
+								"animation": "\"Animation 2\"",
+								"from": "beginning"
+							}
+						},
+						{
 							"id": "set-position",
 							"objectClass": "player",
 							"sid": 603698135146552,
@@ -1828,9 +1846,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "text_begintimer",
-							"sid": 141908352355917,
+							"sid": 689749528427707,
 							"parameters": {
-								"text": "clamp(Self.time, 0, 3)"
+								"text": "\"[background=black]\" & clamp(Self.time, 0, 3)"
 							}
 						}
 					],
@@ -3465,9 +3483,9 @@
 						{
 							"id": "set-x",
 							"objectClass": "player",
-							"sid": 822898683228268,
+							"sid": 641440604931976,
 							"parameters": {
-								"x": "Self.X + 20 * dt"
+								"x": "Self.X + 800 * dt"
 							}
 						}
 					],
@@ -3499,9 +3517,9 @@
 						{
 							"id": "set-x",
 							"objectClass": "player",
-							"sid": 351977781781363,
+							"sid": 143932201283354,
 							"parameters": {
-								"x": "Self.X - 20 * dt"
+								"x": "Self.X - 800 * dt"
 							}
 						}
 					],
@@ -3867,9 +3885,9 @@
 								{
 									"id": "every-x-seconds",
 									"objectClass": "System",
-									"sid": 914172476873898,
+									"sid": 682419931435278,
 									"parameters": {
-										"interval-seconds": "random(1, 3)"
+										"interval-seconds": "random(0.5, 2)"
 									}
 								},
 								{
@@ -4089,11 +4107,13 @@
 								{
 									"id": "destroy",
 									"objectClass": "OBJECTS",
-									"sid": 732152446932733
+									"sid": 732152446932733,
+									"disabled": true
 								},
 								{
 									"callFunction": "Spawn object",
 									"sid": 551046793313627,
+									"disabled": true,
 									"parameters": [
 										"choose(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3)"
 									]
@@ -4132,8 +4152,7 @@
 											}
 										}
 									],
-									"sid": 640097128676282,
-									"disabled": true
+									"sid": 640097128676282
 								}
 							]
 						}
@@ -5897,28 +5916,63 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-speed",
-							"objectClass": "player",
-							"sid": 500306869256522,
-							"behaviorType": "Bullet",
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 259823614607385,
 							"parameters": {
-								"comparison": 0,
-								"speed": "0"
+								"object": "player"
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 436544378839627,
+					"children": [
 						{
-							"id": "set-position",
-							"objectClass": "player",
-							"sid": 709027487273640,
-							"parameters": {
-								"x": "round(Self.X / 16) * 16",
-								"y": "round(Self.Y / 16) * 16"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-speed",
+									"objectClass": "player",
+									"sid": 496777981764688,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"comparison": 0,
+										"speed": "0"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "player",
+									"sid": 806835865382232,
+									"parameters": {
+										"object": "level_windL"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "player",
+									"sid": 845088694289590,
+									"parameters": {
+										"object": "level_windR"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "player",
+									"sid": 569351786736899,
+									"parameters": {
+										"x": "round(Self.X / 16) * 16",
+										"y": "round(Self.Y / 16) * 16"
+									}
+								}
+							],
+							"sid": 684597909623457
 						}
-					],
-					"sid": 388212272982483
+					]
 				},
 				{
 					"eventType": "block",
@@ -6315,9 +6369,9 @@
 						{
 							"id": "set-x",
 							"objectClass": "player",
-							"sid": 434420830937398,
+							"sid": 733729814877742,
 							"parameters": {
-								"x": "Self.X + 20 * dt"
+								"x": "Self.X + 800 * dt"
 							}
 						}
 					],
@@ -6347,9 +6401,9 @@
 						{
 							"id": "set-x",
 							"objectClass": "player",
-							"sid": 219016204948457,
+							"sid": 290108371065658,
 							"parameters": {
-								"x": "Self.X - 20 * dt"
+								"x": "Self.X - 800 * dt"
 							}
 						}
 					],
@@ -6747,9 +6801,9 @@
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 918566886068118,
+							"sid": 956741822529781,
 							"parameters": {
-								"interval-seconds": "random(4/60, 8/60)"
+								"interval-seconds": "random(8/60, 15/60)"
 							}
 						}
 					],
@@ -6757,11 +6811,11 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 809536954785596,
+							"sid": 289428598823131,
 							"parameters": {
 								"object-to-create": "level_wind",
 								"layer": "0",
-								"x": "level_windL.X",
+								"x": "level_windL.X - 0.1",
 								"y": "ceil(random(level_windL.Y, level_windL.ImagePointY(1)) / 16) * 16",
 								"create-hierarchy": false,
 								"template-name": "\"\""
@@ -6770,14 +6824,137 @@
 						{
 							"id": "set-speed",
 							"objectClass": "level_wind",
-							"sid": 228943998944714,
+							"sid": 596124964121485,
 							"behaviorType": "Bullet",
 							"parameters": {
-								"speed": "random(300, 400)"
+								"speed": "random(500, 600)"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "level_wind",
+							"sid": 777749044742981,
+							"parameters": {
+								"angle": "180"
 							}
 						}
 					],
 					"sid": 450951864467945
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 377408827451923,
+							"parameters": {
+								"interval-seconds": "random(8/60, 15/60)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 802259345945675,
+							"parameters": {
+								"object-to-create": "level_wind",
+								"layer": "0",
+								"x": "level_windR.X + 0.1",
+								"y": "floor(random(level_windR.Y, level_windR.ImagePointY(1)) / 16) * 16",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "level_wind",
+							"sid": 624764631226909,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "random(500, 600)"
+							}
+						}
+					],
+					"sid": 132693022638060
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 875253549838319
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-top",
+							"objectClass": "level_windL",
+							"sid": 893429853441115
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "level_windR",
+							"sid": 441880092587877
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "level_wind",
+							"sid": 441831622205980
+						}
+					],
+					"sid": 656766624339779
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 267037208788310,
+							"parameters": {
+								"object": "level_wind"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 701936721120455,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "level_wind",
+									"sid": 863919898680444,
+									"parameters": {
+										"object": "level_windL"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "level_wind",
+									"sid": 703370528706149,
+									"parameters": {
+										"object": "level_windR"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "start-fade",
+									"objectClass": "level_wind",
+									"sid": 940656514349890,
+									"behaviorType": "Fade"
+								}
+							],
+							"sid": 484692869432868
+						}
+					]
 				}
 			],
 			"sid": 786126369296177
