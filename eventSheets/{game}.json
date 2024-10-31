@@ -778,7 +778,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player1",
+											"objectClass": "text_player2",
 											"sid": 840311115385771,
 											"parameters": {
 												"text": "multiplayer.PeerAliasFromID(player.id) & newline & player.score"
@@ -901,7 +901,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player1",
+											"objectClass": "text_player3",
 											"sid": 187376313758107,
 											"parameters": {
 												"text": "player.score & newline & multiplayer.PeerAliasFromID(player.id)"
@@ -1024,7 +1024,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "text_player1",
+											"objectClass": "text_player4",
 											"sid": 524250339809180,
 											"parameters": {
 												"text": "player.score & newline & multiplayer.PeerAliasFromID(player.id)"
@@ -3538,6 +3538,15 @@
 										"instance-variable": "frozen",
 										"value": "1"
 									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "player",
+									"sid": 408049052986790,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "0"
+									}
 								}
 							],
 							"sid": 487276012874031
@@ -5369,6 +5378,27 @@
 												"instance-variable": "from_uid",
 												"value": "player.UID"
 											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 203565159284557,
+											"parameters": {
+												"object-to-create": "player_beam_warning",
+												"layer": "3",
+												"x": "player_beam_base.X + 240",
+												"y": "player_beam_base.Y",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "player_beam_warning",
+											"sid": 139031004776993,
+											"parameters": {
+												"angle": "0"
+											}
 										}
 									],
 									"sid": 673464609584855
@@ -5415,6 +5445,27 @@
 											"parameters": {
 												"instance-variable": "from_uid",
 												"value": "player.UID"
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 827476153015420,
+											"parameters": {
+												"object-to-create": "player_beam_warning",
+												"layer": "3",
+												"x": "player_beam_base.X - 240",
+												"y": "player_beam_base.Y",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "player_beam_warning",
+											"sid": 934984066721684,
+											"parameters": {
+												"angle": "180"
 											}
 										}
 									],
@@ -5954,6 +6005,11 @@
 							"id": "destroy",
 							"objectClass": "player_beam_base",
 							"sid": 610618865414061
+						},
+						{
+							"id": "destroy",
+							"objectClass": "player_beam_warning",
+							"sid": 213031078523790
 						}
 					],
 					"sid": 529888347457448

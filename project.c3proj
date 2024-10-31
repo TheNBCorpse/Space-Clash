@@ -154,7 +154,8 @@
 					"player_projectile",
 					"player_beam_base",
 					"player_beam_laser",
-					"player_trail"
+					"player_trail",
+					"player_beam_warning"
 				],
 				"subfolders": [],
 				"name": "player"

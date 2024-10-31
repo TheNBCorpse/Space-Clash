@@ -398,6 +398,19 @@
 						{
 							"id": "sync-object-2",
 							"objectClass": "multiplayer",
+							"sid": 271921951668082,
+							"parameters": {
+								"object": "player_beam_warning",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"precision": "normal-float-4-bytes",
+								"bandwidth": "low-bandwidth-highly-predictable"
+							}
+						},
+						{
+							"id": "sync-object-2",
+							"objectClass": "multiplayer",
 							"sid": 665429739017758,
 							"parameters": {
 								"object": "text_timer",
