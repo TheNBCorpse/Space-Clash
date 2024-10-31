@@ -159,14 +159,14 @@
 						{
 							"id": "sync-instance-variable",
 							"objectClass": "multiplayer",
-							"sid": 409154757361596,
+							"sid": 369429258044630,
 							"parameters": {
 								"object": "player",
 								"instance-variable": {
 									"name": "score",
 									"objectClass": "player"
 								},
-								"precision": "low-int16-2-bytes",
+								"precision": "normal-float-4-bytes",
 								"interpolation": "none",
 								"client-value-tag": "\"\""
 							}
@@ -360,6 +360,19 @@
 							"sid": 278209947007536,
 							"parameters": {
 								"object": "player_beam_base",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"precision": "normal-float-4-bytes",
+								"bandwidth": "low-bandwidth-highly-predictable"
+							}
+						},
+						{
+							"id": "sync-object-2",
+							"objectClass": "multiplayer",
+							"sid": 137451912603566,
+							"parameters": {
+								"object": "player_beam_laser",
 								"x": true,
 								"y": true,
 								"angle": true,

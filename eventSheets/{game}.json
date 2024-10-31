@@ -682,9 +682,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player1",
-											"sid": 310217066965433,
+											"sid": 528333437677806,
 											"parameters": {
-												"text": "multiplayer.HostAlias & newline & player.score & \"X\""
+												"text": "multiplayer.HostAlias & newline & player.score & \" X\""
 											}
 										}
 									],
@@ -708,9 +708,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player1",
-											"sid": 911105094873508,
+											"sid": 454232464794256,
 											"parameters": {
-												"text": "multiplayer.HostAlias & newline & player.score & \"H\""
+												"text": "multiplayer.HostAlias & newline & player.score & \" H\""
 											}
 										}
 									],
@@ -734,9 +734,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "text_player1",
-											"sid": 747895925037858,
+											"sid": 999691260691936,
 											"parameters": {
-												"text": "multiplayer.HostAlias & newline & player.score & \"~\""
+												"text": "multiplayer.HostAlias & newline & player.score & \" ~\""
 											}
 										}
 									],
@@ -1348,10 +1348,10 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 685915735473792,
+													"sid": 238862587785028,
 													"parameters": {
 														"first-value": "player.PickedCount",
-														"comparison": 4,
+														"comparison": 1,
 														"second-value": "1"
 													}
 												}
@@ -2292,6 +2292,7 @@
 							"id": "wait",
 							"objectClass": "System",
 							"sid": 384298818471221,
+							"disabled": true,
 							"parameters": {
 								"seconds": "1.0"
 							}
@@ -2300,6 +2301,7 @@
 							"id": "spawn-another-object",
 							"objectClass": "player_beam_base",
 							"sid": 580784077258155,
+							"disabled": true,
 							"parameters": {
 								"object": "player_beam_laser",
 								"layer": "3",
@@ -2312,6 +2314,7 @@
 							"id": "wait",
 							"objectClass": "System",
 							"sid": 275508384493251,
+							"disabled": true,
 							"parameters": {
 								"seconds": "3.0"
 							}
@@ -2319,7 +2322,8 @@
 						{
 							"id": "destroy",
 							"objectClass": "player_beam_laser",
-							"sid": 166041238647430
+							"sid": 166041238647430,
+							"disabled": true
 						}
 					],
 					"sid": 510591548543522
@@ -2345,11 +2349,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 524266634325665,
+									"sid": 763000278882930,
 									"parameters": {
 										"instance-variable": "speed",
 										"comparison": 4,
-										"value": "500"
+										"value": "475"
 									}
 								}
 							],
@@ -2362,9 +2366,9 @@
 										{
 											"id": "every-x-seconds",
 											"objectClass": "System",
-											"sid": 222027110011665,
+											"sid": 437602483284778,
 											"parameters": {
-												"interval-seconds": "random(0.2, 0.25)"
+												"interval-seconds": "random(0.1, 0.15)"
 											}
 										}
 									],
@@ -2374,7 +2378,7 @@
 											"objectClass": "System",
 											"sid": 973765933340065,
 											"parameters": {
-												"object-to-create": "level_trail",
+												"object-to-create": "player_trail",
 												"layer": "3",
 												"x": "player.X",
 												"y": "player.Y",
@@ -2384,7 +2388,7 @@
 										},
 										{
 											"id": "set-angle-of-motion",
-											"objectClass": "level_trail",
+											"objectClass": "player_trail",
 											"sid": 146757283350776,
 											"behaviorType": "Bullet",
 											"parameters": {
@@ -2434,13 +2438,21 @@
 							],
 							"actions": [
 								{
+									"id": "stop",
+									"objectClass": "audio",
+									"sid": 247258762555015,
+									"parameters": {
+										"tag": "\"bounce\""
+									}
+								},
+								{
 									"id": "play",
 									"objectClass": "audio",
-									"sid": 711872214065654,
+									"sid": 891448385601037,
 									"parameters": {
 										"audio-file": "sfx_bounce",
 										"loop": "not-looping",
-										"volume": "-2.5",
+										"volume": "0",
 										"stereo-pan": "0",
 										"tag-optional": "\"bounce\""
 									}
@@ -2483,7 +2495,8 @@
 							}
 						}
 					],
-					"sid": 366591464021593
+					"sid": 366591464021593,
+					"disabled": true
 				}
 			],
 			"sid": 903254140831643
@@ -2920,6 +2933,7 @@
 									"id": "compare-speed",
 									"objectClass": "player",
 									"sid": 501800193422025,
+									"disabled": true,
 									"behaviorType": "Bullet",
 									"parameters": {
 										"comparison": 3,
@@ -3048,10 +3062,10 @@
 								{
 									"id": "set-speed",
 									"objectClass": "player",
-									"sid": 706704544615222,
+									"sid": 933807579098145,
 									"behaviorType": "Bullet",
 									"parameters": {
-										"speed": "1000"
+										"speed": "1200"
 									}
 								},
 								{
@@ -3754,9 +3768,25 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 874688679790651,
+									"parameters": {
+										"object": "player"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 556894036753788,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "on-collision-with-another-object",
 									"objectClass": "player",
-									"sid": 886577177420281,
+									"sid": 376745191385240,
 									"parameters": {
 										"object": "level_objcollect"
 									}
@@ -3764,7 +3794,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 465235520194943,
+									"sid": 604799565533583,
 									"parameters": {
 										"instance-variable": "alive",
 										"comparison": 0,
@@ -3776,19 +3806,19 @@
 								{
 									"id": "destroy",
 									"objectClass": "level_objcollect",
-									"sid": 305909130974316
+									"sid": 196288537200791
 								},
 								{
-									"id": "add-to-instvar",
+									"id": "set-instvar-value",
 									"objectClass": "player",
-									"sid": 484268342755195,
+									"sid": 796466810691615,
 									"parameters": {
 										"instance-variable": "score",
-										"value": "1"
+										"value": "Self.score + 1"
 									}
 								}
 							],
-							"sid": 664077132892570
+							"sid": 586049292934645
 						},
 						{
 							"eventType": "block",
@@ -3796,7 +3826,7 @@
 								{
 									"id": "on-collision-with-another-object",
 									"objectClass": "player",
-									"sid": 272107346969000,
+									"sid": 798767845618292,
 									"parameters": {
 										"object": "level_objsweep"
 									}
@@ -3804,7 +3834,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 421611773263521,
+									"sid": 618007210253488,
 									"parameters": {
 										"instance-variable": "alive",
 										"comparison": 0,
@@ -3816,19 +3846,19 @@
 								{
 									"id": "destroy",
 									"objectClass": "level_objsweep",
-									"sid": 770902674275683
+									"sid": 105953918040339
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "player",
-									"sid": 611552309001825,
+									"sid": 349385288191904,
 									"parameters": {
 										"instance-variable": "powerup",
 										"value": "1"
 									}
 								}
 							],
-							"sid": 253977403155072
+							"sid": 959747078316057
 						},
 						{
 							"eventType": "block",
@@ -3836,7 +3866,7 @@
 								{
 									"id": "on-collision-with-another-object",
 									"objectClass": "player",
-									"sid": 359861302068511,
+									"sid": 998560055211807,
 									"parameters": {
 										"object": "level_objbeam"
 									}
@@ -3844,7 +3874,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 213923440377709,
+									"sid": 154160986527344,
 									"parameters": {
 										"instance-variable": "alive",
 										"comparison": 0,
@@ -3856,19 +3886,19 @@
 								{
 									"id": "destroy",
 									"objectClass": "level_objbeam",
-									"sid": 776718779029391
+									"sid": 967135661200533
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "player",
-									"sid": 261082002323792,
+									"sid": 104223733144721,
 									"parameters": {
 										"instance-variable": "powerup",
 										"value": "2"
 									}
 								}
 							],
-							"sid": 302250592255012
+							"sid": 800346698648135
 						},
 						{
 							"eventType": "block",
@@ -3876,7 +3906,7 @@
 								{
 									"id": "on-collision-with-another-object",
 									"objectClass": "player",
-									"sid": 352930458715975,
+									"sid": 940842957618406,
 									"parameters": {
 										"object": "level_objspeed"
 									}
@@ -3884,7 +3914,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "player",
-									"sid": 887687843198248,
+									"sid": 789775987442644,
 									"parameters": {
 										"instance-variable": "alive",
 										"comparison": 0,
@@ -3896,19 +3926,19 @@
 								{
 									"id": "destroy",
 									"objectClass": "level_objspeed",
-									"sid": 804487404431177
+									"sid": 951284539974946
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "player",
-									"sid": 237455235917010,
+									"sid": 790483684052821,
 									"parameters": {
 										"instance-variable": "powerup",
 										"value": "3"
 									}
 								}
 							],
-							"sid": 895353620094128
+							"sid": 980007680715053
 						}
 					],
 					"sid": 954752237210646
@@ -4254,6 +4284,7 @@
 									"id": "compare-speed",
 									"objectClass": "player",
 									"sid": 183429601769024,
+									"disabled": true,
 									"behaviorType": "Bullet",
 									"parameters": {
 										"comparison": 3,
@@ -4388,6 +4419,15 @@
 									}
 								},
 								{
+									"id": "set-instvar-value",
+									"objectClass": "player_projectile",
+									"sid": 315258713310291,
+									"parameters": {
+										"instance-variable": "from_uid",
+										"value": "player.UID"
+									}
+								},
+								{
 									"id": "create-object",
 									"objectClass": "System",
 									"sid": 569473078482103,
@@ -4407,6 +4447,15 @@
 									"behaviorType": "Bullet",
 									"parameters": {
 										"angle": "player.Bullet.AngleOfMotion - 15"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player_projectile",
+									"sid": 573717959826467,
+									"parameters": {
+										"instance-variable": "from_uid",
+										"value": "player.UID"
 									}
 								},
 								{
@@ -4432,6 +4481,15 @@
 									}
 								},
 								{
+									"id": "set-instvar-value",
+									"objectClass": "player_projectile",
+									"sid": 961189108044199,
+									"parameters": {
+										"instance-variable": "from_uid",
+										"value": "player.UID"
+									}
+								},
+								{
 									"id": "create-object",
 									"objectClass": "System",
 									"sid": 923022380802770,
@@ -4454,6 +4512,15 @@
 									}
 								},
 								{
+									"id": "set-instvar-value",
+									"objectClass": "player_projectile",
+									"sid": 851831367175474,
+									"parameters": {
+										"instance-variable": "from_uid",
+										"value": "player.UID"
+									}
+								},
+								{
 									"id": "create-object",
 									"objectClass": "System",
 									"sid": 344706369243941,
@@ -4473,6 +4540,15 @@
 									"behaviorType": "Bullet",
 									"parameters": {
 										"angle": "player.Bullet.AngleOfMotion + 30"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player_projectile",
+									"sid": 808797131028714,
+									"parameters": {
+										"instance-variable": "from_uid",
+										"value": "player.UID"
 									}
 								}
 							],
@@ -4568,6 +4644,15 @@
 											"parameters": {
 												"angle": "0"
 											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "player_beam_base",
+											"sid": 142993881539988,
+											"parameters": {
+												"instance-variable": "from_uid",
+												"value": "player.UID"
+											}
 										}
 									],
 									"sid": 218469326530119
@@ -4605,6 +4690,15 @@
 											"sid": 408600714065559,
 											"parameters": {
 												"angle": "180"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "player_beam_base",
+											"sid": 206744681849819,
+											"parameters": {
+												"instance-variable": "from_uid",
+												"value": "player.UID"
 											}
 										}
 									],
@@ -4677,10 +4771,10 @@
 								{
 									"id": "set-speed",
 									"objectClass": "player",
-									"sid": 623825747633441,
+									"sid": 906320506862931,
 									"behaviorType": "Bullet",
 									"parameters": {
-										"speed": "1000"
+										"speed": "1200"
 									}
 								},
 								{
@@ -4807,6 +4901,7 @@
 									"id": "compare-speed",
 									"objectClass": "player",
 									"sid": 210116191446127,
+									"disabled": true,
 									"behaviorType": "Bullet",
 									"parameters": {
 										"comparison": 3,
@@ -4942,6 +5037,15 @@
 									}
 								},
 								{
+									"id": "set-instvar-value",
+									"objectClass": "player_projectile",
+									"sid": 522302191867875,
+									"parameters": {
+										"instance-variable": "from_uid",
+										"value": "player.UID"
+									}
+								},
+								{
 									"id": "create-object",
 									"objectClass": "System",
 									"sid": 619197064946332,
@@ -4961,6 +5065,15 @@
 									"behaviorType": "Bullet",
 									"parameters": {
 										"angle": "player.Bullet.AngleOfMotion - 15"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player_projectile",
+									"sid": 840476920021693,
+									"parameters": {
+										"instance-variable": "from_uid",
+										"value": "player.UID"
 									}
 								},
 								{
@@ -4986,6 +5099,15 @@
 									}
 								},
 								{
+									"id": "set-instvar-value",
+									"objectClass": "player_projectile",
+									"sid": 614810573850882,
+									"parameters": {
+										"instance-variable": "from_uid",
+										"value": "player.UID"
+									}
+								},
+								{
 									"id": "create-object",
 									"objectClass": "System",
 									"sid": 160727573984099,
@@ -5008,6 +5130,15 @@
 									}
 								},
 								{
+									"id": "set-instvar-value",
+									"objectClass": "player_projectile",
+									"sid": 650669111042603,
+									"parameters": {
+										"instance-variable": "from_uid",
+										"value": "player.UID"
+									}
+								},
+								{
 									"id": "create-object",
 									"objectClass": "System",
 									"sid": 135758467591850,
@@ -5027,6 +5158,15 @@
 									"behaviorType": "Bullet",
 									"parameters": {
 										"angle": "player.Bullet.AngleOfMotion + 30"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player_projectile",
+									"sid": 694502563616318,
+									"parameters": {
+										"instance-variable": "from_uid",
+										"value": "player.UID"
 									}
 								}
 							],
@@ -5123,6 +5263,15 @@
 											"parameters": {
 												"angle": "0"
 											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "player_beam_base",
+											"sid": 678920774963743,
+											"parameters": {
+												"instance-variable": "from_uid",
+												"value": "player.UID"
+											}
 										}
 									],
 									"sid": 673464609584855
@@ -5160,6 +5309,15 @@
 											"sid": 895271431501732,
 											"parameters": {
 												"angle": "180"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "player_beam_base",
+											"sid": 567342802658298,
+											"parameters": {
+												"instance-variable": "from_uid",
+												"value": "player.UID"
 											}
 										}
 									],
@@ -5233,10 +5391,10 @@
 								{
 									"id": "set-speed",
 									"objectClass": "player",
-									"sid": 966524338988016,
+									"sid": 527763024311050,
 									"behaviorType": "Bullet",
 									"parameters": {
-										"speed": "1000"
+										"speed": "1200"
 									}
 								},
 								{
@@ -5378,9 +5536,9 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 463620133178275,
+							"sid": 330051155497965,
 							"parameters": {
-								"seconds": "1.5/60"
+								"seconds": "0.001"
 							}
 						},
 						{
@@ -5487,6 +5645,14 @@
 									"parameters": {
 										"state": "disabled"
 									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "player",
+									"sid": 963536367843252,
+									"parameters": {
+										"collisions": "disabled"
+									}
 								}
 							],
 							"sid": 793808670801507
@@ -5507,9 +5673,30 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 676684089077299,
+							"sid": 220278380733187,
 							"parameters": {
-								"seconds": "1.001"
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "player_beam_base",
+							"sid": 291201958029954,
+							"parameters": {
+								"object": "player_beam_laser",
+								"layer": "3",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player_beam_laser",
+							"sid": 817538082719626,
+							"parameters": {
+								"instance-variable": "from_uid",
+								"value": "player_beam_base.from_uid"
 							}
 						},
 						{

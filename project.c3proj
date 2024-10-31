@@ -153,7 +153,8 @@
 					"player",
 					"player_projectile",
 					"player_beam_base",
-					"player_beam_laser"
+					"player_beam_laser",
+					"player_trail"
 				],
 				"subfolders": [],
 				"name": "player"
@@ -204,8 +205,7 @@
 					"level_objbeam",
 					"level_objcollect",
 					"level_objsweep",
-					"level_objspeed",
-					"level_trail"
+					"level_objspeed"
 				],
 				"subfolders": [],
 				"name": "level"
