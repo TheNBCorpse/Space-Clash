@@ -1353,6 +1353,15 @@
 													],
 													"actions": [
 														{
+															"id": "log",
+															"objectClass": "browser",
+															"sid": 950445853936965,
+															"parameters": {
+																"type": "log",
+																"message": "\"registered\""
+															}
+														},
+														{
 															"id": "disconnect-room",
 															"objectClass": "multiplayer",
 															"sid": 986875168173047
@@ -1363,6 +1372,15 @@
 															"sid": 124608908511799,
 															"parameters": {
 																"seconds": "0.15"
+															}
+														},
+														{
+															"id": "log",
+															"objectClass": "browser",
+															"sid": 631470590380134,
+															"parameters": {
+																"type": "log",
+																"message": "\"waited\""
 															}
 														},
 														{
@@ -1387,6 +1405,15 @@
 													],
 													"actions": [
 														{
+															"id": "log",
+															"objectClass": "browser",
+															"sid": 558181105509315,
+															"parameters": {
+																"type": "log",
+																"message": "\"registered\""
+															}
+														},
+														{
 															"id": "disconnect-room",
 															"objectClass": "multiplayer",
 															"sid": 298286367962958
@@ -1397,6 +1424,15 @@
 															"sid": 702407785561739,
 															"parameters": {
 																"seconds": "0.2"
+															}
+														},
+														{
+															"id": "log",
+															"objectClass": "browser",
+															"sid": 290256793467250,
+															"parameters": {
+																"type": "log",
+																"message": "\"waited\""
 															}
 														},
 														{
@@ -1566,6 +1602,15 @@
 													],
 													"actions": [
 														{
+															"id": "log",
+															"objectClass": "browser",
+															"sid": 900043434925433,
+															"parameters": {
+																"type": "log",
+																"message": "\"registered\""
+															}
+														},
+														{
 															"id": "disconnect-room",
 															"objectClass": "multiplayer",
 															"sid": 160862397250806
@@ -1576,6 +1621,15 @@
 															"sid": 999060106685916,
 															"parameters": {
 																"seconds": "0.15"
+															}
+														},
+														{
+															"id": "log",
+															"objectClass": "browser",
+															"sid": 163555738211709,
+															"parameters": {
+																"type": "log",
+																"message": "\"waited\""
 															}
 														},
 														{
@@ -1600,6 +1654,15 @@
 													],
 													"actions": [
 														{
+															"id": "log",
+															"objectClass": "browser",
+															"sid": 792289544213431,
+															"parameters": {
+																"type": "log",
+																"message": "\"registered\""
+															}
+														},
+														{
 															"id": "disconnect-room",
 															"objectClass": "multiplayer",
 															"sid": 861778399174667
@@ -1610,6 +1673,15 @@
 															"sid": 487401316909556,
 															"parameters": {
 																"seconds": "0.2"
+															}
+														},
+														{
+															"id": "log",
+															"objectClass": "browser",
+															"sid": 270437186314104,
+															"parameters": {
+																"type": "log",
+																"message": "\"waited\""
 															}
 														},
 														{
@@ -1628,6 +1700,36 @@
 									]
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-left-room",
+									"objectClass": "multiplayer",
+									"sid": 996553693477906
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "browser",
+									"sid": 206920892029442,
+									"parameters": {
+										"type": "log",
+										"message": "\"left\""
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 335716622173817,
+									"parameters": {
+										"layout": "room"
+									}
+								}
+							],
+							"sid": 300132857872934
 						}
 					],
 					"sid": 280242207370916
