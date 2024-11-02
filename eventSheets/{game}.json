@@ -1159,7 +1159,17 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "browser",
+									"sid": 365871102281363,
+									"parameters": {
+										"type": "log",
+										"message": "player.PickedCount"
+									}
+								}
+							],
 							"sid": 126863637430137,
 							"children": [
 								{
@@ -1176,7 +1186,17 @@
 											}
 										}
 									],
-									"actions": [],
+									"actions": [
+										{
+											"id": "log",
+											"objectClass": "browser",
+											"sid": 517766053812552,
+											"parameters": {
+												"type": "log",
+												"message": "player.PickedCount"
+											}
+										}
+									],
 									"sid": 533096030391997,
 									"children": [
 										{
@@ -1398,10 +1418,10 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 264900004011118,
+													"sid": 381710226109572,
 													"parameters": {
 														"first-value": "player.PickedCount",
-														"comparison": 4,
+														"comparison": 1,
 														"second-value": "1"
 													}
 												}
