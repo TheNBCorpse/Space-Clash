@@ -1,0 +1,20 @@
+{
+	"name": "OBJECTS",
+	"plugin-id": "Sprite",
+	"sid": 634332935382575,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "destroy",
+			"name": "DestroyOutsideLayout",
+			"sid": 778375101095850
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"level_objcollect",
+		"level_objbeam",
+		"level_objspeed",
+		"level_objsweep"
+	]
+}

@@ -1,0 +1,50 @@
+{
+	"name": "player_beam_laser",
+	"plugin-id": "TiledBg",
+	"sid": 592690320545510,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "from_uid",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 355891077189852
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "destroy",
+			"name": "DestroyOutsideLayout",
+			"sid": 475282289359426
+		},
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 658872147328522
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "glowhorizontal",
+			"name": "GlowHorizontal"
+		},
+		{
+			"effectId": "glowvertical",
+			"name": "GlowVertical"
+		}
+	],
+	"image": {
+		"width": 320,
+		"height": 480,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 9494993,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}
