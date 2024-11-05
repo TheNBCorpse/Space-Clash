@@ -471,8 +471,8 @@
 		"subfolders": []
 	},
 	"properties": {
-		"description": "",
-		"version": "1.0.0",
+		"description": "- Fixed connection bugs.\n- Added app icons.\n- Added version text to the main menu.",
+		"version": "1.0.1",
 		"author": "TheNBCorpse",
 		"authorEmail": "",
 		"authorWebsite": "",

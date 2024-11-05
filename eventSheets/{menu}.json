@@ -66,6 +66,30 @@
 			"children": [
 				{
 					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "text_standard",
+							"sid": 883191458424191,
+							"parameters": {
+								"unique-id": "692"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "text_standard",
+							"sid": 685772739084614,
+							"parameters": {
+								"text": "\"Version: \" & projectversion"
+							}
+						}
+					],
+					"sid": 613424798303832
+				},
+				{
+					"eventType": "block",
 					"conditions": [],
 					"actions": [
 						{

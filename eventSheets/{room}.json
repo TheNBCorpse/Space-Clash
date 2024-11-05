@@ -1082,6 +1082,7 @@
 									"id": "go-to-layout-by-name",
 									"objectClass": "System",
 									"sid": 233753770025046,
+									"disabled": true,
 									"parameters": {
 										"layout": "chooseindex(text_begintimer.map, \"bowl\", \"minefield\", \"storm\", \"fort\")"
 									}
@@ -1116,6 +1117,7 @@
 									"id": "go-to-layout-by-name",
 									"objectClass": "System",
 									"sid": 819978346977136,
+									"disabled": true,
 									"parameters": {
 										"layout": "chooseindex(text_begintimer.map, \"bowl\", \"minefield\", \"storm\", \"fort\")"
 									}
@@ -1124,6 +1126,27 @@
 							"sid": 882688500713168
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-left-room",
+							"objectClass": "multiplayer",
+							"sid": 638036801567731
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout-by-name",
+							"objectClass": "System",
+							"sid": 551470859087942,
+							"parameters": {
+								"layout": "chooseindex(text_begintimer.map, \"bowl\", \"minefield\", \"storm\", \"fort\")"
+							}
+						}
+					],
+					"sid": 719680189578464
 				},
 				{
 					"eventType": "block",
