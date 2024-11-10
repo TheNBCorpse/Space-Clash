@@ -396,10 +396,77 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1824,
+						"x": 2240,
 						"y": 1376,
-						"width": 736,
+						"width": 320,
 						"height": 80,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "text_changelog",
+					"properties": {
+						"text": "- Fixed disconnection issues.\n- Fixed beam powerups not going across the entire screen.\n- Various networking improvements to increase stability and add support for upcoming features.\n- Added app icons.\n- Added version text to the main menu.",
+						"enable-bbcode": true,
+						"font": "pixel8",
+						"size": 32,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "bottom",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 693,
+					"sid": 832177155663938,
+					"tags": "",
+					"instanceVariables": {
+						"size8": 32,
+						"sizeD": 28,
+						"spacing8": 0,
+						"spacingD": 8
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 832177155663938,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1936,
+						"y": 1440,
+						"width": 624,
+						"height": 1344,
 						"originX": 0,
 						"originY": 0,
 						"color": [

@@ -7187,6 +7187,50 @@
 							"sid": 484692869432868
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "player_beam_laser",
+							"sid": 843623356787134
+						}
+					],
+					"actions": [
+						{
+							"id": "set-size",
+							"objectClass": "player_beam_laser",
+							"sid": 903124327623436,
+							"parameters": {
+								"width": "3840",
+								"height": "480"
+							}
+						}
+					],
+					"sid": 784540869520470
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "player_beam_warning",
+							"sid": 833088940019511
+						}
+					],
+					"actions": [
+						{
+							"id": "set-size",
+							"objectClass": "player_beam_warning",
+							"sid": 848065586516844,
+							"parameters": {
+								"width": "3840",
+								"height": "480"
+							}
+						}
+					],
+					"sid": 360646326810370
 				}
 			],
 			"sid": 786126369296177

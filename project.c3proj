@@ -187,7 +187,8 @@
 					"text_player3",
 					"text_player4",
 					"text_timer",
-					"text_results"
+					"text_results",
+					"text_changelog"
 				],
 				"subfolders": [],
 				"name": "text"
@@ -471,7 +472,7 @@
 		"subfolders": []
 	},
 	"properties": {
-		"description": "- Fixed connection bugs.\n- Added app icons.\n- Added version text to the main menu.",
+		"description": "",
 		"version": "1.0.1",
 		"author": "TheNBCorpse",
 		"authorEmail": "",

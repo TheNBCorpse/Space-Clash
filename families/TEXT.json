@@ -46,6 +46,7 @@
 		"text_player3",
 		"text_player4",
 		"text_timer",
-		"text_results"
+		"text_results",
+		"text_changelog"
 	]
 }

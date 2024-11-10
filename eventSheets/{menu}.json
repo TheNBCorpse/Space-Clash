@@ -66,30 +66,6 @@
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "text_standard",
-							"sid": 883191458424191,
-							"parameters": {
-								"unique-id": "692"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "text_standard",
-							"sid": 685772739084614,
-							"parameters": {
-								"text": "\"Version: \" & projectversion"
-							}
-						}
-					],
-					"sid": 613424798303832
-				},
-				{
-					"eventType": "block",
 					"conditions": [],
 					"actions": [
 						{
@@ -503,11 +479,126 @@
 				{
 					"id": "cursor-is-over-object",
 					"objectClass": "mouse",
+					"sid": 545085979289448,
+					"parameters": {
+						"object": "menu_font"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-default-color",
+					"objectClass": "menu_font",
+					"sid": 248696866668709,
+					"parameters": {
+						"color": "rgbEx255(255, 255, 255)"
+					}
+				}
+			],
+			"sid": 803880865024173
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "mouse",
+					"sid": 287247279788465,
+					"parameters": {
+						"object": "text_standard"
+					}
+				},
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "text_standard",
+					"sid": 297105773883209,
+					"parameters": {
+						"unique-id": "692"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-cursor-style",
+					"objectClass": "mouse",
+					"sid": 343433564061382,
+					"parameters": {
+						"cursor-style": "hand"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "text_standard",
+					"sid": 851776890198094,
+					"parameters": {
+						"text": "\"[u]Version: \" & projectversion"
+					}
+				}
+			],
+			"sid": 115614867290841
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "mouse",
+					"sid": 718364474588007,
+					"parameters": {
+						"object": "text_standard"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "text_standard",
+					"sid": 643755391064725,
+					"parameters": {
+						"unique-id": "692"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "text_standard",
+					"sid": 122946924971637,
+					"parameters": {
+						"text": "\"Version: \" & projectversion"
+					}
+				}
+			],
+			"sid": 587630216039088
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "mouse",
 					"sid": 611091049043095,
 					"parameters": {
 						"object": "menu_font"
 					},
 					"isInverted": true
+				},
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "mouse",
+					"sid": 788347309345467,
+					"parameters": {
+						"object": "text_standard"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "text_standard",
+					"sid": 652986685379391,
+					"parameters": {
+						"unique-id": "692"
+					}
 				},
 				{
 					"id": "trigger-once-while-true",
@@ -522,14 +613,6 @@
 					"sid": 358513976537997,
 					"parameters": {
 						"cursor-style": "normal"
-					}
-				},
-				{
-					"id": "set-default-color",
-					"objectClass": "menu_font",
-					"sid": 120401875455208,
-					"parameters": {
-						"color": "rgbEx255(255, 255, 255)"
 					}
 				}
 			],
@@ -813,6 +896,135 @@
 						}
 					],
 					"sid": 715697609437239
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "mouse",
+					"sid": 160017352245890,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "text_standard"
+					}
+				},
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "text_standard",
+					"sid": 959399017364446,
+					"parameters": {
+						"unique-id": "692"
+					}
+				},
+				{
+					"id": "is-playing",
+					"objectClass": "text_changelog",
+					"sid": 851002212953623,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"move\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [],
+			"sid": 608394529222716,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "text_changelog",
+							"sid": 986789131478570,
+							"parameters": {
+								"comparison": 2,
+								"y-co-ordinate": "500"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "audio",
+							"sid": 502039956000601,
+							"parameters": {
+								"audio-file": "sfx_type",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"type\""
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "text_changelog",
+							"sid": 155483163569782,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"move\"",
+								"property": "offsetY",
+								"end-value": "1440",
+								"time": "0.15",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 273050561844466
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "text_changelog",
+							"sid": 184125088790711,
+							"parameters": {
+								"comparison": 4,
+								"y-co-ordinate": "500"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "audio",
+							"sid": 575537284158647,
+							"parameters": {
+								"audio-file": "sfx_type",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"type\""
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "text_changelog",
+							"sid": 793244974380165,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"move\"",
+								"property": "offsetY",
+								"end-value": "0",
+								"time": "0.15",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 103846170798956
 				}
 			]
 		},
