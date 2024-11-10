@@ -12,6 +12,16 @@
 			"sid": 571214621931941
 		},
 		{
+			"eventType": "variable",
+			"name": "layout",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 924231415996154
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "{GLOBAL}"
 		},
@@ -830,6 +840,15 @@
 								"stereo-pan": "0",
 								"tag-optional": "\"type\""
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 946813931913010,
+							"parameters": {
+								"variable": "layout",
+								"value": "text_begintimer.map"
+							}
 						}
 					],
 					"sid": 220248187809817
@@ -1066,17 +1085,17 @@
 							],
 							"actions": [
 								{
-									"id": "disconnect-room",
-									"objectClass": "multiplayer",
-									"sid": 802426087321503
-								},
-								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 160240324485370,
+									"sid": 876809457015099,
 									"parameters": {
 										"seconds": "0.15"
 									}
+								},
+								{
+									"id": "disconnect-room",
+									"objectClass": "multiplayer",
+									"sid": 802426087321503
 								},
 								{
 									"id": "go-to-layout-by-name",
@@ -1101,17 +1120,17 @@
 							],
 							"actions": [
 								{
-									"id": "disconnect-room",
-									"objectClass": "multiplayer",
-									"sid": 572753834436117
-								},
-								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 210773846667327,
+									"sid": 151431216721165,
 									"parameters": {
 										"seconds": "0.2"
 									}
+								},
+								{
+									"id": "disconnect-room",
+									"objectClass": "multiplayer",
+									"sid": 572753834436117
 								},
 								{
 									"id": "go-to-layout-by-name",
@@ -1140,9 +1159,9 @@
 						{
 							"id": "go-to-layout-by-name",
 							"objectClass": "System",
-							"sid": 551470859087942,
+							"sid": 635352541171004,
 							"parameters": {
-								"layout": "chooseindex(text_begintimer.map, \"bowl\", \"minefield\", \"storm\", \"fort\")"
+								"layout": "chooseindex(layout, \"bowl\", \"minefield\", \"storm\", \"fort\")"
 							}
 						}
 					],
