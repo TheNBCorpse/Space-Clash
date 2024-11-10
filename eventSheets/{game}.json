@@ -337,11 +337,11 @@
 								{
 									"id": "join-room",
 									"objectClass": "multiplayer",
-									"sid": 747968821235768,
+									"sid": 770542923048785,
 									"parameters": {
 										"game": "\"thenbcorpse_5132652236_\" & projectversion",
-										"instance": "LayoutName",
-										"room": "room",
+										"instance": "room",
+										"room": "LayoutName",
 										"max-peers": "4"
 									}
 								}
@@ -388,11 +388,11 @@
 								{
 									"id": "join-room",
 									"objectClass": "multiplayer",
-									"sid": 145038973734229,
+									"sid": 407106362987240,
 									"parameters": {
 										"game": "\"thenbcorpse_5132652236_\" & projectversion",
-										"instance": "LayoutName",
-										"room": "room",
+										"instance": "room",
+										"room": "LayoutName",
 										"max-peers": "4"
 									}
 								}
@@ -1370,9 +1370,9 @@
 															}
 														},
 														{
-															"id": "disconnect-room",
+															"id": "leave-room",
 															"objectClass": "multiplayer",
-															"sid": 986875168173047
+															"sid": 954968251291946
 														},
 														{
 															"id": "log",
@@ -1393,7 +1393,8 @@
 															}
 														}
 													],
-													"sid": 556040627383805
+													"sid": 556040627383805,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -1401,7 +1402,8 @@
 														{
 															"id": "else",
 															"objectClass": "System",
-															"sid": 776123957688125
+															"sid": 776123957688125,
+															"disabled": true
 														}
 													],
 													"actions": [
@@ -1423,9 +1425,9 @@
 															}
 														},
 														{
-															"id": "disconnect-room",
+															"id": "leave-room",
 															"objectClass": "multiplayer",
-															"sid": 298286367962958
+															"sid": 555089247276172
 														},
 														{
 															"id": "log",
@@ -1621,9 +1623,9 @@
 															}
 														},
 														{
-															"id": "disconnect-room",
+															"id": "leave-room",
 															"objectClass": "multiplayer",
-															"sid": 160862397250806
+															"sid": 458444774937317
 														},
 														{
 															"id": "log",
@@ -1644,7 +1646,8 @@
 															}
 														}
 													],
-													"sid": 668124544125565
+													"sid": 668124544125565,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -1652,7 +1655,8 @@
 														{
 															"id": "else",
 															"objectClass": "System",
-															"sid": 716167835475605
+															"sid": 716167835475605,
+															"disabled": true
 														}
 													],
 													"actions": [
@@ -1674,9 +1678,9 @@
 															}
 														},
 														{
-															"id": "disconnect-room",
+															"id": "leave-room",
 															"objectClass": "multiplayer",
-															"sid": 861778399174667
+															"sid": 957943371981497
 														},
 														{
 															"id": "log",
@@ -1711,7 +1715,7 @@
 								{
 									"id": "on-left-room",
 									"objectClass": "multiplayer",
-									"sid": 996553693477906
+									"sid": 202947862778474
 								}
 							],
 							"actions": [
@@ -3882,6 +3886,11 @@
 									"parameters": {
 										"speed": "0"
 									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "player_beam_laser",
+									"sid": 879154218834193
 								}
 							],
 							"sid": 487276012874031
@@ -4328,6 +4337,16 @@
 										"comparison": 0,
 										"value": "1"
 									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 142201733693274,
+									"parameters": {
+										"instance-variable": "frozen",
+										"comparison": 0,
+										"value": "0"
+									}
 								}
 							],
 							"actions": [
@@ -4367,6 +4386,16 @@
 										"instance-variable": "alive",
 										"comparison": 0,
 										"value": "1"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 842221855537692,
+									"parameters": {
+										"instance-variable": "frozen",
+										"comparison": 0,
+										"value": "0"
 									}
 								}
 							],
@@ -4408,6 +4437,16 @@
 										"comparison": 0,
 										"value": "1"
 									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 318255979227354,
+									"parameters": {
+										"instance-variable": "frozen",
+										"comparison": 0,
+										"value": "0"
+									}
 								}
 							],
 							"actions": [
@@ -4447,6 +4486,16 @@
 										"instance-variable": "alive",
 										"comparison": 0,
 										"value": "1"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 805935280718714,
+									"parameters": {
+										"instance-variable": "frozen",
+										"comparison": 0,
+										"value": "0"
 									}
 								}
 							],
@@ -6927,9 +6976,9 @@
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 956741822529781,
+							"sid": 712276354631002,
 							"parameters": {
-								"interval-seconds": "random(8/60, 15/60)"
+								"interval-seconds": "random(6/60, 12/60)"
 							}
 						}
 					],
@@ -6950,10 +6999,10 @@
 						{
 							"id": "set-speed",
 							"objectClass": "level_wind",
-							"sid": 596124964121485,
+							"sid": 416346853354921,
 							"behaviorType": "Bullet",
 							"parameters": {
-								"speed": "random(500, 600)"
+								"speed": "random(600, 700)"
 							}
 						},
 						{
@@ -6973,9 +7022,9 @@
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 377408827451923,
+							"sid": 429008411793599,
 							"parameters": {
-								"interval-seconds": "random(8/60, 15/60)"
+								"interval-seconds": "random(6/60, 12/60)"
 							}
 						}
 					],
@@ -6996,10 +7045,10 @@
 						{
 							"id": "set-speed",
 							"objectClass": "level_wind",
-							"sid": 624764631226909,
+							"sid": 717638950185871,
 							"behaviorType": "Bullet",
 							"parameters": {
-								"speed": "random(500, 600)"
+								"speed": "random(600, 700)"
 							}
 						}
 					],

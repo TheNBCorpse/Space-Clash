@@ -341,11 +341,11 @@
 								{
 									"id": "join-room",
 									"objectClass": "multiplayer",
-									"sid": 595577036236969,
+									"sid": 844729582559720,
 									"parameters": {
 										"game": "\"thenbcorpse_5132652236_\" & projectversion",
-										"instance": "\"room\"",
-										"room": "room",
+										"instance": "room",
+										"room": "\"room\"",
 										"max-peers": "4"
 									}
 								}
@@ -392,11 +392,11 @@
 								{
 									"id": "join-room",
 									"objectClass": "multiplayer",
-									"sid": 860165349179852,
+									"sid": 770997625526081,
 									"parameters": {
 										"game": "\"thenbcorpse_5132652236_\" & projectversion",
-										"instance": "\"room\"",
-										"room": "room",
+										"instance": "room",
+										"room": "\"room\"",
 										"max-peers": "4"
 									}
 								}
@@ -1093,9 +1093,9 @@
 									}
 								},
 								{
-									"id": "disconnect-room",
+									"id": "leave-room",
 									"objectClass": "multiplayer",
-									"sid": 802426087321503
+									"sid": 617368077121786
 								},
 								{
 									"id": "go-to-layout-by-name",
@@ -1107,7 +1107,8 @@
 									}
 								}
 							],
-							"sid": 772978658924863
+							"sid": 772978658924863,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -1115,7 +1116,8 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 261029690339235
+									"sid": 261029690339235,
+									"disabled": true
 								}
 							],
 							"actions": [
@@ -1128,9 +1130,9 @@
 									}
 								},
 								{
-									"id": "disconnect-room",
+									"id": "leave-room",
 									"objectClass": "multiplayer",
-									"sid": 572753834436117
+									"sid": 479432292544187
 								},
 								{
 									"id": "go-to-layout-by-name",
@@ -1152,7 +1154,7 @@
 						{
 							"id": "on-left-room",
 							"objectClass": "multiplayer",
-							"sid": 638036801567731
+							"sid": 337855938773851
 						}
 					],
 					"actions": [
