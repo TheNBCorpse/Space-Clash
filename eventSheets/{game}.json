@@ -1176,13 +1176,13 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-two-values",
+											"id": "pick-by-highest-lowest-value",
 											"objectClass": "System",
-											"sid": 833717184417563,
+											"sid": 114559737954121,
 											"parameters": {
-												"first-value": "player.score",
-												"comparison": 0,
-												"second-value": "highest"
+												"object": "player",
+												"which": "highest",
+												"expression": "player.score"
 											}
 										}
 									],
@@ -1190,27 +1190,25 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 637002560534242,
+											"sid": 337549296090556,
 											"parameters": {
 												"variable": "highest",
 												"value": "player.score"
 											}
 										}
 									],
-									"sid": 279179467277153,
-									"children": [
+									"sid": 855920942910493
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
 										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"callFunction": "Display winner(s)",
-													"sid": 930633952619202
-												}
-											],
-											"sid": 496657817353873
+											"callFunction": "Display winner(s)",
+											"sid": 875285895026431
 										}
-									]
+									],
+									"sid": 752044354009152
 								}
 							]
 						},
@@ -1241,13 +1239,14 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "pick-by-highest-lowest-value",
+											"id": "pick-by-comparison",
 											"objectClass": "System",
-											"sid": 826484194590422,
+											"sid": 632508706397626,
 											"parameters": {
 												"object": "player",
-												"which": "highest",
-												"expression": "player.score"
+												"expression": "player.score",
+												"comparison": 0,
+												"value": "highest"
 											}
 										}
 									],
