@@ -1085,17 +1085,22 @@
 							],
 							"actions": [
 								{
+									"id": "disconnect-room",
+									"objectClass": "multiplayer",
+									"sid": 534419371886614
+								},
+								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 876809457015099,
+									"sid": 505817686808117,
 									"parameters": {
-										"seconds": "0.15"
+										"seconds": "0.8"
 									}
 								},
 								{
-									"id": "leave-room",
-									"objectClass": "multiplayer",
-									"sid": 617368077121786
+									"callFunction": "Force leave",
+									"sid": 496114432420862,
+									"disabled": true
 								},
 								{
 									"id": "go-to-layout-by-name",
@@ -1105,10 +1110,17 @@
 									"parameters": {
 										"layout": "chooseindex(text_begintimer.map, \"bowl\", \"minefield\", \"storm\", \"fort\")"
 									}
+								},
+								{
+									"id": "go-to-layout-by-name",
+									"objectClass": "System",
+									"sid": 756760643353933,
+									"parameters": {
+										"layout": "chooseindex(layout, \"bowl\", \"minefield\", \"storm\", \"fort\")"
+									}
 								}
 							],
-							"sid": 772978658924863,
-							"disabled": true
+							"sid": 772978658924863
 						},
 						{
 							"eventType": "block",
@@ -1116,23 +1128,45 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 261029690339235,
-									"disabled": true
+									"sid": 261029690339235
 								}
 							],
 							"actions": [
 								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 151431216721165,
+									"id": "log",
+									"objectClass": "browser",
+									"sid": 433919694888205,
 									"parameters": {
-										"seconds": "0.2"
+										"type": "log",
+										"message": "\"attempting to leave\""
 									}
 								},
 								{
-									"id": "leave-room",
+									"id": "disconnect-room",
 									"objectClass": "multiplayer",
-									"sid": 479432292544187
+									"sid": 726730161090138
+								},
+								{
+									"id": "log",
+									"objectClass": "browser",
+									"sid": 876646668360098,
+									"parameters": {
+										"type": "log",
+										"message": "\"attempt sent\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 319688791357123,
+									"parameters": {
+										"seconds": "1.0"
+									}
+								},
+								{
+									"callFunction": "Force leave",
+									"sid": 759558722118002,
+									"disabled": true
 								},
 								{
 									"id": "go-to-layout-by-name",
@@ -1142,9 +1176,136 @@
 									"parameters": {
 										"layout": "chooseindex(text_begintimer.map, \"bowl\", \"minefield\", \"storm\", \"fort\")"
 									}
+								},
+								{
+									"id": "go-to-layout-by-name",
+									"objectClass": "System",
+									"sid": 646984137610543,
+									"parameters": {
+										"layout": "chooseindex(layout, \"bowl\", \"minefield\", \"storm\", \"fort\")"
+									}
 								}
 							],
 							"sid": 882688500713168
+						}
+					]
+				},
+				{
+					"functionName": "Force leave",
+					"functionDescription": "Forcibly disconnect and transfer the player.",
+					"functionCategory": "Connectivity",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 701814193854742,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 970002031563781,
+									"parameters": {
+										"variable": "layout",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 746160876138417,
+									"parameters": {
+										"layout": "bowl"
+									}
+								}
+							],
+							"sid": 820372545121604
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 490248196156017,
+									"parameters": {
+										"variable": "layout",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 381927593791922,
+									"parameters": {
+										"layout": "minefield"
+									}
+								}
+							],
+							"sid": 933548905451072
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 178298679055202,
+									"parameters": {
+										"variable": "layout",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 906090586012679,
+									"parameters": {
+										"layout": "storm"
+									}
+								}
+							],
+							"sid": 950544430959500
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 794582415131941,
+									"parameters": {
+										"variable": "layout",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 615965328261253,
+									"parameters": {
+										"layout": "fort"
+									}
+								}
+							],
+							"sid": 308896496349975
 						}
 					]
 				},
@@ -1159,15 +1320,145 @@
 					],
 					"actions": [
 						{
+							"id": "log",
+							"objectClass": "browser",
+							"sid": 654554022243318,
+							"parameters": {
+								"type": "log",
+								"message": "\"left room\""
+							}
+						},
+						{
 							"id": "go-to-layout-by-name",
 							"objectClass": "System",
 							"sid": 635352541171004,
+							"disabled": true,
 							"parameters": {
 								"layout": "chooseindex(layout, \"bowl\", \"minefield\", \"storm\", \"fort\")"
 							}
+						},
+						{
+							"id": "log",
+							"objectClass": "browser",
+							"sid": 203011958831655,
+							"parameters": {
+								"type": "log",
+								"message": "chooseindex(layout, \"bowl\", \"minefield\", \"storm\", \"fort\")"
+							}
 						}
 					],
-					"sid": 719680189578464
+					"sid": 719680189578464,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 888099643477765,
+									"parameters": {
+										"variable": "layout",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 259577740237699,
+									"parameters": {
+										"layout": "bowl"
+									}
+								}
+							],
+							"sid": 614303371846171,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 267277271895759,
+									"parameters": {
+										"variable": "layout",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 957420928224216,
+									"parameters": {
+										"layout": "minefield"
+									}
+								}
+							],
+							"sid": 633720101008408,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 722797584852031,
+									"parameters": {
+										"variable": "layout",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 322745646422603,
+									"parameters": {
+										"layout": "storm"
+									}
+								}
+							],
+							"sid": 599799219764385,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 595913145432855,
+									"parameters": {
+										"variable": "layout",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 236939759573508,
+									"parameters": {
+										"layout": "fort"
+									}
+								}
+							],
+							"sid": 136624118344463,
+							"disabled": true
+						}
+					]
 				},
 				{
 					"eventType": "block",

@@ -1140,6 +1140,81 @@
 							]
 						},
 						{
+							"eventType": "variable",
+							"name": "highest",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 567640681737869
+						},
+						{
+							"functionName": "Check winner(s)",
+							"functionDescription": "Checks for the player(s) with the highest score.",
+							"functionCategory": "Gameplay",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 594090286866413,
+									"parameters": {
+										"object": "player",
+										"expression": "player.alive"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 569591844402585,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 833717184417563,
+											"parameters": {
+												"first-value": "player.score",
+												"comparison": 0,
+												"second-value": "highest"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 637002560534242,
+											"parameters": {
+												"variable": "highest",
+												"value": "player.score"
+											}
+										}
+									],
+									"sid": 279179467277153,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "Display winner(s)",
+													"sid": 930633952619202
+												}
+											],
+											"sid": 496657817353873
+										}
+									]
+								}
+							]
+						},
+						{
 							"functionName": "Display winner(s)",
 							"functionDescription": "Displays the round's winners.",
 							"functionCategory": "Gameplay",
@@ -1159,17 +1234,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "log",
-									"objectClass": "browser",
-									"sid": 365871102281363,
-									"parameters": {
-										"type": "log",
-										"message": "player.PickedCount"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 126863637430137,
 							"children": [
 								{
@@ -1178,7 +1243,7 @@
 										{
 											"id": "pick-by-highest-lowest-value",
 											"objectClass": "System",
-											"sid": 211187329338844,
+											"sid": 826484194590422,
 											"parameters": {
 												"object": "player",
 												"which": "highest",
@@ -1362,17 +1427,17 @@
 															}
 														},
 														{
-															"id": "wait",
-															"objectClass": "System",
-															"sid": 243469341295427,
-															"parameters": {
-																"seconds": "0.15"
-															}
+															"id": "disconnect-room",
+															"objectClass": "multiplayer",
+															"sid": 636086977741568
 														},
 														{
-															"id": "leave-room",
-															"objectClass": "multiplayer",
-															"sid": 954968251291946
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 707565202752805,
+															"parameters": {
+																"seconds": "0.8"
+															}
 														},
 														{
 															"id": "log",
@@ -1387,14 +1452,12 @@
 															"id": "go-to-layout",
 															"objectClass": "System",
 															"sid": 670627372654671,
-															"disabled": true,
 															"parameters": {
 																"layout": "room"
 															}
 														}
 													],
-													"sid": 556040627383805,
-													"disabled": true
+													"sid": 556040627383805
 												},
 												{
 													"eventType": "block",
@@ -1402,8 +1465,7 @@
 														{
 															"id": "else",
 															"objectClass": "System",
-															"sid": 776123957688125,
-															"disabled": true
+															"sid": 776123957688125
 														}
 													],
 													"actions": [
@@ -1417,17 +1479,17 @@
 															}
 														},
 														{
-															"id": "wait",
-															"objectClass": "System",
-															"sid": 552341582655654,
-															"parameters": {
-																"seconds": "0.2"
-															}
+															"id": "disconnect-room",
+															"objectClass": "multiplayer",
+															"sid": 101630720597670
 														},
 														{
-															"id": "leave-room",
-															"objectClass": "multiplayer",
-															"sid": 555089247276172
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 878990978037679,
+															"parameters": {
+																"seconds": "1.0"
+															}
 														},
 														{
 															"id": "log",
@@ -1442,7 +1504,6 @@
 															"id": "go-to-layout",
 															"objectClass": "System",
 															"sid": 478537774478793,
-															"disabled": true,
 															"parameters": {
 																"layout": "room"
 															}
@@ -1601,36 +1662,36 @@
 														{
 															"id": "is-host",
 															"objectClass": "multiplayer",
-															"sid": 364878528714045
+															"sid": 239212623764772
 														}
 													],
 													"actions": [
 														{
 															"id": "log",
 															"objectClass": "browser",
-															"sid": 900043434925433,
+															"sid": 111998972142857,
 															"parameters": {
 																"type": "log",
 																"message": "\"registered\""
 															}
 														},
 														{
-															"id": "wait",
-															"objectClass": "System",
-															"sid": 239787506116064,
-															"parameters": {
-																"seconds": "0.15"
-															}
+															"id": "disconnect-room",
+															"objectClass": "multiplayer",
+															"sid": 790645194460279
 														},
 														{
-															"id": "leave-room",
-															"objectClass": "multiplayer",
-															"sid": 458444774937317
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 414937876987615,
+															"parameters": {
+																"seconds": "0.8"
+															}
 														},
 														{
 															"id": "log",
 															"objectClass": "browser",
-															"sid": 163555738211709,
+															"sid": 104027509841016,
 															"parameters": {
 																"type": "log",
 																"message": "\"waited\""
@@ -1639,15 +1700,13 @@
 														{
 															"id": "go-to-layout",
 															"objectClass": "System",
-															"sid": 660275566909596,
-															"disabled": true,
+															"sid": 917202533112765,
 															"parameters": {
 																"layout": "room"
 															}
 														}
 													],
-													"sid": 668124544125565,
-													"disabled": true
+													"sid": 750110351617037
 												},
 												{
 													"eventType": "block",
@@ -1655,37 +1714,36 @@
 														{
 															"id": "else",
 															"objectClass": "System",
-															"sid": 716167835475605,
-															"disabled": true
+															"sid": 899793573193484
 														}
 													],
 													"actions": [
 														{
 															"id": "log",
 															"objectClass": "browser",
-															"sid": 792289544213431,
+															"sid": 928391243464497,
 															"parameters": {
 																"type": "log",
 																"message": "\"registered\""
 															}
 														},
 														{
-															"id": "wait",
-															"objectClass": "System",
-															"sid": 589664205496838,
-															"parameters": {
-																"seconds": "0.2"
-															}
+															"id": "disconnect-room",
+															"objectClass": "multiplayer",
+															"sid": 538044032715245
 														},
 														{
-															"id": "leave-room",
-															"objectClass": "multiplayer",
-															"sid": 957943371981497
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 306158601492194,
+															"parameters": {
+																"seconds": "1.0"
+															}
 														},
 														{
 															"id": "log",
 															"objectClass": "browser",
-															"sid": 270437186314104,
+															"sid": 432171523520883,
 															"parameters": {
 																"type": "log",
 																"message": "\"waited\""
@@ -1694,14 +1752,13 @@
 														{
 															"id": "go-to-layout",
 															"objectClass": "System",
-															"sid": 183704709094886,
-															"disabled": true,
+															"sid": 234043693257911,
 															"parameters": {
 																"layout": "room"
 															}
 														}
 													],
-													"sid": 433409433566169
+													"sid": 791840824547975
 												}
 											]
 										}
@@ -1737,7 +1794,8 @@
 									}
 								}
 							],
-							"sid": 300132857872934
+							"sid": 300132857872934,
+							"disabled": true
 						}
 					],
 					"sid": 280242207370916
@@ -2221,8 +2279,8 @@
 							}
 						},
 						{
-							"callFunction": "Display winner(s)",
-							"sid": 110923103363587
+							"callFunction": "Check winner(s)",
+							"sid": 266529456424943
 						}
 					],
 					"sid": 501912676857682
