@@ -1,0 +1,15 @@
+{
+	"name": "text_changelog",
+	"plugin-id": "Text",
+	"sid": 264970790085060,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 845515265970724
+		}
+	],
+	"effectTypes": []
+}
