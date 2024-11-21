@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 41400,
-	"name": "space thing",
+	"savedWithRelease": 41600,
+	"name": "Space Clash",
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
